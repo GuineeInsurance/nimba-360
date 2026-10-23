@@ -1,0 +1,21 @@
+export type Business = {
+  id: string;
+  name: string;
+  category: string;
+  neighborhood: string;
+  city: string;
+  rating: number;
+  reviewCount: number;
+  distanceKm: number;
+  isOpen: boolean;
+  verified: boolean;
+  price?: string;
+  phone: string;
+  whatsapp?: string;
+  address: string;
+  description: string;
+  services: string[];
+  imageUrl: string;
+  latitude: number;
+  longitude: number;
+};

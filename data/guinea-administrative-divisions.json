@@ -1,0 +1,4673 @@
+{
+  "_attribution": "Data from Open Admin Data (https://openadmindata.org/gn/) — CC-BY-4.0. Please cite: https://github.com/open-admin-data/guinea-administrative-divisions",
+  "data": [
+    {
+      "id": "GN001",
+      "name": {
+        "local": "Boke",
+        "en": "Boke",
+        "slug": "boke-gn001"
+      },
+      "code": {
+        "id": "GN001",
+        "iso": null
+      },
+      "prefecture": [
+        {
+          "id": "GN001001",
+          "name": {
+            "local": "Boffa",
+            "en": "Boffa",
+            "slug": "boffa-gn001001"
+          },
+          "code": {
+            "id": "GN001001",
+            "iso": null
+          },
+          "sub_prefecture": [
+            {
+              "id": "GN00100101",
+              "name": {
+                "local": "Boffa Ctre",
+                "en": "Boffa Ctre",
+                "slug": "boffa-ctre-gn00100101"
+              },
+              "code": {
+                "id": "GN00100101",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00100102",
+              "name": {
+                "local": "Douprou",
+                "en": "Douprou",
+                "slug": "douprou-gn00100102"
+              },
+              "code": {
+                "id": "GN00100102",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00100103",
+              "name": {
+                "local": "Koba Tatema",
+                "en": "Koba Tatema",
+                "slug": "koba-tatema-gn00100103"
+              },
+              "code": {
+                "id": "GN00100103",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00100104",
+              "name": {
+                "local": "Kolia",
+                "en": "Kolia",
+                "slug": "kolia-gn00100104"
+              },
+              "code": {
+                "id": "GN00100104",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00100105",
+              "name": {
+                "local": "Lisso",
+                "en": "Lisso",
+                "slug": "lisso-gn00100105"
+              },
+              "code": {
+                "id": "GN00100105",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00100106",
+              "name": {
+                "local": "Mankountan",
+                "en": "Mankountan",
+                "slug": "mankountan-gn00100106"
+              },
+              "code": {
+                "id": "GN00100106",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00100107",
+              "name": {
+                "local": "Tamita",
+                "en": "Tamita",
+                "slug": "tamita-gn00100107"
+              },
+              "code": {
+                "id": "GN00100107",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00100108",
+              "name": {
+                "local": "Tougnifily",
+                "en": "Tougnifily",
+                "slug": "tougnifily-gn00100108"
+              },
+              "code": {
+                "id": "GN00100108",
+                "iso": null
+              }
+            }
+          ]
+        },
+        {
+          "id": "GN001002",
+          "name": {
+            "local": "Boke",
+            "en": "Boke",
+            "slug": "boke-gn001002"
+          },
+          "code": {
+            "id": "GN001002",
+            "iso": null
+          },
+          "sub_prefecture": [
+            {
+              "id": "GN00100210",
+              "name": {
+                "local": "Tanene",
+                "en": "Tanene",
+                "slug": "tanene-gn00100210"
+              },
+              "code": {
+                "id": "GN00100210",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00100201",
+              "name": {
+                "local": "Bintimodia",
+                "en": "Bintimodia",
+                "slug": "bintimodia-gn00100201"
+              },
+              "code": {
+                "id": "GN00100201",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00100202",
+              "name": {
+                "local": "Boke Ctre",
+                "en": "Boke Ctre",
+                "slug": "boke-ctre-gn00100202"
+              },
+              "code": {
+                "id": "GN00100202",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00100203",
+              "name": {
+                "local": "Dabiss",
+                "en": "Dabiss",
+                "slug": "dabiss-gn00100203"
+              },
+              "code": {
+                "id": "GN00100203",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00100204",
+              "name": {
+                "local": "Kamsar",
+                "en": "Kamsar",
+                "slug": "kamsar-gn00100204"
+              },
+              "code": {
+                "id": "GN00100204",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00100206",
+              "name": {
+                "local": "Kolaboui",
+                "en": "Kolaboui",
+                "slug": "kolaboui-gn00100206"
+              },
+              "code": {
+                "id": "GN00100206",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00100207",
+              "name": {
+                "local": "Malapouya",
+                "en": "Malapouya",
+                "slug": "malapouya-gn00100207"
+              },
+              "code": {
+                "id": "GN00100207",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00100208",
+              "name": {
+                "local": "Sangaredi",
+                "en": "Sangaredi",
+                "slug": "sangaredi-gn00100208"
+              },
+              "code": {
+                "id": "GN00100208",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00100209",
+              "name": {
+                "local": "Sansale",
+                "en": "Sansale",
+                "slug": "sansale-gn00100209"
+              },
+              "code": {
+                "id": "GN00100209",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00100205",
+              "name": {
+                "local": "Kanfarande",
+                "en": "Kanfarande",
+                "slug": "kanfarande-gn00100205"
+              },
+              "code": {
+                "id": "GN00100205",
+                "iso": null
+              }
+            }
+          ]
+        },
+        {
+          "id": "GN001005",
+          "name": {
+            "local": "Fria",
+            "en": "Fria",
+            "slug": "fria-gn001005"
+          },
+          "code": {
+            "id": "GN001005",
+            "iso": null
+          },
+          "sub_prefecture": [
+            {
+              "id": "GN00100501",
+              "name": {
+                "local": "Baguinet",
+                "en": "Baguinet",
+                "slug": "baguinet-gn00100501"
+              },
+              "code": {
+                "id": "GN00100501",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00100502",
+              "name": {
+                "local": "Banguigny",
+                "en": "Banguigny",
+                "slug": "banguigny-gn00100502"
+              },
+              "code": {
+                "id": "GN00100502",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00100503",
+              "name": {
+                "local": "Fria Ctre",
+                "en": "Fria Ctre",
+                "slug": "fria-ctre-gn00100503"
+              },
+              "code": {
+                "id": "GN00100503",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00100504",
+              "name": {
+                "local": "Tormelin",
+                "en": "Tormelin",
+                "slug": "tormelin-gn00100504"
+              },
+              "code": {
+                "id": "GN00100504",
+                "iso": null
+              }
+            }
+          ]
+        },
+        {
+          "id": "GN001003",
+          "name": {
+            "local": "Gaoual",
+            "en": "Gaoual",
+            "slug": "gaoual-gn001003"
+          },
+          "code": {
+            "id": "GN001003",
+            "iso": null
+          },
+          "sub_prefecture": [
+            {
+              "id": "GN00100308",
+              "name": {
+                "local": "Wendou Mbour",
+                "en": "Wendou Mbour",
+                "slug": "wendou-mbour-gn00100308"
+              },
+              "code": {
+                "id": "GN00100308",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00100301",
+              "name": {
+                "local": "Foulamory",
+                "en": "Foulamory",
+                "slug": "foulamory-gn00100301"
+              },
+              "code": {
+                "id": "GN00100301",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00100302",
+              "name": {
+                "local": "Gaoual Ctre",
+                "en": "Gaoual Ctre",
+                "slug": "gaoual-ctre-gn00100302"
+              },
+              "code": {
+                "id": "GN00100302",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00100303",
+              "name": {
+                "local": "Kakony",
+                "en": "Kakony",
+                "slug": "kakony-gn00100303"
+              },
+              "code": {
+                "id": "GN00100303",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00100304",
+              "name": {
+                "local": "Koumbia",
+                "en": "Koumbia",
+                "slug": "koumbia-gn00100304"
+              },
+              "code": {
+                "id": "GN00100304",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00100305",
+              "name": {
+                "local": "Kounsitel",
+                "en": "Kounsitel",
+                "slug": "kounsitel-gn00100305"
+              },
+              "code": {
+                "id": "GN00100305",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00100306",
+              "name": {
+                "local": "Malanta",
+                "en": "Malanta",
+                "slug": "malanta-gn00100306"
+              },
+              "code": {
+                "id": "GN00100306",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00100307",
+              "name": {
+                "local": "Touba",
+                "en": "Touba",
+                "slug": "touba-gn00100307"
+              },
+              "code": {
+                "id": "GN00100307",
+                "iso": null
+              }
+            }
+          ]
+        },
+        {
+          "id": "GN001004",
+          "name": {
+            "local": "Koundara",
+            "en": "Koundara",
+            "slug": "koundara-gn001004"
+          },
+          "code": {
+            "id": "GN001004",
+            "iso": null
+          },
+          "sub_prefecture": [
+            {
+              "id": "GN00100407",
+              "name": {
+                "local": "Youkounkoun",
+                "en": "Youkounkoun",
+                "slug": "youkounkoun-gn00100407"
+              },
+              "code": {
+                "id": "GN00100407",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00100401",
+              "name": {
+                "local": "Guinguan",
+                "en": "Guinguan",
+                "slug": "guinguan-gn00100401"
+              },
+              "code": {
+                "id": "GN00100401",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00100402",
+              "name": {
+                "local": "Kamabi",
+                "en": "Kamabi",
+                "slug": "kamabi-gn00100402"
+              },
+              "code": {
+                "id": "GN00100402",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00100403",
+              "name": {
+                "local": "Koundara Ctre",
+                "en": "Koundara Ctre",
+                "slug": "koundara-ctre-gn00100403"
+              },
+              "code": {
+                "id": "GN00100403",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00100404",
+              "name": {
+                "local": "Sambailo",
+                "en": "Sambailo",
+                "slug": "sambailo-gn00100404"
+              },
+              "code": {
+                "id": "GN00100404",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00100405",
+              "name": {
+                "local": "Sareboido",
+                "en": "Sareboido",
+                "slug": "sareboido-gn00100405"
+              },
+              "code": {
+                "id": "GN00100405",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00100406",
+              "name": {
+                "local": "Termesse",
+                "en": "Termesse",
+                "slug": "termesse-gn00100406"
+              },
+              "code": {
+                "id": "GN00100406",
+                "iso": null
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "GN002",
+      "name": {
+        "local": "Conakry",
+        "en": "Conakry",
+        "slug": "conakry-gn002"
+      },
+      "code": {
+        "id": "GN002",
+        "iso": null
+      },
+      "prefecture": [
+        {
+          "id": "GN002001",
+          "name": {
+            "local": "Conakry",
+            "en": "Conakry",
+            "slug": "conakry-gn002001"
+          },
+          "code": {
+            "id": "GN002001",
+            "iso": null
+          },
+          "sub_prefecture": [
+            {
+              "id": "GN00200101",
+              "name": {
+                "local": "Dixinn",
+                "en": "Dixinn",
+                "slug": "dixinn-gn00200101"
+              },
+              "code": {
+                "id": "GN00200101",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00200102",
+              "name": {
+                "local": "Kaloum",
+                "en": "Kaloum",
+                "slug": "kaloum-gn00200102"
+              },
+              "code": {
+                "id": "GN00200102",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00200103",
+              "name": {
+                "local": "Matam",
+                "en": "Matam",
+                "slug": "matam-gn00200103"
+              },
+              "code": {
+                "id": "GN00200103",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00200105",
+              "name": {
+                "local": "Ratoma",
+                "en": "Ratoma",
+                "slug": "ratoma-gn00200105"
+              },
+              "code": {
+                "id": "GN00200105",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00200104",
+              "name": {
+                "local": "Matoto",
+                "en": "Matoto",
+                "slug": "matoto-gn00200104"
+              },
+              "code": {
+                "id": "GN00200104",
+                "iso": null
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "GN003",
+      "name": {
+        "local": "Faranah",
+        "en": "Faranah",
+        "slug": "faranah-gn003"
+      },
+      "code": {
+        "id": "GN003",
+        "iso": null
+      },
+      "prefecture": [
+        {
+          "id": "GN003001",
+          "name": {
+            "local": "Dabola",
+            "en": "Dabola",
+            "slug": "dabola-gn003001"
+          },
+          "code": {
+            "id": "GN003001",
+            "iso": null
+          },
+          "sub_prefecture": [
+            {
+              "id": "GN00300101",
+              "name": {
+                "local": "Arfamoussayah",
+                "en": "Arfamoussayah",
+                "slug": "arfamoussayah-gn00300101"
+              },
+              "code": {
+                "id": "GN00300101",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00300102",
+              "name": {
+                "local": "Banko",
+                "en": "Banko",
+                "slug": "banko-gn00300102"
+              },
+              "code": {
+                "id": "GN00300102",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00300103",
+              "name": {
+                "local": "Bissikrima",
+                "en": "Bissikrima",
+                "slug": "bissikrima-gn00300103"
+              },
+              "code": {
+                "id": "GN00300103",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00300105",
+              "name": {
+                "local": "Dogomet",
+                "en": "Dogomet",
+                "slug": "dogomet-gn00300105"
+              },
+              "code": {
+                "id": "GN00300105",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00300104",
+              "name": {
+                "local": "Dabola Ctre",
+                "en": "Dabola Ctre",
+                "slug": "dabola-ctre-gn00300104"
+              },
+              "code": {
+                "id": "GN00300104",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00300106",
+              "name": {
+                "local": "Kankama",
+                "en": "Kankama",
+                "slug": "kankama-gn00300106"
+              },
+              "code": {
+                "id": "GN00300106",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00300107",
+              "name": {
+                "local": "Kindoye",
+                "en": "Kindoye",
+                "slug": "kindoye-gn00300107"
+              },
+              "code": {
+                "id": "GN00300107",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00300108",
+              "name": {
+                "local": "Konendou",
+                "en": "Konendou",
+                "slug": "konendou-gn00300108"
+              },
+              "code": {
+                "id": "GN00300108",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00300109",
+              "name": {
+                "local": "Ndema",
+                "en": "Ndema",
+                "slug": "ndema-gn00300109"
+              },
+              "code": {
+                "id": "GN00300109",
+                "iso": null
+              }
+            }
+          ]
+        },
+        {
+          "id": "GN003002",
+          "name": {
+            "local": "Dinguiraye",
+            "en": "Dinguiraye",
+            "slug": "dinguiraye-gn003002"
+          },
+          "code": {
+            "id": "GN003002",
+            "iso": null
+          },
+          "sub_prefecture": [
+            {
+              "id": "GN00300201",
+              "name": {
+                "local": "Banora",
+                "en": "Banora",
+                "slug": "banora-gn00300201"
+              },
+              "code": {
+                "id": "GN00300201",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00300202",
+              "name": {
+                "local": "Dialakoro",
+                "en": "Dialakoro",
+                "slug": "dialakoro-gn00300202"
+              },
+              "code": {
+                "id": "GN00300202",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00300203",
+              "name": {
+                "local": "Diatifere",
+                "en": "Diatifere",
+                "slug": "diatifere-gn00300203"
+              },
+              "code": {
+                "id": "GN00300203",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00300204",
+              "name": {
+                "local": "Dinguiraye Ctre",
+                "en": "Dinguiraye Ctre",
+                "slug": "dinguiraye-ctre-gn00300204"
+              },
+              "code": {
+                "id": "GN00300204",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00300205",
+              "name": {
+                "local": "Gagnakaly",
+                "en": "Gagnakaly",
+                "slug": "gagnakaly-gn00300205"
+              },
+              "code": {
+                "id": "GN00300205",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00300206",
+              "name": {
+                "local": "Kalinko",
+                "en": "Kalinko",
+                "slug": "kalinko-gn00300206"
+              },
+              "code": {
+                "id": "GN00300206",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00300207",
+              "name": {
+                "local": "Lansanaya",
+                "en": "Lansanaya",
+                "slug": "lansanaya-gn00300207"
+              },
+              "code": {
+                "id": "GN00300207",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00300208",
+              "name": {
+                "local": "Selouma",
+                "en": "Selouma",
+                "slug": "selouma-gn00300208"
+              },
+              "code": {
+                "id": "GN00300208",
+                "iso": null
+              }
+            }
+          ]
+        },
+        {
+          "id": "GN003003",
+          "name": {
+            "local": "Faranah",
+            "en": "Faranah",
+            "slug": "faranah-gn003003"
+          },
+          "code": {
+            "id": "GN003003",
+            "iso": null
+          },
+          "sub_prefecture": [
+            {
+              "id": "GN00300302",
+              "name": {
+                "local": "Beindou",
+                "en": "Beindou",
+                "slug": "beindou-gn00300302"
+              },
+              "code": {
+                "id": "GN00300302",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00300303",
+              "name": {
+                "local": "Faranah Ctre",
+                "en": "Faranah Ctre",
+                "slug": "faranah-ctre-gn00300303"
+              },
+              "code": {
+                "id": "GN00300303",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00300304",
+              "name": {
+                "local": "Gnaleah",
+                "en": "Gnaleah",
+                "slug": "gnaleah-gn00300304"
+              },
+              "code": {
+                "id": "GN00300304",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00300305",
+              "name": {
+                "local": "Heremakono",
+                "en": "Heremakono",
+                "slug": "heremakono-gn00300305"
+              },
+              "code": {
+                "id": "GN00300305",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00300306",
+              "name": {
+                "local": "Kobikoro",
+                "en": "Kobikoro",
+                "slug": "kobikoro-gn00300306"
+              },
+              "code": {
+                "id": "GN00300306",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00300307",
+              "name": {
+                "local": "Marella",
+                "en": "Marella",
+                "slug": "marella-gn00300307"
+              },
+              "code": {
+                "id": "GN00300307",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00300308",
+              "name": {
+                "local": "Passaya",
+                "en": "Passaya",
+                "slug": "passaya-gn00300308"
+              },
+              "code": {
+                "id": "GN00300308",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00300309",
+              "name": {
+                "local": "Sandenia",
+                "en": "Sandenia",
+                "slug": "sandenia-gn00300309"
+              },
+              "code": {
+                "id": "GN00300309",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00300310",
+              "name": {
+                "local": "Songoyah",
+                "en": "Songoyah",
+                "slug": "songoyah-gn00300310"
+              },
+              "code": {
+                "id": "GN00300310",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00300311",
+              "name": {
+                "local": "Tiro",
+                "en": "Tiro",
+                "slug": "tiro-gn00300311"
+              },
+              "code": {
+                "id": "GN00300311",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00300301",
+              "name": {
+                "local": "Banian",
+                "en": "Banian",
+                "slug": "banian-gn00300301"
+              },
+              "code": {
+                "id": "GN00300301",
+                "iso": null
+              }
+            }
+          ]
+        },
+        {
+          "id": "GN003004",
+          "name": {
+            "local": "Kissidougou",
+            "en": "Kissidougou",
+            "slug": "kissidougou-gn003004"
+          },
+          "code": {
+            "id": "GN003004",
+            "iso": null
+          },
+          "sub_prefecture": [
+            {
+              "id": "GN00300412",
+              "name": {
+                "local": "Yende Millimou",
+                "en": "Yende Millimou",
+                "slug": "yende-millimou-gn00300412"
+              },
+              "code": {
+                "id": "GN00300412",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00300413",
+              "name": {
+                "local": "Yombiro",
+                "en": "Yombiro",
+                "slug": "yombiro-gn00300413"
+              },
+              "code": {
+                "id": "GN00300413",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00300402",
+              "name": {
+                "local": "Banama",
+                "en": "Banama",
+                "slug": "banama-gn00300402"
+              },
+              "code": {
+                "id": "GN00300402",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00300401",
+              "name": {
+                "local": "Albadariah",
+                "en": "Albadariah",
+                "slug": "albadariah-gn00300401"
+              },
+              "code": {
+                "id": "GN00300401",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00300403",
+              "name": {
+                "local": "Bardou",
+                "en": "Bardou",
+                "slug": "bardou-gn00300403"
+              },
+              "code": {
+                "id": "GN00300403",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00300404",
+              "name": {
+                "local": "Beindou",
+                "en": "Beindou",
+                "slug": "beindou-gn00300404"
+              },
+              "code": {
+                "id": "GN00300404",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00300405",
+              "name": {
+                "local": "Fermessadou",
+                "en": "Fermessadou",
+                "slug": "fermessadou-gn00300405"
+              },
+              "code": {
+                "id": "GN00300405",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00300406",
+              "name": {
+                "local": "Firawa",
+                "en": "Firawa",
+                "slug": "firawa-gn00300406"
+              },
+              "code": {
+                "id": "GN00300406",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00300407",
+              "name": {
+                "local": "Gbangbadou",
+                "en": "Gbangbadou",
+                "slug": "gbangbadou-gn00300407"
+              },
+              "code": {
+                "id": "GN00300407",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00300408",
+              "name": {
+                "local": "Kissidougou Ctre",
+                "en": "Kissidougou Ctre",
+                "slug": "kissidougou-ctre-gn00300408"
+              },
+              "code": {
+                "id": "GN00300408",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00300409",
+              "name": {
+                "local": "Kondiadou",
+                "en": "Kondiadou",
+                "slug": "kondiadou-gn00300409"
+              },
+              "code": {
+                "id": "GN00300409",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00300410",
+              "name": {
+                "local": "Manfran",
+                "en": "Manfran",
+                "slug": "manfran-gn00300410"
+              },
+              "code": {
+                "id": "GN00300410",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00300411",
+              "name": {
+                "local": "Sangardo",
+                "en": "Sangardo",
+                "slug": "sangardo-gn00300411"
+              },
+              "code": {
+                "id": "GN00300411",
+                "iso": null
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "GN004",
+      "name": {
+        "local": "Kankan",
+        "en": "Kankan",
+        "slug": "kankan-gn004"
+      },
+      "code": {
+        "id": "GN004",
+        "iso": null
+      },
+      "prefecture": [
+        {
+          "id": "GN004001",
+          "name": {
+            "local": "Kankan",
+            "en": "Kankan",
+            "slug": "kankan-gn004001"
+          },
+          "code": {
+            "id": "GN004001",
+            "iso": null
+          },
+          "sub_prefecture": [
+            {
+              "id": "GN00400101",
+              "name": {
+                "local": "Balandougou",
+                "en": "Balandougou",
+                "slug": "balandougou-gn00400101"
+              },
+              "code": {
+                "id": "GN00400101",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00400102",
+              "name": {
+                "local": "Bate Nafadji",
+                "en": "Bate Nafadji",
+                "slug": "bate-nafadji-gn00400102"
+              },
+              "code": {
+                "id": "GN00400102",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00400103",
+              "name": {
+                "local": "Boula",
+                "en": "Boula",
+                "slug": "boula-gn00400103"
+              },
+              "code": {
+                "id": "GN00400103",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00400104",
+              "name": {
+                "local": "Gberedou Baranama",
+                "en": "Gberedou Baranama",
+                "slug": "gberedou-baranama-gn00400104"
+              },
+              "code": {
+                "id": "GN00400104",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00400105",
+              "name": {
+                "local": "Kankan Ctre",
+                "en": "Kankan Ctre",
+                "slug": "kankan-ctre-gn00400105"
+              },
+              "code": {
+                "id": "GN00400105",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00400106",
+              "name": {
+                "local": "Karifamoriah",
+                "en": "Karifamoriah",
+                "slug": "karifamoriah-gn00400106"
+              },
+              "code": {
+                "id": "GN00400106",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00400107",
+              "name": {
+                "local": "Koumban",
+                "en": "Koumban",
+                "slug": "koumban-gn00400107"
+              },
+              "code": {
+                "id": "GN00400107",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00400108",
+              "name": {
+                "local": "Mamouroudou",
+                "en": "Mamouroudou",
+                "slug": "mamouroudou-gn00400108"
+              },
+              "code": {
+                "id": "GN00400108",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00400109",
+              "name": {
+                "local": "Missamana",
+                "en": "Missamana",
+                "slug": "missamana-gn00400109"
+              },
+              "code": {
+                "id": "GN00400109",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00400110",
+              "name": {
+                "local": "Moribayah",
+                "en": "Moribayah",
+                "slug": "moribayah-gn00400110"
+              },
+              "code": {
+                "id": "GN00400110",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00400111",
+              "name": {
+                "local": "Sabadou Baranama",
+                "en": "Sabadou Baranama",
+                "slug": "sabadou-baranama-gn00400111"
+              },
+              "code": {
+                "id": "GN00400111",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00400112",
+              "name": {
+                "local": "Tinti Oulen",
+                "en": "Tinti Oulen",
+                "slug": "tinti-oulen-gn00400112"
+              },
+              "code": {
+                "id": "GN00400112",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00400113",
+              "name": {
+                "local": "Tokounou",
+                "en": "Tokounou",
+                "slug": "tokounou-gn00400113"
+              },
+              "code": {
+                "id": "GN00400113",
+                "iso": null
+              }
+            }
+          ]
+        },
+        {
+          "id": "GN004002",
+          "name": {
+            "local": "Kerouane",
+            "en": "Kerouane",
+            "slug": "kerouane-gn004002"
+          },
+          "code": {
+            "id": "GN004002",
+            "iso": null
+          },
+          "sub_prefecture": [
+            {
+              "id": "GN00400201",
+              "name": {
+                "local": "Banankoro",
+                "en": "Banankoro",
+                "slug": "banankoro-gn00400201"
+              },
+              "code": {
+                "id": "GN00400201",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00400202",
+              "name": {
+                "local": "Damaro",
+                "en": "Damaro",
+                "slug": "damaro-gn00400202"
+              },
+              "code": {
+                "id": "GN00400202",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00400203",
+              "name": {
+                "local": "Kerouane Ctre",
+                "en": "Kerouane Ctre",
+                "slug": "kerouane-ctre-gn00400203"
+              },
+              "code": {
+                "id": "GN00400203",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00400204",
+              "name": {
+                "local": "Komodou",
+                "en": "Komodou",
+                "slug": "komodou-gn00400204"
+              },
+              "code": {
+                "id": "GN00400204",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00400205",
+              "name": {
+                "local": "Konsankoro",
+                "en": "Konsankoro",
+                "slug": "konsankoro-gn00400205"
+              },
+              "code": {
+                "id": "GN00400205",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00400206",
+              "name": {
+                "local": "Linko",
+                "en": "Linko",
+                "slug": "linko-gn00400206"
+              },
+              "code": {
+                "id": "GN00400206",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00400207",
+              "name": {
+                "local": "Sibiribaro",
+                "en": "Sibiribaro",
+                "slug": "sibiribaro-gn00400207"
+              },
+              "code": {
+                "id": "GN00400207",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00400208",
+              "name": {
+                "local": "Soromaya",
+                "en": "Soromaya",
+                "slug": "soromaya-gn00400208"
+              },
+              "code": {
+                "id": "GN00400208",
+                "iso": null
+              }
+            }
+          ]
+        },
+        {
+          "id": "GN004003",
+          "name": {
+            "local": "Kouroussa",
+            "en": "Kouroussa",
+            "slug": "kouroussa-gn004003"
+          },
+          "code": {
+            "id": "GN004003",
+            "iso": null
+          },
+          "sub_prefecture": [
+            {
+              "id": "GN00400301",
+              "name": {
+                "local": "Babila",
+                "en": "Babila",
+                "slug": "babila-gn00400301"
+              },
+              "code": {
+                "id": "GN00400301",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00400303",
+              "name": {
+                "local": "Banfele",
+                "en": "Banfele",
+                "slug": "banfele-gn00400303"
+              },
+              "code": {
+                "id": "GN00400303",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00400302",
+              "name": {
+                "local": "Balato",
+                "en": "Balato",
+                "slug": "balato-gn00400302"
+              },
+              "code": {
+                "id": "GN00400302",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00400304",
+              "name": {
+                "local": "Baro",
+                "en": "Baro",
+                "slug": "baro-gn00400304"
+              },
+              "code": {
+                "id": "GN00400304",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00400305",
+              "name": {
+                "local": "Cissela",
+                "en": "Cissela",
+                "slug": "cissela-gn00400305"
+              },
+              "code": {
+                "id": "GN00400305",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00400306",
+              "name": {
+                "local": "Douako",
+                "en": "Douako",
+                "slug": "douako-gn00400306"
+              },
+              "code": {
+                "id": "GN00400306",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00400307",
+              "name": {
+                "local": "Doura",
+                "en": "Doura",
+                "slug": "doura-gn00400307"
+              },
+              "code": {
+                "id": "GN00400307",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00400308",
+              "name": {
+                "local": "Kiniero",
+                "en": "Kiniero",
+                "slug": "kiniero-gn00400308"
+              },
+              "code": {
+                "id": "GN00400308",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00400309",
+              "name": {
+                "local": "Komola Khoura",
+                "en": "Komola Khoura",
+                "slug": "komola-khoura-gn00400309"
+              },
+              "code": {
+                "id": "GN00400309",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00400310",
+              "name": {
+                "local": "Koumana",
+                "en": "Koumana",
+                "slug": "koumana-gn00400310"
+              },
+              "code": {
+                "id": "GN00400310",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00400311",
+              "name": {
+                "local": "Kouroussa Ctre",
+                "en": "Kouroussa Ctre",
+                "slug": "kouroussa-ctre-gn00400311"
+              },
+              "code": {
+                "id": "GN00400311",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00400312",
+              "name": {
+                "local": "Sanguiana",
+                "en": "Sanguiana",
+                "slug": "sanguiana-gn00400312"
+              },
+              "code": {
+                "id": "GN00400312",
+                "iso": null
+              }
+            }
+          ]
+        },
+        {
+          "id": "GN004004",
+          "name": {
+            "local": "Mandiana",
+            "en": "Mandiana",
+            "slug": "mandiana-gn004004"
+          },
+          "code": {
+            "id": "GN004004",
+            "iso": null
+          },
+          "sub_prefecture": [
+            {
+              "id": "GN00400401",
+              "name": {
+                "local": "Balandougouba",
+                "en": "Balandougouba",
+                "slug": "balandougouba-gn00400401"
+              },
+              "code": {
+                "id": "GN00400401",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00400402",
+              "name": {
+                "local": "Dialokoro",
+                "en": "Dialokoro",
+                "slug": "dialokoro-gn00400402"
+              },
+              "code": {
+                "id": "GN00400402",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00400403",
+              "name": {
+                "local": "Faralako",
+                "en": "Faralako",
+                "slug": "faralako-gn00400403"
+              },
+              "code": {
+                "id": "GN00400403",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00400404",
+              "name": {
+                "local": "Kantoumanina",
+                "en": "Kantoumanina",
+                "slug": "kantoumanina-gn00400404"
+              },
+              "code": {
+                "id": "GN00400404",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00400405",
+              "name": {
+                "local": "Kinieran",
+                "en": "Kinieran",
+                "slug": "kinieran-gn00400405"
+              },
+              "code": {
+                "id": "GN00400405",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00400406",
+              "name": {
+                "local": "Koundian",
+                "en": "Koundian",
+                "slug": "koundian-gn00400406"
+              },
+              "code": {
+                "id": "GN00400406",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00400407",
+              "name": {
+                "local": "Koundianakoro",
+                "en": "Koundianakoro",
+                "slug": "koundianakoro-gn00400407"
+              },
+              "code": {
+                "id": "GN00400407",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00400408",
+              "name": {
+                "local": "Mandiana Ctre",
+                "en": "Mandiana Ctre",
+                "slug": "mandiana-ctre-gn00400408"
+              },
+              "code": {
+                "id": "GN00400408",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00400409",
+              "name": {
+                "local": "Morodou",
+                "en": "Morodou",
+                "slug": "morodou-gn00400409"
+              },
+              "code": {
+                "id": "GN00400409",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00400410",
+              "name": {
+                "local": "Niantanina",
+                "en": "Niantanina",
+                "slug": "niantanina-gn00400410"
+              },
+              "code": {
+                "id": "GN00400410",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00400411",
+              "name": {
+                "local": "Saladou",
+                "en": "Saladou",
+                "slug": "saladou-gn00400411"
+              },
+              "code": {
+                "id": "GN00400411",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00400412",
+              "name": {
+                "local": "Sansando",
+                "en": "Sansando",
+                "slug": "sansando-gn00400412"
+              },
+              "code": {
+                "id": "GN00400412",
+                "iso": null
+              }
+            }
+          ]
+        },
+        {
+          "id": "GN004005",
+          "name": {
+            "local": "Siguiri",
+            "en": "Siguiri",
+            "slug": "siguiri-gn004005"
+          },
+          "code": {
+            "id": "GN004005",
+            "iso": null
+          },
+          "sub_prefecture": [
+            {
+              "id": "GN00400501",
+              "name": {
+                "local": "Bankon",
+                "en": "Bankon",
+                "slug": "bankon-gn00400501"
+              },
+              "code": {
+                "id": "GN00400501",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00400502",
+              "name": {
+                "local": "Doko",
+                "en": "Doko",
+                "slug": "doko-gn00400502"
+              },
+              "code": {
+                "id": "GN00400502",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00400503",
+              "name": {
+                "local": "Franwalia",
+                "en": "Franwalia",
+                "slug": "franwalia-gn00400503"
+              },
+              "code": {
+                "id": "GN00400503",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00400504",
+              "name": {
+                "local": "Kiniebakoura",
+                "en": "Kiniebakoura",
+                "slug": "kiniebakoura-gn00400504"
+              },
+              "code": {
+                "id": "GN00400504",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00400505",
+              "name": {
+                "local": "Kintinian",
+                "en": "Kintinian",
+                "slug": "kintinian-gn00400505"
+              },
+              "code": {
+                "id": "GN00400505",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00400506",
+              "name": {
+                "local": "Malea",
+                "en": "Malea",
+                "slug": "malea-gn00400506"
+              },
+              "code": {
+                "id": "GN00400506",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00400507",
+              "name": {
+                "local": "Naboun",
+                "en": "Naboun",
+                "slug": "naboun-gn00400507"
+              },
+              "code": {
+                "id": "GN00400507",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00400508",
+              "name": {
+                "local": "Niagassola",
+                "en": "Niagassola",
+                "slug": "niagassola-gn00400508"
+              },
+              "code": {
+                "id": "GN00400508",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00400509",
+              "name": {
+                "local": "Niandankoro",
+                "en": "Niandankoro",
+                "slug": "niandankoro-gn00400509"
+              },
+              "code": {
+                "id": "GN00400509",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00400510",
+              "name": {
+                "local": "Norassoba",
+                "en": "Norassoba",
+                "slug": "norassoba-gn00400510"
+              },
+              "code": {
+                "id": "GN00400510",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00400511",
+              "name": {
+                "local": "Siguiri Ctre",
+                "en": "Siguiri Ctre",
+                "slug": "siguiri-ctre-gn00400511"
+              },
+              "code": {
+                "id": "GN00400511",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00400512",
+              "name": {
+                "local": "Siguirini",
+                "en": "Siguirini",
+                "slug": "siguirini-gn00400512"
+              },
+              "code": {
+                "id": "GN00400512",
+                "iso": null
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "GN005",
+      "name": {
+        "local": "Kindia",
+        "en": "Kindia",
+        "slug": "kindia-gn005"
+      },
+      "code": {
+        "id": "GN005",
+        "iso": null
+      },
+      "prefecture": [
+        {
+          "id": "GN005001",
+          "name": {
+            "local": "Coyah",
+            "en": "Coyah",
+            "slug": "coyah-gn005001"
+          },
+          "code": {
+            "id": "GN005001",
+            "iso": null
+          },
+          "sub_prefecture": [
+            {
+              "id": "GN00500104",
+              "name": {
+                "local": "Wonkifong",
+                "en": "Wonkifong",
+                "slug": "wonkifong-gn00500104"
+              },
+              "code": {
+                "id": "GN00500104",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00500101",
+              "name": {
+                "local": "Coyah Ctre",
+                "en": "Coyah Ctre",
+                "slug": "coyah-ctre-gn00500101"
+              },
+              "code": {
+                "id": "GN00500101",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00500103",
+              "name": {
+                "local": "Maneah",
+                "en": "Maneah",
+                "slug": "maneah-gn00500103"
+              },
+              "code": {
+                "id": "GN00500103",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00500102",
+              "name": {
+                "local": "Kouria",
+                "en": "Kouria",
+                "slug": "kouria-gn00500102"
+              },
+              "code": {
+                "id": "GN00500102",
+                "iso": null
+              }
+            }
+          ]
+        },
+        {
+          "id": "GN005002",
+          "name": {
+            "local": "Dubreka",
+            "en": "Dubreka",
+            "slug": "dubreka-gn005002"
+          },
+          "code": {
+            "id": "GN005002",
+            "iso": null
+          },
+          "sub_prefecture": [
+            {
+              "id": "GN00500208",
+              "name": {
+                "local": "Tanene",
+                "en": "Tanene",
+                "slug": "tanene-gn00500208"
+              },
+              "code": {
+                "id": "GN00500208",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00500201",
+              "name": {
+                "local": "Badi",
+                "en": "Badi",
+                "slug": "badi-gn00500201"
+              },
+              "code": {
+                "id": "GN00500201",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00500202",
+              "name": {
+                "local": "Dubreka Ctre",
+                "en": "Dubreka Ctre",
+                "slug": "dubreka-ctre-gn00500202"
+              },
+              "code": {
+                "id": "GN00500202",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00500203",
+              "name": {
+                "local": "Falessade",
+                "en": "Falessade",
+                "slug": "falessade-gn00500203"
+              },
+              "code": {
+                "id": "GN00500203",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00500204",
+              "name": {
+                "local": "Khorira",
+                "en": "Khorira",
+                "slug": "khorira-gn00500204"
+              },
+              "code": {
+                "id": "GN00500204",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00500205",
+              "name": {
+                "local": "Ouassou",
+                "en": "Ouassou",
+                "slug": "ouassou-gn00500205"
+              },
+              "code": {
+                "id": "GN00500205",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00500207",
+              "name": {
+                "local": "Tondon",
+                "en": "Tondon",
+                "slug": "tondon-gn00500207"
+              },
+              "code": {
+                "id": "GN00500207",
+                "iso": null
+              }
+            }
+          ]
+        },
+        {
+          "id": "GN005003",
+          "name": {
+            "local": "Forecariah",
+            "en": "Forecariah",
+            "slug": "forecariah-gn005003"
+          },
+          "code": {
+            "id": "GN005003",
+            "iso": null
+          },
+          "sub_prefecture": [
+            {
+              "id": "GN00500306",
+              "name": {
+                "local": "Kakossa",
+                "en": "Kakossa",
+                "slug": "kakossa-gn00500306"
+              },
+              "code": {
+                "id": "GN00500306",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00500301",
+              "name": {
+                "local": "Allassoyah",
+                "en": "Allassoyah",
+                "slug": "allassoyah-gn00500301"
+              },
+              "code": {
+                "id": "GN00500301",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00500302",
+              "name": {
+                "local": "Benty",
+                "en": "Benty",
+                "slug": "benty-gn00500302"
+              },
+              "code": {
+                "id": "GN00500302",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00500303",
+              "name": {
+                "local": "Farmoriah",
+                "en": "Farmoriah",
+                "slug": "farmoriah-gn00500303"
+              },
+              "code": {
+                "id": "GN00500303",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00500304",
+              "name": {
+                "local": "Forecariah Ctre",
+                "en": "Forecariah Ctre",
+                "slug": "forecariah-ctre-gn00500304"
+              },
+              "code": {
+                "id": "GN00500304",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00500305",
+              "name": {
+                "local": "Kaback",
+                "en": "Kaback",
+                "slug": "kaback-gn00500305"
+              },
+              "code": {
+                "id": "GN00500305",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00500307",
+              "name": {
+                "local": "Kaliah",
+                "en": "Kaliah",
+                "slug": "kaliah-gn00500307"
+              },
+              "code": {
+                "id": "GN00500307",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00500308",
+              "name": {
+                "local": "Maferinya",
+                "en": "Maferinya",
+                "slug": "maferinya-gn00500308"
+              },
+              "code": {
+                "id": "GN00500308",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00500309",
+              "name": {
+                "local": "Moussayah",
+                "en": "Moussayah",
+                "slug": "moussayah-gn00500309"
+              },
+              "code": {
+                "id": "GN00500309",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00500310",
+              "name": {
+                "local": "Sikhourou",
+                "en": "Sikhourou",
+                "slug": "sikhourou-gn00500310"
+              },
+              "code": {
+                "id": "GN00500310",
+                "iso": null
+              }
+            }
+          ]
+        },
+        {
+          "id": "GN005004",
+          "name": {
+            "local": "Kindia",
+            "en": "Kindia",
+            "slug": "kindia-gn005004"
+          },
+          "code": {
+            "id": "GN005004",
+            "iso": null
+          },
+          "sub_prefecture": [
+            {
+              "id": "GN00500401",
+              "name": {
+                "local": "Bangouya",
+                "en": "Bangouya",
+                "slug": "bangouya-gn00500401"
+              },
+              "code": {
+                "id": "GN00500401",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00500402",
+              "name": {
+                "local": "Damakania",
+                "en": "Damakania",
+                "slug": "damakania-gn00500402"
+              },
+              "code": {
+                "id": "GN00500402",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00500403",
+              "name": {
+                "local": "Friguiagbe",
+                "en": "Friguiagbe",
+                "slug": "friguiagbe-gn00500403"
+              },
+              "code": {
+                "id": "GN00500403",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00500404",
+              "name": {
+                "local": "Kindia Ctre",
+                "en": "Kindia Ctre",
+                "slug": "kindia-ctre-gn00500404"
+              },
+              "code": {
+                "id": "GN00500404",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00500405",
+              "name": {
+                "local": "Kolente",
+                "en": "Kolente",
+                "slug": "kolente-gn00500405"
+              },
+              "code": {
+                "id": "GN00500405",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00500406",
+              "name": {
+                "local": "Madina Oula",
+                "en": "Madina Oula",
+                "slug": "madina-oula-gn00500406"
+              },
+              "code": {
+                "id": "GN00500406",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00500407",
+              "name": {
+                "local": "Mambia",
+                "en": "Mambia",
+                "slug": "mambia-gn00500407"
+              },
+              "code": {
+                "id": "GN00500407",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00500408",
+              "name": {
+                "local": "Molota",
+                "en": "Molota",
+                "slug": "molota-gn00500408"
+              },
+              "code": {
+                "id": "GN00500408",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00500409",
+              "name": {
+                "local": "Samaya",
+                "en": "Samaya",
+                "slug": "samaya-gn00500409"
+              },
+              "code": {
+                "id": "GN00500409",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00500410",
+              "name": {
+                "local": "Sougueta",
+                "en": "Sougueta",
+                "slug": "sougueta-gn00500410"
+              },
+              "code": {
+                "id": "GN00500410",
+                "iso": null
+              }
+            }
+          ]
+        },
+        {
+          "id": "GN005005",
+          "name": {
+            "local": "Telimele",
+            "en": "Telimele",
+            "slug": "telimele-gn005005"
+          },
+          "code": {
+            "id": "GN005005",
+            "iso": null
+          },
+          "sub_prefecture": [
+            {
+              "id": "GN00500513",
+              "name": {
+                "local": "Telemele Ctre",
+                "en": "Telemele Ctre",
+                "slug": "telemele-ctre-gn00500513"
+              },
+              "code": {
+                "id": "GN00500513",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00500501",
+              "name": {
+                "local": "Bourouwal",
+                "en": "Bourouwal",
+                "slug": "bourouwal-gn00500501"
+              },
+              "code": {
+                "id": "GN00500501",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00500502",
+              "name": {
+                "local": "Daramagnaky",
+                "en": "Daramagnaky",
+                "slug": "daramagnaky-gn00500502"
+              },
+              "code": {
+                "id": "GN00500502",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00500503",
+              "name": {
+                "local": "Gougoudje",
+                "en": "Gougoudje",
+                "slug": "gougoudje-gn00500503"
+              },
+              "code": {
+                "id": "GN00500503",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00500504",
+              "name": {
+                "local": "Koba",
+                "en": "Koba",
+                "slug": "koba-gn00500504"
+              },
+              "code": {
+                "id": "GN00500504",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00500505",
+              "name": {
+                "local": "Kollet",
+                "en": "Kollet",
+                "slug": "kollet-gn00500505"
+              },
+              "code": {
+                "id": "GN00500505",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00500506",
+              "name": {
+                "local": "Konsotami",
+                "en": "Konsotami",
+                "slug": "konsotami-gn00500506"
+              },
+              "code": {
+                "id": "GN00500506",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00500507",
+              "name": {
+                "local": "Missira",
+                "en": "Missira",
+                "slug": "missira-gn00500507"
+              },
+              "code": {
+                "id": "GN00500507",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00500508",
+              "name": {
+                "local": "Santou",
+                "en": "Santou",
+                "slug": "santou-gn00500508"
+              },
+              "code": {
+                "id": "GN00500508",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00500510",
+              "name": {
+                "local": "Sinta",
+                "en": "Sinta",
+                "slug": "sinta-gn00500510"
+              },
+              "code": {
+                "id": "GN00500510",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00500511",
+              "name": {
+                "local": "Sogolon",
+                "en": "Sogolon",
+                "slug": "sogolon-gn00500511"
+              },
+              "code": {
+                "id": "GN00500511",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00500514",
+              "name": {
+                "local": "Thionthian",
+                "en": "Thionthian",
+                "slug": "thionthian-gn00500514"
+              },
+              "code": {
+                "id": "GN00500514",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00500509",
+              "name": {
+                "local": "Sarekali",
+                "en": "Sarekali",
+                "slug": "sarekali-gn00500509"
+              },
+              "code": {
+                "id": "GN00500509",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00500512",
+              "name": {
+                "local": "Tarihoye",
+                "en": "Tarihoye",
+                "slug": "tarihoye-gn00500512"
+              },
+              "code": {
+                "id": "GN00500512",
+                "iso": null
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "GN006",
+      "name": {
+        "local": "Labe",
+        "en": "Labe",
+        "slug": "labe-gn006"
+      },
+      "code": {
+        "id": "GN006",
+        "iso": null
+      },
+      "prefecture": [
+        {
+          "id": "GN006001",
+          "name": {
+            "local": "Koubia",
+            "en": "Koubia",
+            "slug": "koubia-gn006001"
+          },
+          "code": {
+            "id": "GN006001",
+            "iso": null
+          },
+          "sub_prefecture": [
+            {
+              "id": "GN00600104",
+              "name": {
+                "local": "Matakaou",
+                "en": "Matakaou",
+                "slug": "matakaou-gn00600104"
+              },
+              "code": {
+                "id": "GN00600104",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00600101",
+              "name": {
+                "local": "Fafaya",
+                "en": "Fafaya",
+                "slug": "fafaya-gn00600101"
+              },
+              "code": {
+                "id": "GN00600101",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00600102",
+              "name": {
+                "local": "Gadha Woundou",
+                "en": "Gadha Woundou",
+                "slug": "gadha-woundou-gn00600102"
+              },
+              "code": {
+                "id": "GN00600102",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00600103",
+              "name": {
+                "local": "Koubia Ctre",
+                "en": "Koubia Ctre",
+                "slug": "koubia-ctre-gn00600103"
+              },
+              "code": {
+                "id": "GN00600103",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00600105",
+              "name": {
+                "local": "Missira",
+                "en": "Missira",
+                "slug": "missira-gn00600105"
+              },
+              "code": {
+                "id": "GN00600105",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00600106",
+              "name": {
+                "local": "Pilimini",
+                "en": "Pilimini",
+                "slug": "pilimini-gn00600106"
+              },
+              "code": {
+                "id": "GN00600106",
+                "iso": null
+              }
+            }
+          ]
+        },
+        {
+          "id": "GN006002",
+          "name": {
+            "local": "Labe",
+            "en": "Labe",
+            "slug": "labe-gn006002"
+          },
+          "code": {
+            "id": "GN006002",
+            "iso": null
+          },
+          "sub_prefecture": [
+            {
+              "id": "GN00600213",
+              "name": {
+                "local": "Tountourou",
+                "en": "Tountourou",
+                "slug": "tountourou-gn00600213"
+              },
+              "code": {
+                "id": "GN00600213",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00600205",
+              "name": {
+                "local": "Garambe",
+                "en": "Garambe",
+                "slug": "garambe-gn00600205"
+              },
+              "code": {
+                "id": "GN00600205",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00600202",
+              "name": {
+                "local": "Daralabe",
+                "en": "Daralabe",
+                "slug": "daralabe-gn00600202"
+              },
+              "code": {
+                "id": "GN00600202",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00600201",
+              "name": {
+                "local": "Dalein",
+                "en": "Dalein",
+                "slug": "dalein-gn00600201"
+              },
+              "code": {
+                "id": "GN00600201",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00600203",
+              "name": {
+                "local": "Diari",
+                "en": "Diari",
+                "slug": "diari-gn00600203"
+              },
+              "code": {
+                "id": "GN00600203",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00600204",
+              "name": {
+                "local": "Dionfo",
+                "en": "Dionfo",
+                "slug": "dionfo-gn00600204"
+              },
+              "code": {
+                "id": "GN00600204",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00600206",
+              "name": {
+                "local": "Hafia",
+                "en": "Hafia",
+                "slug": "hafia-gn00600206"
+              },
+              "code": {
+                "id": "GN00600206",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00600207",
+              "name": {
+                "local": "Kaalan",
+                "en": "Kaalan",
+                "slug": "kaalan-gn00600207"
+              },
+              "code": {
+                "id": "GN00600207",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00600209",
+              "name": {
+                "local": "Labe Ctre",
+                "en": "Labe Ctre",
+                "slug": "labe-ctre-gn00600209"
+              },
+              "code": {
+                "id": "GN00600209",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00600208",
+              "name": {
+                "local": "Kouramangui",
+                "en": "Kouramangui",
+                "slug": "kouramangui-gn00600208"
+              },
+              "code": {
+                "id": "GN00600208",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00600210",
+              "name": {
+                "local": "Noussy",
+                "en": "Noussy",
+                "slug": "noussy-gn00600210"
+              },
+              "code": {
+                "id": "GN00600210",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00600211",
+              "name": {
+                "local": "Popodara",
+                "en": "Popodara",
+                "slug": "popodara-gn00600211"
+              },
+              "code": {
+                "id": "GN00600211",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00600212",
+              "name": {
+                "local": "Sannou",
+                "en": "Sannou",
+                "slug": "sannou-gn00600212"
+              },
+              "code": {
+                "id": "GN00600212",
+                "iso": null
+              }
+            }
+          ]
+        },
+        {
+          "id": "GN006003",
+          "name": {
+            "local": "Lelouma",
+            "en": "Lelouma",
+            "slug": "lelouma-gn006003"
+          },
+          "code": {
+            "id": "GN006003",
+            "iso": null
+          },
+          "sub_prefecture": [
+            {
+              "id": "GN00600301",
+              "name": {
+                "local": "Balaya",
+                "en": "Balaya",
+                "slug": "balaya-gn00600301"
+              },
+              "code": {
+                "id": "GN00600301",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00600302",
+              "name": {
+                "local": "Diontou",
+                "en": "Diontou",
+                "slug": "diontou-gn00600302"
+              },
+              "code": {
+                "id": "GN00600302",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00600303",
+              "name": {
+                "local": "Herico",
+                "en": "Herico",
+                "slug": "herico-gn00600303"
+              },
+              "code": {
+                "id": "GN00600303",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00600304",
+              "name": {
+                "local": "Korbe",
+                "en": "Korbe",
+                "slug": "korbe-gn00600304"
+              },
+              "code": {
+                "id": "GN00600304",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00600305",
+              "name": {
+                "local": "Lafou",
+                "en": "Lafou",
+                "slug": "lafou-gn00600305"
+              },
+              "code": {
+                "id": "GN00600305",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00600306",
+              "name": {
+                "local": "Lelouma Ctre",
+                "en": "Lelouma Ctre",
+                "slug": "lelouma-ctre-gn00600306"
+              },
+              "code": {
+                "id": "GN00600306",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00600307",
+              "name": {
+                "local": "Linsan Saran",
+                "en": "Linsan Saran",
+                "slug": "linsan-saran-gn00600307"
+              },
+              "code": {
+                "id": "GN00600307",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00600308",
+              "name": {
+                "local": "Manda",
+                "en": "Manda",
+                "slug": "manda-gn00600308"
+              },
+              "code": {
+                "id": "GN00600308",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00600309",
+              "name": {
+                "local": "Parawol",
+                "en": "Parawol",
+                "slug": "parawol-gn00600309"
+              },
+              "code": {
+                "id": "GN00600309",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00600310",
+              "name": {
+                "local": "Sagale",
+                "en": "Sagale",
+                "slug": "sagale-gn00600310"
+              },
+              "code": {
+                "id": "GN00600310",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00600311",
+              "name": {
+                "local": "Tianguel Bori",
+                "en": "Tianguel Bori",
+                "slug": "tianguel-bori-gn00600311"
+              },
+              "code": {
+                "id": "GN00600311",
+                "iso": null
+              }
+            }
+          ]
+        },
+        {
+          "id": "GN006004",
+          "name": {
+            "local": "Mali",
+            "en": "Mali",
+            "slug": "mali-gn006004"
+          },
+          "code": {
+            "id": "GN006004",
+            "iso": null
+          },
+          "sub_prefecture": [
+            {
+              "id": "GN00600413",
+              "name": {
+                "local": "Yimbering",
+                "en": "Yimbering",
+                "slug": "yimbering-gn00600413"
+              },
+              "code": {
+                "id": "GN00600413",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00600401",
+              "name": {
+                "local": "Balaki",
+                "en": "Balaki",
+                "slug": "balaki-gn00600401"
+              },
+              "code": {
+                "id": "GN00600401",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00600402",
+              "name": {
+                "local": "Donghol Sigon",
+                "en": "Donghol Sigon",
+                "slug": "donghol-sigon-gn00600402"
+              },
+              "code": {
+                "id": "GN00600402",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00600403",
+              "name": {
+                "local": "Dougountouny",
+                "en": "Dougountouny",
+                "slug": "dougountouny-gn00600403"
+              },
+              "code": {
+                "id": "GN00600403",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00600405",
+              "name": {
+                "local": "Gayah",
+                "en": "Gayah",
+                "slug": "gayah-gn00600405"
+              },
+              "code": {
+                "id": "GN00600405",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00600404",
+              "name": {
+                "local": "Fougou",
+                "en": "Fougou",
+                "slug": "fougou-gn00600404"
+              },
+              "code": {
+                "id": "GN00600404",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00600406",
+              "name": {
+                "local": "Hidayatou",
+                "en": "Hidayatou",
+                "slug": "hidayatou-gn00600406"
+              },
+              "code": {
+                "id": "GN00600406",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00600407",
+              "name": {
+                "local": "Lebekeren",
+                "en": "Lebekeren",
+                "slug": "lebekeren-gn00600407"
+              },
+              "code": {
+                "id": "GN00600407",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00600408",
+              "name": {
+                "local": "Madina Wora",
+                "en": "Madina Wora",
+                "slug": "madina-wora-gn00600408"
+              },
+              "code": {
+                "id": "GN00600408",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00600409",
+              "name": {
+                "local": "Mali Ctre",
+                "en": "Mali Ctre",
+                "slug": "mali-ctre-gn00600409"
+              },
+              "code": {
+                "id": "GN00600409",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00600410",
+              "name": {
+                "local": "Salambande",
+                "en": "Salambande",
+                "slug": "salambande-gn00600410"
+              },
+              "code": {
+                "id": "GN00600410",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00600411",
+              "name": {
+                "local": "Telire",
+                "en": "Telire",
+                "slug": "telire-gn00600411"
+              },
+              "code": {
+                "id": "GN00600411",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00600412",
+              "name": {
+                "local": "Touba",
+                "en": "Touba",
+                "slug": "touba-gn00600412"
+              },
+              "code": {
+                "id": "GN00600412",
+                "iso": null
+              }
+            }
+          ]
+        },
+        {
+          "id": "GN006005",
+          "name": {
+            "local": "Tougue",
+            "en": "Tougue",
+            "slug": "tougue-gn006005"
+          },
+          "code": {
+            "id": "GN006005",
+            "iso": null
+          },
+          "sub_prefecture": [
+            {
+              "id": "GN00600501",
+              "name": {
+                "local": "Fatako",
+                "en": "Fatako",
+                "slug": "fatako-gn00600501"
+              },
+              "code": {
+                "id": "GN00600501",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00600502",
+              "name": {
+                "local": "Fello Koundoua",
+                "en": "Fello Koundoua",
+                "slug": "fello-koundoua-gn00600502"
+              },
+              "code": {
+                "id": "GN00600502",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00600503",
+              "name": {
+                "local": "Kansangui",
+                "en": "Kansangui",
+                "slug": "kansangui-gn00600503"
+              },
+              "code": {
+                "id": "GN00600503",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00600505",
+              "name": {
+                "local": "Kolangui",
+                "en": "Kolangui",
+                "slug": "kolangui-gn00600505"
+              },
+              "code": {
+                "id": "GN00600505",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00600504",
+              "name": {
+                "local": "Koin",
+                "en": "Koin",
+                "slug": "koin-gn00600504"
+              },
+              "code": {
+                "id": "GN00600504",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00600506",
+              "name": {
+                "local": "Kolet",
+                "en": "Kolet",
+                "slug": "kolet-gn00600506"
+              },
+              "code": {
+                "id": "GN00600506",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00600507",
+              "name": {
+                "local": "Konah",
+                "en": "Konah",
+                "slug": "konah-gn00600507"
+              },
+              "code": {
+                "id": "GN00600507",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00600508",
+              "name": {
+                "local": "Kouratongo",
+                "en": "Kouratongo",
+                "slug": "kouratongo-gn00600508"
+              },
+              "code": {
+                "id": "GN00600508",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00600509",
+              "name": {
+                "local": "Tangali",
+                "en": "Tangali",
+                "slug": "tangali-gn00600509"
+              },
+              "code": {
+                "id": "GN00600509",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00600510",
+              "name": {
+                "local": "Tougue Ctre",
+                "en": "Tougue Ctre",
+                "slug": "tougue-ctre-gn00600510"
+              },
+              "code": {
+                "id": "GN00600510",
+                "iso": null
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "GN007",
+      "name": {
+        "local": "Mamou",
+        "en": "Mamou",
+        "slug": "mamou-gn007"
+      },
+      "code": {
+        "id": "GN007",
+        "iso": null
+      },
+      "prefecture": [
+        {
+          "id": "GN007001",
+          "name": {
+            "local": "Dalaba",
+            "en": "Dalaba",
+            "slug": "dalaba-gn007001"
+          },
+          "code": {
+            "id": "GN007001",
+            "iso": null
+          },
+          "sub_prefecture": [
+            {
+              "id": "GN00700101",
+              "name": {
+                "local": "Bodie",
+                "en": "Bodie",
+                "slug": "bodie-gn00700101"
+              },
+              "code": {
+                "id": "GN00700101",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00700102",
+              "name": {
+                "local": "Dalaba Ctre",
+                "en": "Dalaba Ctre",
+                "slug": "dalaba-ctre-gn00700102"
+              },
+              "code": {
+                "id": "GN00700102",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00700103",
+              "name": {
+                "local": "Ditinn",
+                "en": "Ditinn",
+                "slug": "ditinn-gn00700103"
+              },
+              "code": {
+                "id": "GN00700103",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00700104",
+              "name": {
+                "local": "Kaala",
+                "en": "Kaala",
+                "slug": "kaala-gn00700104"
+              },
+              "code": {
+                "id": "GN00700104",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00700105",
+              "name": {
+                "local": "Kankalabe",
+                "en": "Kankalabe",
+                "slug": "kankalabe-gn00700105"
+              },
+              "code": {
+                "id": "GN00700105",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00700106",
+              "name": {
+                "local": "Kebali",
+                "en": "Kebali",
+                "slug": "kebali-gn00700106"
+              },
+              "code": {
+                "id": "GN00700106",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00700107",
+              "name": {
+                "local": "Koba",
+                "en": "Koba",
+                "slug": "koba-gn00700107"
+              },
+              "code": {
+                "id": "GN00700107",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00700108",
+              "name": {
+                "local": "Mafara",
+                "en": "Mafara",
+                "slug": "mafara-gn00700108"
+              },
+              "code": {
+                "id": "GN00700108",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00700109",
+              "name": {
+                "local": "Mitty",
+                "en": "Mitty",
+                "slug": "mitty-gn00700109"
+              },
+              "code": {
+                "id": "GN00700109",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00700110",
+              "name": {
+                "local": "Mombeyah",
+                "en": "Mombeyah",
+                "slug": "mombeyah-gn00700110"
+              },
+              "code": {
+                "id": "GN00700110",
+                "iso": null
+              }
+            }
+          ]
+        },
+        {
+          "id": "GN007002",
+          "name": {
+            "local": "Mamou",
+            "en": "Mamou",
+            "slug": "mamou-gn007002"
+          },
+          "code": {
+            "id": "GN007002",
+            "iso": null
+          },
+          "sub_prefecture": [
+            {
+              "id": "GN00700201",
+              "name": {
+                "local": "Bouliwel",
+                "en": "Bouliwel",
+                "slug": "bouliwel-gn00700201"
+              },
+              "code": {
+                "id": "GN00700201",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00700202",
+              "name": {
+                "local": "Dounet",
+                "en": "Dounet",
+                "slug": "dounet-gn00700202"
+              },
+              "code": {
+                "id": "GN00700202",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00700203",
+              "name": {
+                "local": "Gongoret",
+                "en": "Gongoret",
+                "slug": "gongoret-gn00700203"
+              },
+              "code": {
+                "id": "GN00700203",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00700204",
+              "name": {
+                "local": "Kegneko",
+                "en": "Kegneko",
+                "slug": "kegneko-gn00700204"
+              },
+              "code": {
+                "id": "GN00700204",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00700205",
+              "name": {
+                "local": "Kounkoure",
+                "en": "Kounkoure",
+                "slug": "kounkoure-gn00700205"
+              },
+              "code": {
+                "id": "GN00700205",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00700206",
+              "name": {
+                "local": "Mamou Ctre",
+                "en": "Mamou Ctre",
+                "slug": "mamou-ctre-gn00700206"
+              },
+              "code": {
+                "id": "GN00700206",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00700207",
+              "name": {
+                "local": "Nyagara",
+                "en": "Nyagara",
+                "slug": "nyagara-gn00700207"
+              },
+              "code": {
+                "id": "GN00700207",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00700208",
+              "name": {
+                "local": "Oure Kaba",
+                "en": "Oure Kaba",
+                "slug": "oure-kaba-gn00700208"
+              },
+              "code": {
+                "id": "GN00700208",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00700209",
+              "name": {
+                "local": "Poredaka",
+                "en": "Poredaka",
+                "slug": "poredaka-gn00700209"
+              },
+              "code": {
+                "id": "GN00700209",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00700210",
+              "name": {
+                "local": "Saramoussaya",
+                "en": "Saramoussaya",
+                "slug": "saramoussaya-gn00700210"
+              },
+              "code": {
+                "id": "GN00700210",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00700211",
+              "name": {
+                "local": "Soyah",
+                "en": "Soyah",
+                "slug": "soyah-gn00700211"
+              },
+              "code": {
+                "id": "GN00700211",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00700212",
+              "name": {
+                "local": "Teguereyah",
+                "en": "Teguereyah",
+                "slug": "teguereyah-gn00700212"
+              },
+              "code": {
+                "id": "GN00700212",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00700213",
+              "name": {
+                "local": "Timbo",
+                "en": "Timbo",
+                "slug": "timbo-gn00700213"
+              },
+              "code": {
+                "id": "GN00700213",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00700214",
+              "name": {
+                "local": "Tolo",
+                "en": "Tolo",
+                "slug": "tolo-gn00700214"
+              },
+              "code": {
+                "id": "GN00700214",
+                "iso": null
+              }
+            }
+          ]
+        },
+        {
+          "id": "GN007003",
+          "name": {
+            "local": "Pita",
+            "en": "Pita",
+            "slug": "pita-gn007003"
+          },
+          "code": {
+            "id": "GN007003",
+            "iso": null
+          },
+          "sub_prefecture": [
+            {
+              "id": "GN00700301",
+              "name": {
+                "local": "Bantignel",
+                "en": "Bantignel",
+                "slug": "bantignel-gn00700301"
+              },
+              "code": {
+                "id": "GN00700301",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00700302",
+              "name": {
+                "local": "Brouwal Tape",
+                "en": "Brouwal Tape",
+                "slug": "brouwal-tape-gn00700302"
+              },
+              "code": {
+                "id": "GN00700302",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00700303",
+              "name": {
+                "local": "Donghol Touma",
+                "en": "Donghol Touma",
+                "slug": "donghol-touma-gn00700303"
+              },
+              "code": {
+                "id": "GN00700303",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00700304",
+              "name": {
+                "local": "Gongoret",
+                "en": "Gongoret",
+                "slug": "gongoret-gn00700304"
+              },
+              "code": {
+                "id": "GN00700304",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00700305",
+              "name": {
+                "local": "Ley Miro",
+                "en": "Ley Miro",
+                "slug": "ley-miro-gn00700305"
+              },
+              "code": {
+                "id": "GN00700305",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00700306",
+              "name": {
+                "local": "Maci",
+                "en": "Maci",
+                "slug": "maci-gn00700306"
+              },
+              "code": {
+                "id": "GN00700306",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00700307",
+              "name": {
+                "local": "Ninguelande",
+                "en": "Ninguelande",
+                "slug": "ninguelande-gn00700307"
+              },
+              "code": {
+                "id": "GN00700307",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00700310",
+              "name": {
+                "local": "Sintali",
+                "en": "Sintali",
+                "slug": "sintali-gn00700310"
+              },
+              "code": {
+                "id": "GN00700310",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00700308",
+              "name": {
+                "local": "Pita Ctre",
+                "en": "Pita Ctre",
+                "slug": "pita-ctre-gn00700308"
+              },
+              "code": {
+                "id": "GN00700308",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00700309",
+              "name": {
+                "local": "Sangareah",
+                "en": "Sangareah",
+                "slug": "sangareah-gn00700309"
+              },
+              "code": {
+                "id": "GN00700309",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00700311",
+              "name": {
+                "local": "Timbi Madina",
+                "en": "Timbi Madina",
+                "slug": "timbi-madina-gn00700311"
+              },
+              "code": {
+                "id": "GN00700311",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00700312",
+              "name": {
+                "local": "Timbi Touni",
+                "en": "Timbi Touni",
+                "slug": "timbi-touni-gn00700312"
+              },
+              "code": {
+                "id": "GN00700312",
+                "iso": null
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "GN008",
+      "name": {
+        "local": "Nzerekore",
+        "en": "Nzerekore",
+        "slug": "nzerekore-gn008"
+      },
+      "code": {
+        "id": "GN008",
+        "iso": null
+      },
+      "prefecture": [
+        {
+          "id": "GN008001",
+          "name": {
+            "local": "Beyla",
+            "en": "Beyla",
+            "slug": "beyla-gn008001"
+          },
+          "code": {
+            "id": "GN008001",
+            "iso": null
+          },
+          "sub_prefecture": [
+            {
+              "id": "GN00800101",
+              "name": {
+                "local": "Beyla Ctre",
+                "en": "Beyla Ctre",
+                "slug": "beyla-ctre-gn00800101"
+              },
+              "code": {
+                "id": "GN00800101",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00800102",
+              "name": {
+                "local": "Boola",
+                "en": "Boola",
+                "slug": "boola-gn00800102"
+              },
+              "code": {
+                "id": "GN00800102",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00800104",
+              "name": {
+                "local": "Diassodou",
+                "en": "Diassodou",
+                "slug": "diassodou-gn00800104"
+              },
+              "code": {
+                "id": "GN00800104",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00800105",
+              "name": {
+                "local": "Fouala",
+                "en": "Fouala",
+                "slug": "fouala-gn00800105"
+              },
+              "code": {
+                "id": "GN00800105",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00800106",
+              "name": {
+                "local": "Gbakedou",
+                "en": "Gbakedou",
+                "slug": "gbakedou-gn00800106"
+              },
+              "code": {
+                "id": "GN00800106",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00800107",
+              "name": {
+                "local": "Gbessoba",
+                "en": "Gbessoba",
+                "slug": "gbessoba-gn00800107"
+              },
+              "code": {
+                "id": "GN00800107",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00800108",
+              "name": {
+                "local": "Karala",
+                "en": "Karala",
+                "slug": "karala-gn00800108"
+              },
+              "code": {
+                "id": "GN00800108",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00800109",
+              "name": {
+                "local": "Koumandou",
+                "en": "Koumandou",
+                "slug": "koumandou-gn00800109"
+              },
+              "code": {
+                "id": "GN00800109",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00800110",
+              "name": {
+                "local": "Moussadou",
+                "en": "Moussadou",
+                "slug": "moussadou-gn00800110"
+              },
+              "code": {
+                "id": "GN00800110",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00800111",
+              "name": {
+                "local": "Nionsomoridou",
+                "en": "Nionsomoridou",
+                "slug": "nionsomoridou-gn00800111"
+              },
+              "code": {
+                "id": "GN00800111",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00800112",
+              "name": {
+                "local": "Sakourala",
+                "en": "Sakourala",
+                "slug": "sakourala-gn00800112"
+              },
+              "code": {
+                "id": "GN00800112",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00800113",
+              "name": {
+                "local": "Samana",
+                "en": "Samana",
+                "slug": "samana-gn00800113"
+              },
+              "code": {
+                "id": "GN00800113",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00800114",
+              "name": {
+                "local": "Sinko",
+                "en": "Sinko",
+                "slug": "sinko-gn00800114"
+              },
+              "code": {
+                "id": "GN00800114",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00800103",
+              "name": {
+                "local": "Diaraguerela",
+                "en": "Diaraguerela",
+                "slug": "diaraguerela-gn00800103"
+              },
+              "code": {
+                "id": "GN00800103",
+                "iso": null
+              }
+            }
+          ]
+        },
+        {
+          "id": "GN008002",
+          "name": {
+            "local": "Gueckedou",
+            "en": "Gueckedou",
+            "slug": "gueckedou-gn008002"
+          },
+          "code": {
+            "id": "GN008002",
+            "iso": null
+          },
+          "sub_prefecture": [
+            {
+              "id": "GN00800201",
+              "name": {
+                "local": "Bolodou",
+                "en": "Bolodou",
+                "slug": "bolodou-gn00800201"
+              },
+              "code": {
+                "id": "GN00800201",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00800202",
+              "name": {
+                "local": "Fangamadou",
+                "en": "Fangamadou",
+                "slug": "fangamadou-gn00800202"
+              },
+              "code": {
+                "id": "GN00800202",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00800203",
+              "name": {
+                "local": "Gueckedou Ctre",
+                "en": "Gueckedou Ctre",
+                "slug": "gueckedou-ctre-gn00800203"
+              },
+              "code": {
+                "id": "GN00800203",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00800204",
+              "name": {
+                "local": "Guendembou",
+                "en": "Guendembou",
+                "slug": "guendembou-gn00800204"
+              },
+              "code": {
+                "id": "GN00800204",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00800205",
+              "name": {
+                "local": "Kassadou",
+                "en": "Kassadou",
+                "slug": "kassadou-gn00800205"
+              },
+              "code": {
+                "id": "GN00800205",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00800206",
+              "name": {
+                "local": "Koundou",
+                "en": "Koundou",
+                "slug": "koundou-gn00800206"
+              },
+              "code": {
+                "id": "GN00800206",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00800207",
+              "name": {
+                "local": "Nongoa",
+                "en": "Nongoa",
+                "slug": "nongoa-gn00800207"
+              },
+              "code": {
+                "id": "GN00800207",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00800208",
+              "name": {
+                "local": "Ouende Kenema",
+                "en": "Ouende Kenema",
+                "slug": "ouende-kenema-gn00800208"
+              },
+              "code": {
+                "id": "GN00800208",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00800210",
+              "name": {
+                "local": "Termassadou",
+                "en": "Termassadou",
+                "slug": "termassadou-gn00800210"
+              },
+              "code": {
+                "id": "GN00800210",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00800209",
+              "name": {
+                "local": "Tekoulo",
+                "en": "Tekoulo",
+                "slug": "tekoulo-gn00800209"
+              },
+              "code": {
+                "id": "GN00800209",
+                "iso": null
+              }
+            }
+          ]
+        },
+        {
+          "id": "GN008003",
+          "name": {
+            "local": "Lola",
+            "en": "Lola",
+            "slug": "lola-gn008003"
+          },
+          "code": {
+            "id": "GN008003",
+            "iso": null
+          },
+          "sub_prefecture": [
+            {
+              "id": "GN00800301",
+              "name": {
+                "local": "Bossou",
+                "en": "Bossou",
+                "slug": "bossou-gn00800301"
+              },
+              "code": {
+                "id": "GN00800301",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00800302",
+              "name": {
+                "local": "Foumbadou",
+                "en": "Foumbadou",
+                "slug": "foumbadou-gn00800302"
+              },
+              "code": {
+                "id": "GN00800302",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00800303",
+              "name": {
+                "local": "Gama Berema",
+                "en": "Gama Berema",
+                "slug": "gama-berema-gn00800303"
+              },
+              "code": {
+                "id": "GN00800303",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00800304",
+              "name": {
+                "local": "Gueasso",
+                "en": "Gueasso",
+                "slug": "gueasso-gn00800304"
+              },
+              "code": {
+                "id": "GN00800304",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00800305",
+              "name": {
+                "local": "Kokota",
+                "en": "Kokota",
+                "slug": "kokota-gn00800305"
+              },
+              "code": {
+                "id": "GN00800305",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00800306",
+              "name": {
+                "local": "Laine",
+                "en": "Laine",
+                "slug": "laine-gn00800306"
+              },
+              "code": {
+                "id": "GN00800306",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00800307",
+              "name": {
+                "local": "Lola Ctre",
+                "en": "Lola Ctre",
+                "slug": "lola-ctre-gn00800307"
+              },
+              "code": {
+                "id": "GN00800307",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00800308",
+              "name": {
+                "local": "Nzoo",
+                "en": "Nzoo",
+                "slug": "nzoo-gn00800308"
+              },
+              "code": {
+                "id": "GN00800308",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00800309",
+              "name": {
+                "local": "Tounkarata",
+                "en": "Tounkarata",
+                "slug": "tounkarata-gn00800309"
+              },
+              "code": {
+                "id": "GN00800309",
+                "iso": null
+              }
+            }
+          ]
+        },
+        {
+          "id": "GN008004",
+          "name": {
+            "local": "Macenta",
+            "en": "Macenta",
+            "slug": "macenta-gn008004"
+          },
+          "code": {
+            "id": "GN008004",
+            "iso": null
+          },
+          "sub_prefecture": [
+            {
+              "id": "GN00800414",
+              "name": {
+                "local": "Vasseredou",
+                "en": "Vasseredou",
+                "slug": "vasseredou-gn00800414"
+              },
+              "code": {
+                "id": "GN00800414",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00800415",
+              "name": {
+                "local": "Watanka",
+                "en": "Watanka",
+                "slug": "watanka-gn00800415"
+              },
+              "code": {
+                "id": "GN00800415",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00800401",
+              "name": {
+                "local": "Balizia",
+                "en": "Balizia",
+                "slug": "balizia-gn00800401"
+              },
+              "code": {
+                "id": "GN00800401",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00800402",
+              "name": {
+                "local": "Binikala",
+                "en": "Binikala",
+                "slug": "binikala-gn00800402"
+              },
+              "code": {
+                "id": "GN00800402",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00800403",
+              "name": {
+                "local": "Bofossou",
+                "en": "Bofossou",
+                "slug": "bofossou-gn00800403"
+              },
+              "code": {
+                "id": "GN00800403",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00800404",
+              "name": {
+                "local": "Daro",
+                "en": "Daro",
+                "slug": "daro-gn00800404"
+              },
+              "code": {
+                "id": "GN00800404",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00800405",
+              "name": {
+                "local": "Fassankoni",
+                "en": "Fassankoni",
+                "slug": "fassankoni-gn00800405"
+              },
+              "code": {
+                "id": "GN00800405",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00800406",
+              "name": {
+                "local": "Kouankan",
+                "en": "Kouankan",
+                "slug": "kouankan-gn00800406"
+              },
+              "code": {
+                "id": "GN00800406",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00800407",
+              "name": {
+                "local": "Koyamah",
+                "en": "Koyamah",
+                "slug": "koyamah-gn00800407"
+              },
+              "code": {
+                "id": "GN00800407",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00800408",
+              "name": {
+                "local": "Macenta Ctre",
+                "en": "Macenta Ctre",
+                "slug": "macenta-ctre-gn00800408"
+              },
+              "code": {
+                "id": "GN00800408",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00800409",
+              "name": {
+                "local": "Nzebela",
+                "en": "Nzebela",
+                "slug": "nzebela-gn00800409"
+              },
+              "code": {
+                "id": "GN00800409",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00800410",
+              "name": {
+                "local": "Ouremai",
+                "en": "Ouremai",
+                "slug": "ouremai-gn00800410"
+              },
+              "code": {
+                "id": "GN00800410",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00800411",
+              "name": {
+                "local": "Panziazou",
+                "en": "Panziazou",
+                "slug": "panziazou-gn00800411"
+              },
+              "code": {
+                "id": "GN00800411",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00800412",
+              "name": {
+                "local": "Sengbedou",
+                "en": "Sengbedou",
+                "slug": "sengbedou-gn00800412"
+              },
+              "code": {
+                "id": "GN00800412",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00800413",
+              "name": {
+                "local": "Seredou",
+                "en": "Seredou",
+                "slug": "seredou-gn00800413"
+              },
+              "code": {
+                "id": "GN00800413",
+                "iso": null
+              }
+            }
+          ]
+        },
+        {
+          "id": "GN008005",
+          "name": {
+            "local": "Nzerekore",
+            "en": "Nzerekore",
+            "slug": "nzerekore-gn008005"
+          },
+          "code": {
+            "id": "GN008005",
+            "iso": null
+          },
+          "sub_prefecture": [
+            {
+              "id": "GN00800510",
+              "name": {
+                "local": "Womey",
+                "en": "Womey",
+                "slug": "womey-gn00800510"
+              },
+              "code": {
+                "id": "GN00800510",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00800511",
+              "name": {
+                "local": "Yalenzou",
+                "en": "Yalenzou",
+                "slug": "yalenzou-gn00800511"
+              },
+              "code": {
+                "id": "GN00800511",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00800501",
+              "name": {
+                "local": "Bounouma",
+                "en": "Bounouma",
+                "slug": "bounouma-gn00800501"
+              },
+              "code": {
+                "id": "GN00800501",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00800502",
+              "name": {
+                "local": "Gouecke",
+                "en": "Gouecke",
+                "slug": "gouecke-gn00800502"
+              },
+              "code": {
+                "id": "GN00800502",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00800503",
+              "name": {
+                "local": "Kobela",
+                "en": "Kobela",
+                "slug": "kobela-gn00800503"
+              },
+              "code": {
+                "id": "GN00800503",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00800504",
+              "name": {
+                "local": "Koropara",
+                "en": "Koropara",
+                "slug": "koropara-gn00800504"
+              },
+              "code": {
+                "id": "GN00800504",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00800505",
+              "name": {
+                "local": "Koule",
+                "en": "Koule",
+                "slug": "koule-gn00800505"
+              },
+              "code": {
+                "id": "GN00800505",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00800506",
+              "name": {
+                "local": "Nzerekore Ctre",
+                "en": "Nzerekore Ctre",
+                "slug": "nzerekore-ctre-gn00800506"
+              },
+              "code": {
+                "id": "GN00800506",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00800507",
+              "name": {
+                "local": "Pale",
+                "en": "Pale",
+                "slug": "pale-gn00800507"
+              },
+              "code": {
+                "id": "GN00800507",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00800508",
+              "name": {
+                "local": "Samoe",
+                "en": "Samoe",
+                "slug": "samoe-gn00800508"
+              },
+              "code": {
+                "id": "GN00800508",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00800509",
+              "name": {
+                "local": "Soulouta",
+                "en": "Soulouta",
+                "slug": "soulouta-gn00800509"
+              },
+              "code": {
+                "id": "GN00800509",
+                "iso": null
+              }
+            }
+          ]
+        },
+        {
+          "id": "GN008006",
+          "name": {
+            "local": "Yomou",
+            "en": "Yomou",
+            "slug": "yomou-gn008006"
+          },
+          "code": {
+            "id": "GN008006",
+            "iso": null
+          },
+          "sub_prefecture": [
+            {
+              "id": "GN00800607",
+              "name": {
+                "local": "Yomou Ctre",
+                "en": "Yomou Ctre",
+                "slug": "yomou-ctre-gn00800607"
+              },
+              "code": {
+                "id": "GN00800607",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00800601",
+              "name": {
+                "local": "Banie",
+                "en": "Banie",
+                "slug": "banie-gn00800601"
+              },
+              "code": {
+                "id": "GN00800601",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00800602",
+              "name": {
+                "local": "Bheeta",
+                "en": "Bheeta",
+                "slug": "bheeta-gn00800602"
+              },
+              "code": {
+                "id": "GN00800602",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00800603",
+              "name": {
+                "local": "Bignamou",
+                "en": "Bignamou",
+                "slug": "bignamou-gn00800603"
+              },
+              "code": {
+                "id": "GN00800603",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00800604",
+              "name": {
+                "local": "Bowe",
+                "en": "Bowe",
+                "slug": "bowe-gn00800604"
+              },
+              "code": {
+                "id": "GN00800604",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00800605",
+              "name": {
+                "local": "Diecke",
+                "en": "Diecke",
+                "slug": "diecke-gn00800605"
+              },
+              "code": {
+                "id": "GN00800605",
+                "iso": null
+              }
+            },
+            {
+              "id": "GN00800606",
+              "name": {
+                "local": "Pela",
+                "en": "Pela",
+                "slug": "pela-gn00800606"
+              },
+              "code": {
+                "id": "GN00800606",
+                "iso": null
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

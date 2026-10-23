@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#071f2c">
+  <title>Espace entreprise — NIMBA 360</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="styles.css">
+</head>
+<body class="portal-body">
+  <header class="site-header portal-header"><a class="brand" href="index.html"><span class="brand-name">NIMBA</span><span class="brand-360"><i>3</i><i>6</i><i>0</i></span></a><div class="portal-actions"><a href="index.html">← Retour au site</a><button class="nav-cta auth-trigger" type="button" data-auth-open>Se connecter</button><button class="user-chip" type="button" data-user-chip hidden></button></div></header>
+  <main class="portal-shell">
+    <div class="portal-intro"><div><p class="eyebrow"><span></span> Espace entreprise</p><h1>Présentez votre activité.</h1><p>Créez une fiche complète et envoyez-la à notre équipe de vérification.</p></div><span class="prototype-badge" data-connection-status>Connexion Firebase en attente</span></div>
+    <div class="workspace">
+      <aside class="workspace-side"><h2>Votre inscription</h2><ol class="step-list"><li class="active" data-step-label="1"><i>1</i>Identité</li><li data-step-label="2"><i>2</i>Coordonnées</li><li data-step-label="3"><i>3</i>Présentation</li><li data-step-label="4"><i>4</i>Vérification</li></ol><div class="side-help"><strong>Besoin d’aide ?</strong>Votre progression est enregistrée sur cet appareil. Une équipe pourra bientôt vous accompagner.</div></aside>
+      <form class="workspace-main" id="business-form" novalidate>
+        <section class="form-step active" data-step="1"><h2>Parlez-nous de votre entreprise</h2><p>Ces informations permettront de créer la base de votre fiche publique.</p><div class="form-grid">
+          <div class="field full"><label for="business-name">Nom de l’entreprise <span>*</span></label><input id="business-name" name="name" required placeholder="Ex. Le Palmier"></div>
+          <div class="field"><label for="category">Catégorie principale <span>*</span></label><select id="category" name="category" required><option value="">Sélectionner</option><option>Restaurant</option><option>Hôtel et hébergement</option><option>Santé</option><option>Commerce</option><option>Automobile</option><option>Services professionnels</option><option>Éducation</option><option>Tourisme et loisirs</option><option>Autre</option></select></div>
+          <div class="field"><label for="legal-name">Raison sociale</label><input id="legal-name" name="legalName" placeholder="Nom légal si différent"></div>
+          <div class="field"><label for="rccm">Numéro RCCM</label><input id="rccm" name="rccm" placeholder="Ex. GN.CKY.2025.A.00000"><small>Facultatif, utilisé pour faciliter la vérification.</small></div>
+          <div class="field"><label for="founded">Année de création</label><input id="founded" name="founded" type="number" min="1900" max="2026" placeholder="2022"></div>
+        </div></section>
+        <section class="form-step" data-step="2"><h2>Où peut-on vous joindre ?</h2><p>Ajoutez une adresse précise et au moins un moyen de contact.</p><div class="form-grid">
+          <div class="field"><label for="region">Région <span>*</span></label><select id="region" name="region" required><option value="">Sélectionner</option><option>Conakry</option><option>Boké</option><option>Faranah</option><option>Kankan</option><option>Kindia</option><option>Labé</option><option>Mamou</option><option>N’Zérékoré</option></select></div>
+          <div class="field"><label for="city">Ville / Préfecture <span>*</span></label><input id="city" name="city" required placeholder="Ex. Conakry"></div>
+          <div class="field"><label for="commune">Commune / Sous-préfecture <span>*</span></label><input id="commune" name="commune" required placeholder="Ex. Kaloum"></div>
+          <div class="field"><label for="district">Quartier / District</label><input id="district" name="district" placeholder="Ex. Almamya"></div>
+          <div class="field full"><label for="address">Adresse ou repère précis <span>*</span></label><input id="address" name="address" required placeholder="Ex. Avenue de la République, près du Port"></div>
+          <div class="field"><label for="latitude">Latitude <span>*</span></label><input id="latitude" name="latitude" required type="number" min="7" max="13" step="any" placeholder="Ex. 9.5092"><small>Coordonnée approximative entre 7 et 13.</small></div>
+          <div class="field"><label for="longitude">Longitude <span>*</span></label><input id="longitude" name="longitude" required type="number" min="-16" max="-7" step="any" placeholder="Ex. -13.7122"><small>Coordonnée approximative entre -16 et -7.</small></div>
+          <div class="field"><label for="phone">Téléphone <span>*</span></label><input id="phone" name="phone" required type="tel" placeholder="+224 6XX XX XX XX"></div>
+          <div class="field"><label for="whatsapp">WhatsApp</label><input id="whatsapp" name="whatsapp" type="tel" placeholder="+224 6XX XX XX XX"></div>
+          <div class="field"><label for="email">E-mail professionnel</label><input id="email" name="email" type="email" placeholder="contact@entreprise.com"></div>
+          <div class="field"><label for="website">Site web</label><input id="website" name="website" type="url" placeholder="https://"></div>
+        </div></section>
+        <section class="form-step" data-step="3"><h2>Donnez envie de vous découvrir</h2><p>Une description claire et de bonnes photos rendent votre fiche plus utile.</p><div class="form-grid">
+          <div class="field full"><label for="description">Description <span>*</span></label><textarea id="description" name="description" required maxlength="600" placeholder="Décrivez votre activité, vos spécialités et ce qui vous distingue…"></textarea><small>600 caractères maximum.</small></div>
+          <div class="field full"><label for="services">Services principaux</label><input id="services" name="services" placeholder="Séparez les services par une virgule"></div>
+          <div class="field"><label for="hours">Horaires habituels</label><input id="hours" name="hours" placeholder="Ex. Lun–Sam, 8h–20h"></div>
+          <div class="field"><label for="languages">Langues d’accueil</label><input id="languages" name="languages" placeholder="Ex. Français, Soussou"></div>
+          <label class="upload-box" for="photos"><span><strong>Ajoutez votre logo et vos photos</strong><br><small>JPG ou PNG, 5 images maximum</small></span><input class="sr-only" id="photos" name="photos" type="file" accept="image/png,image/jpeg" multiple></label>
+        </div></section>
+        <section class="form-step" data-step="4"><h2>Vérifiez avant d’envoyer</h2><p>Votre fiche sera examinée avant d’être visible dans l’application.</p><div class="review-summary" id="form-summary"></div><label class="consent"><input type="checkbox" id="consent" required><span>Je confirme être autorisé à représenter cette entreprise et que les informations fournies sont exactes. J’accepte les <a href="terms.html" target="_blank">conditions d’utilisation</a> et reconnais la <a href="privacy.html" target="_blank">politique de confidentialité</a>.</span></label><div class="submit-notice" data-submit-notice>Connectez-vous pour envoyer votre fiche de façon sécurisée à l’équipe de vérification.</div></section>
+        <div class="form-nav"><button type="button" class="button button-secondary" id="prev-step" disabled>← Précédent</button><button type="button" class="button button-primary" id="next-step">Continuer →</button></div>
+        <p class="form-feedback" id="business-feedback" aria-live="polite"></p>
+      </form>
+    </div>
+  </main>
+  <div class="modal-backdrop" data-auth-modal hidden><section class="auth-modal" role="dialog" aria-modal="true" aria-labelledby="auth-title"><button class="drawer-close" type="button" data-auth-close aria-label="Fermer">×</button><p class="eyebrow"><span></span> Compte entreprise</p><h2 id="auth-title">Connectez-vous</h2><p class="auth-intro">Utilisez votre e-mail professionnel pour gérer vos soumissions.</p><form data-auth-form><div class="field"><label for="auth-name">Votre nom</label><input id="auth-name" name="displayName" autocomplete="name" placeholder="Nom du responsable"></div><div class="field"><label for="auth-email">Adresse e-mail</label><input id="auth-email" name="email" type="email" autocomplete="email" required></div><div class="field"><label for="auth-password">Mot de passe</label><input id="auth-password" name="password" type="password" autocomplete="current-password" minlength="8" required></div><button class="button button-primary auth-submit" type="submit">Se connecter</button></form><button class="auth-mode" type="button" data-auth-mode>Pas encore de compte ? Créer un compte</button><p class="form-feedback" data-auth-feedback aria-live="polite"></p><p class="auth-legal">En continuant, vous acceptez nos <a href="terms.html">conditions</a> et notre <a href="privacy.html">politique de confidentialité</a>.</p></section></div>
+  <script src="app.js"></script><script type="module" src="firebase-app.js"></script>
+</body>
+</html>

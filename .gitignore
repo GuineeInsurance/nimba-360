@@ -1,0 +1,31 @@
+# Dependencies and local tooling
+node_modules/
+**/node_modules/
+.expo/
+**/.expo/
+.firebase/
+
+# Environment and credentials
+.env
+.env.*
+!.env.example
+*service-account*.json
+*application-credentials*.json
+*.pem
+*.p12
+*.keystore
+*.jks
+
+# Logs, caches and OS files
+*.log
+firebase-debug.log*
+.DS_Store
+Thumbs.db
+coverage/
+dist-cache/
+**/__pycache__/
+*.pyc
+**/.git-web-app-history/
+
+# Local artifact inspection output
+*.inspect.ndjson

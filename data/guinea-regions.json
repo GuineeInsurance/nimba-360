@@ -1,0 +1,274 @@
+[
+  {
+    "id": "GN001",
+    "level": 1,
+    "level_name": {
+      "local": "Région",
+      "en": "Region"
+    },
+    "name": {
+      "local": "Boke",
+      "en": "Boke",
+      "slug": "boke-gn001"
+    },
+    "code": {
+      "id": "GN001",
+      "iso": null
+    },
+    "parent": null,
+    "ancestors": [],
+    "children_count": {
+      "prefecture": 5,
+      "sub_prefecture": 37
+    },
+    "zip_codes": [],
+    "geo": {
+      "lat": "11.255",
+      "lon": "-14.312"
+    },
+    "metadata": {},
+    "source": {
+      "name": "Open Admin Data",
+      "url": "https://openadmindata.org/gn/regions/boke-gn001/",
+      "api": "https://openadmindata.org/api/gn/"
+    }
+  },
+  {
+    "id": "GN002",
+    "level": 1,
+    "level_name": {
+      "local": "Région",
+      "en": "Region"
+    },
+    "name": {
+      "local": "Conakry",
+      "en": "Conakry",
+      "slug": "conakry-gn002"
+    },
+    "code": {
+      "id": "GN002",
+      "iso": null
+    },
+    "parent": null,
+    "ancestors": [],
+    "children_count": {
+      "prefecture": 1,
+      "sub_prefecture": 5
+    },
+    "zip_codes": [],
+    "geo": {
+      "lat": "9.626",
+      "lon": "-13.551"
+    },
+    "metadata": {},
+    "source": {
+      "name": "Open Admin Data",
+      "url": "https://openadmindata.org/gn/regions/conakry-gn002/",
+      "api": "https://openadmindata.org/api/gn/"
+    }
+  },
+  {
+    "id": "GN003",
+    "level": 1,
+    "level_name": {
+      "local": "Région",
+      "en": "Region"
+    },
+    "name": {
+      "local": "Faranah",
+      "en": "Faranah",
+      "slug": "faranah-gn003"
+    },
+    "code": {
+      "id": "GN003",
+      "iso": null
+    },
+    "parent": null,
+    "ancestors": [],
+    "children_count": {
+      "prefecture": 4,
+      "sub_prefecture": 41
+    },
+    "zip_codes": [],
+    "geo": {
+      "lat": "10.517",
+      "lon": "-10.98"
+    },
+    "metadata": {},
+    "source": {
+      "name": "Open Admin Data",
+      "url": "https://openadmindata.org/gn/regions/faranah-gn003/",
+      "api": "https://openadmindata.org/api/gn/"
+    }
+  },
+  {
+    "id": "GN004",
+    "level": 1,
+    "level_name": {
+      "local": "Région",
+      "en": "Region"
+    },
+    "name": {
+      "local": "Kankan",
+      "en": "Kankan",
+      "slug": "kankan-gn004"
+    },
+    "code": {
+      "id": "GN004",
+      "iso": null
+    },
+    "parent": null,
+    "ancestors": [],
+    "children_count": {
+      "prefecture": 5,
+      "sub_prefecture": 57
+    },
+    "zip_codes": [],
+    "geo": {
+      "lat": "10.629",
+      "lon": "-9.378"
+    },
+    "metadata": {},
+    "source": {
+      "name": "Open Admin Data",
+      "url": "https://openadmindata.org/gn/regions/kankan-gn004/",
+      "api": "https://openadmindata.org/api/gn/"
+    }
+  },
+  {
+    "id": "GN005",
+    "level": 1,
+    "level_name": {
+      "local": "Région",
+      "en": "Region"
+    },
+    "name": {
+      "local": "Kindia",
+      "en": "Kindia",
+      "slug": "kindia-gn005"
+    },
+    "code": {
+      "id": "GN005",
+      "iso": null
+    },
+    "parent": null,
+    "ancestors": [],
+    "children_count": {
+      "prefecture": 5,
+      "sub_prefecture": 45
+    },
+    "zip_codes": [],
+    "geo": {
+      "lat": "10.214",
+      "lon": "-13.017"
+    },
+    "metadata": {},
+    "source": {
+      "name": "Open Admin Data",
+      "url": "https://openadmindata.org/gn/regions/kindia-gn005/",
+      "api": "https://openadmindata.org/api/gn/"
+    }
+  },
+  {
+    "id": "GN006",
+    "level": 1,
+    "level_name": {
+      "local": "Région",
+      "en": "Region"
+    },
+    "name": {
+      "local": "Labe",
+      "en": "Labe",
+      "slug": "labe-gn006"
+    },
+    "code": {
+      "id": "GN006",
+      "iso": null
+    },
+    "parent": null,
+    "ancestors": [],
+    "children_count": {
+      "prefecture": 5,
+      "sub_prefecture": 53
+    },
+    "zip_codes": [],
+    "geo": {
+      "lat": "11.716",
+      "lon": "-11.942"
+    },
+    "metadata": {},
+    "source": {
+      "name": "Open Admin Data",
+      "url": "https://openadmindata.org/gn/regions/labe-gn006/",
+      "api": "https://openadmindata.org/api/gn/"
+    }
+  },
+  {
+    "id": "GN007",
+    "level": 1,
+    "level_name": {
+      "local": "Région",
+      "en": "Region"
+    },
+    "name": {
+      "local": "Mamou",
+      "en": "Mamou",
+      "slug": "mamou-gn007"
+    },
+    "code": {
+      "id": "GN007",
+      "iso": null
+    },
+    "parent": null,
+    "ancestors": [],
+    "children_count": {
+      "prefecture": 3,
+      "sub_prefecture": 36
+    },
+    "zip_codes": [],
+    "geo": {
+      "lat": "10.604",
+      "lon": "-12.008"
+    },
+    "metadata": {},
+    "source": {
+      "name": "Open Admin Data",
+      "url": "https://openadmindata.org/gn/regions/mamou-gn007/",
+      "api": "https://openadmindata.org/api/gn/"
+    }
+  },
+  {
+    "id": "GN008",
+    "level": 1,
+    "level_name": {
+      "local": "Région",
+      "en": "Region"
+    },
+    "name": {
+      "local": "Nzerekore",
+      "en": "Nzerekore",
+      "slug": "nzerekore-gn008"
+    },
+    "code": {
+      "id": "GN008",
+      "iso": null
+    },
+    "parent": null,
+    "ancestors": [],
+    "children_count": {
+      "prefecture": 6,
+      "sub_prefecture": 66
+    },
+    "zip_codes": [],
+    "geo": {
+      "lat": "8.391",
+      "lon": "-8.89"
+    },
+    "metadata": {},
+    "source": {
+      "name": "Open Admin Data",
+      "url": "https://openadmindata.org/gn/regions/nzerekore-gn008/",
+      "api": "https://openadmindata.org/api/gn/"
+    }
+  }
+]

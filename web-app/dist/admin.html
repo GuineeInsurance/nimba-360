@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#071f2c">
+  <title>Administration — NIMBA 360</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=20261022-2">
+</head>
+<body class="portal-body">
+  <header class="site-header portal-header">
+    <a class="brand" href="index.html"><span class="brand-name">NIMBA</span><span class="brand-360"><i>3</i><i>6</i><i>0</i></span></a>
+    <div class="portal-actions">
+      <a href="index.html">Voir le site</a>
+      <button class="nav-cta auth-trigger" type="button" data-auth-open>Connexion admin</button>
+      <button class="user-chip" type="button" data-user-chip hidden></button>
+    </div>
+  </header>
+
+  <div class="admin-layout">
+    <aside class="admin-side">
+      <h2>Opérations</h2>
+      <nav>
+        <button class="active" type="button" data-admin-view="all">File de vérification</button>
+        <button type="button" data-admin-view="duplicate">Doublons potentiels</button>
+        <button type="button" data-admin-view="approved">Entreprises publiées</button>
+        <button type="button" data-admin-view="rejected">Refusées</button>
+      </nav>
+      <h2>Sources</h2>
+      <nav>
+        <button type="button" data-admin-view="source">Import OpenStreetMap</button>
+        <button type="button" data-admin-view="submissions">Soumissions entreprises</button>
+      </nav>
+    </aside>
+
+    <main class="admin-content">
+      <div class="admin-heading">
+        <div>
+          <p class="admin-kicker">Centre de contrôle</p>
+          <h1>Vérification des données</h1>
+          <p>Contrôlez chaque source avant sa publication dans NIMBA 360.</p>
+        </div>
+        <span class="prototype-badge" data-connection-status>Connexion Firebase en attente</span>
+      </div>
+
+      <section class="metrics" aria-label="Indicateurs de vérification">
+        <article class="metrics-card"><span>Fiches importées</span><strong id="metric-total">—</strong><small>inventaire privé</small></article>
+        <article class="metrics-card"><span>Doublons potentiels</span><strong id="metric-duplicates">—</strong><small>à comparer</small></article>
+        <article class="metrics-card"><span>À vérifier</span><strong id="metric-pending">—</strong><small>avant publication</small></article>
+        <article class="metrics-card"><span>Publiées</span><strong id="metric-approved">—</strong><small>visibles dans l’app</small></article>
+      </section>
+
+      <section class="review-panel">
+        <div class="review-toolbar">
+          <label class="admin-search"><span class="sr-only">Rechercher</span><input id="review-search" type="search" placeholder="Rechercher une entreprise, ville, téléphone…"></label>
+          <div class="filter-group" role="group" aria-label="Filtrer par statut">
+            <button class="active" data-filter="all">Toutes</button>
+            <button data-filter="review_required">À vérifier</button>
+            <button data-filter="duplicate">Doublons</button>
+            <button data-filter="approved">Publiées</button>
+          </div>
+        </div>
+        <div class="review-table-wrap">
+          <table class="review-table">
+            <thead><tr><th>Entreprise</th><th>Localisation</th><th>Source</th><th>Statut</th><th>Signal</th><th></th></tr></thead>
+            <tbody id="review-rows"><tr class="loading-row"><td colspan="6">Connectez-vous pour charger les données privées.</td></tr></tbody>
+          </table>
+        </div>
+        <div class="admin-empty" id="admin-empty" hidden><strong>Aucune fiche dans cette vue</strong><span>Modifiez le filtre ou la recherche.</span></div>
+        <div class="admin-table-footer"><span id="records-shown">0 fiche</span><span>Les données importées ne sont jamais publiées automatiquement.</span></div>
+      </section>
+    </main>
+  </div>
+
+  <div class="overlay" id="drawer-overlay"></div>
+  <aside class="drawer admin-review-drawer" id="review-drawer" aria-hidden="true">
+    <button class="drawer-close" type="button" aria-label="Fermer">×</button>
+    <p class="drawer-eyebrow" id="drawer-record-type">Fiche source</p>
+    <h2 id="drawer-name">Entreprise</h2>
+    <div class="drawer-status-line"><span class="status pending" id="drawer-status">À vérifier</span><a id="drawer-source-link" href="#" target="_blank" rel="noopener">Voir la source ↗</a></div>
+
+    <form id="review-form">
+      <section class="drawer-section">
+        <h3>Identité</h3>
+        <div class="drawer-grid">
+          <label class="field full"><span>Nom</span><input name="name" required></label>
+          <label class="field"><span>Catégorie</span><input name="category" required></label>
+          <label class="field"><span>Sous-catégorie</span><input name="subcategory"></label>
+        </div>
+      </section>
+      <section class="drawer-section">
+        <h3>Localisation</h3>
+        <div class="drawer-grid">
+          <label class="field"><span>Ville</span><input name="city" required></label>
+          <label class="field"><span>Quartier / commune</span><input name="district"></label>
+          <label class="field full"><span>Adresse</span><input name="streetAddress"></label>
+          <label class="field"><span>Latitude</span><input name="latitude" type="number" step="any" required></label>
+          <label class="field"><span>Longitude</span><input name="longitude" type="number" step="any" required></label>
+        </div>
+      </section>
+      <section class="drawer-section">
+        <h3>Contacts</h3>
+        <div class="drawer-grid">
+          <label class="field"><span>Téléphone</span><input name="phone"></label>
+          <label class="field"><span>WhatsApp</span><input name="whatsapp"></label>
+          <label class="field"><span>E-mail</span><input name="email" type="email"></label>
+          <label class="field"><span>Site web</span><input name="website"></label>
+        </div>
+      </section>
+      <section class="drawer-section">
+        <h3>Contrôle et provenance</h3>
+        <div class="drawer-grid">
+          <label class="field"><span>Vérification APIP / RCCM</span><select name="apipVerification"><option value="not_checked">Non vérifiée</option><option value="not_found">Non trouvée</option><option value="matched">Correspondance confirmée</option><option value="conflict">Informations contradictoires</option></select></label>
+          <label class="field"><span>RCCM</span><input name="rccm"></label>
+          <label class="field full"><span>Source de vérification</span><input name="verificationSource" placeholder="Lien, appel, document ou autre preuve"></label>
+          <label class="field full"><span>Notes du vérificateur</span><textarea name="comments" placeholder="Expliquez les corrections, décisions ou points à reprendre."></textarea></label>
+        </div>
+        <div class="review-checklist">
+          <label><input type="checkbox" name="checkIdentity"> Nom et activité confirmés</label>
+          <label><input type="checkbox" name="checkContact"> Contact vérifié</label>
+          <label><input type="checkbox" name="checkLocation"> Localisation cohérente</label>
+          <label><input type="checkbox" name="checkDuplicate"> Doublon examiné</label>
+        </div>
+      </section>
+      <div class="source-meta" id="drawer-source-meta"></div>
+      <p class="submit-notice" data-review-notice>Les modifications sont enregistrées dans la fiche privée avant publication.</p>
+      <div class="drawer-actions drawer-actions-stack">
+        <button class="secondary-action" type="button" data-review-action="save">Enregistrer</button>
+        <button class="duplicate-action" type="button" data-review-action="duplicate">Marquer doublon</button>
+        <button class="reject" type="button" data-review-action="rejected">Refuser</button>
+        <button class="approve" type="button" data-review-action="approved">Approuver et publier</button>
+      </div>
+    </form>
+  </aside>
+
+  <div class="modal-backdrop" data-auth-modal hidden>
+    <section class="auth-modal" role="dialog" aria-modal="true" aria-labelledby="auth-title">
+      <button class="drawer-close" type="button" data-auth-close aria-label="Fermer">×</button>
+      <p class="eyebrow"><span></span> Accès protégé</p>
+      <h2 id="auth-title">Connexion administrateur</h2>
+      <p class="auth-intro">Connectez-vous avec le compte administrateur autorisé.</p>
+      <form data-auth-form>
+        <input type="hidden" name="mode" value="signin">
+        <div class="field"><label for="auth-email">Adresse e-mail</label><input id="auth-email" name="email" type="email" autocomplete="email" value="info@guineeinsurance.com" required></div>
+        <div class="field"><label for="auth-password">Mot de passe</label><input id="auth-password" name="password" type="password" autocomplete="current-password" required></div>
+        <button class="button button-primary auth-submit" type="submit">Se connecter</button>
+      </form>
+      <p class="form-feedback" data-auth-feedback aria-live="polite"></p>
+    </section>
+  </div>
+
+  <script src="app.js?v=20261022-2"></script>
+  <script type="module" src="firebase-app.js?v=20261022-2"></script>
+</body>
+</html>

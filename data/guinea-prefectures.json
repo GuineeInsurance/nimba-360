@@ -1,0 +1,1600 @@
+[
+  {
+    "id": "GN008001",
+    "level": 2,
+    "level_name": {
+      "local": "Préfecture",
+      "en": "Prefecture"
+    },
+    "name": {
+      "local": "Beyla",
+      "en": "Beyla",
+      "slug": "beyla-gn008001"
+    },
+    "code": {
+      "id": "GN008001",
+      "iso": null
+    },
+    "parent": {
+      "id": "GN008",
+      "level": 1,
+      "name": {
+        "local": "Nzerekore",
+        "en": "Nzerekore",
+        "slug": "nzerekore-gn008"
+      }
+    },
+    "ancestors": [
+      {
+        "id": "GN008",
+        "level": 1,
+        "name": {
+          "local": "Nzerekore",
+          "en": "Nzerekore",
+          "slug": "nzerekore-gn008"
+        }
+      }
+    ],
+    "children_count": {
+      "sub_prefecture": 14
+    },
+    "zip_codes": [],
+    "geo": {
+      "lat": "8.906",
+      "lon": "-8.373"
+    },
+    "metadata": {},
+    "source": {}
+  },
+  {
+    "id": "GN001001",
+    "level": 2,
+    "level_name": {
+      "local": "Préfecture",
+      "en": "Prefecture"
+    },
+    "name": {
+      "local": "Boffa",
+      "en": "Boffa",
+      "slug": "boffa-gn001001"
+    },
+    "code": {
+      "id": "GN001001",
+      "iso": null
+    },
+    "parent": {
+      "id": "GN001",
+      "level": 1,
+      "name": {
+        "local": "Boke",
+        "en": "Boke",
+        "slug": "boke-gn001"
+      }
+    },
+    "ancestors": [
+      {
+        "id": "GN001",
+        "level": 1,
+        "name": {
+          "local": "Boke",
+          "en": "Boke",
+          "slug": "boke-gn001"
+        }
+      }
+    ],
+    "children_count": {
+      "sub_prefecture": 8
+    },
+    "zip_codes": [],
+    "geo": {
+      "lat": "10.352",
+      "lon": "-14.164"
+    },
+    "metadata": {},
+    "source": {}
+  },
+  {
+    "id": "GN001002",
+    "level": 2,
+    "level_name": {
+      "local": "Préfecture",
+      "en": "Prefecture"
+    },
+    "name": {
+      "local": "Boke",
+      "en": "Boke",
+      "slug": "boke-gn001002"
+    },
+    "code": {
+      "id": "GN001002",
+      "iso": null
+    },
+    "parent": {
+      "id": "GN001",
+      "level": 1,
+      "name": {
+        "local": "Boke",
+        "en": "Boke",
+        "slug": "boke-gn001"
+      }
+    },
+    "ancestors": [
+      {
+        "id": "GN001",
+        "level": 1,
+        "name": {
+          "local": "Boke",
+          "en": "Boke",
+          "slug": "boke-gn001"
+        }
+      }
+    ],
+    "children_count": {
+      "sub_prefecture": 10
+    },
+    "zip_codes": [],
+    "geo": {
+      "lat": "11.072",
+      "lon": "-14.357"
+    },
+    "metadata": {},
+    "source": {}
+  },
+  {
+    "id": "GN002001",
+    "level": 2,
+    "level_name": {
+      "local": "Préfecture",
+      "en": "Prefecture"
+    },
+    "name": {
+      "local": "Conakry",
+      "en": "Conakry",
+      "slug": "conakry-gn002001"
+    },
+    "code": {
+      "id": "GN002001",
+      "iso": null
+    },
+    "parent": {
+      "id": "GN002",
+      "level": 1,
+      "name": {
+        "local": "Conakry",
+        "en": "Conakry",
+        "slug": "conakry-gn002"
+      }
+    },
+    "ancestors": [
+      {
+        "id": "GN002",
+        "level": 1,
+        "name": {
+          "local": "Conakry",
+          "en": "Conakry",
+          "slug": "conakry-gn002"
+        }
+      }
+    ],
+    "children_count": {
+      "sub_prefecture": 5
+    },
+    "zip_codes": [],
+    "geo": {
+      "lat": "9.626",
+      "lon": "-13.551"
+    },
+    "metadata": {},
+    "source": {}
+  },
+  {
+    "id": "GN005001",
+    "level": 2,
+    "level_name": {
+      "local": "Préfecture",
+      "en": "Prefecture"
+    },
+    "name": {
+      "local": "Coyah",
+      "en": "Coyah",
+      "slug": "coyah-gn005001"
+    },
+    "code": {
+      "id": "GN005001",
+      "iso": null
+    },
+    "parent": {
+      "id": "GN005",
+      "level": 1,
+      "name": {
+        "local": "Kindia",
+        "en": "Kindia",
+        "slug": "kindia-gn005"
+      }
+    },
+    "ancestors": [
+      {
+        "id": "GN005",
+        "level": 1,
+        "name": {
+          "local": "Kindia",
+          "en": "Kindia",
+          "slug": "kindia-gn005"
+        }
+      }
+    ],
+    "children_count": {
+      "sub_prefecture": 4
+    },
+    "zip_codes": [],
+    "geo": {
+      "lat": "9.754",
+      "lon": "-13.309"
+    },
+    "metadata": {},
+    "source": {}
+  },
+  {
+    "id": "GN003001",
+    "level": 2,
+    "level_name": {
+      "local": "Préfecture",
+      "en": "Prefecture"
+    },
+    "name": {
+      "local": "Dabola",
+      "en": "Dabola",
+      "slug": "dabola-gn003001"
+    },
+    "code": {
+      "id": "GN003001",
+      "iso": null
+    },
+    "parent": {
+      "id": "GN003",
+      "level": 1,
+      "name": {
+        "local": "Faranah",
+        "en": "Faranah",
+        "slug": "faranah-gn003"
+      }
+    },
+    "ancestors": [
+      {
+        "id": "GN003",
+        "level": 1,
+        "name": {
+          "local": "Faranah",
+          "en": "Faranah",
+          "slug": "faranah-gn003"
+        }
+      }
+    ],
+    "children_count": {
+      "sub_prefecture": 9
+    },
+    "zip_codes": [],
+    "geo": {
+      "lat": "10.774",
+      "lon": "-11.076"
+    },
+    "metadata": {},
+    "source": {}
+  },
+  {
+    "id": "GN007001",
+    "level": 2,
+    "level_name": {
+      "local": "Préfecture",
+      "en": "Prefecture"
+    },
+    "name": {
+      "local": "Dalaba",
+      "en": "Dalaba",
+      "slug": "dalaba-gn007001"
+    },
+    "code": {
+      "id": "GN007001",
+      "iso": null
+    },
+    "parent": {
+      "id": "GN007",
+      "level": 1,
+      "name": {
+        "local": "Mamou",
+        "en": "Mamou",
+        "slug": "mamou-gn007"
+      }
+    },
+    "ancestors": [
+      {
+        "id": "GN007",
+        "level": 1,
+        "name": {
+          "local": "Mamou",
+          "en": "Mamou",
+          "slug": "mamou-gn007"
+        }
+      }
+    ],
+    "children_count": {
+      "sub_prefecture": 10
+    },
+    "zip_codes": [],
+    "geo": {
+      "lat": "10.892",
+      "lon": "-12.064"
+    },
+    "metadata": {},
+    "source": {}
+  },
+  {
+    "id": "GN003002",
+    "level": 2,
+    "level_name": {
+      "local": "Préfecture",
+      "en": "Prefecture"
+    },
+    "name": {
+      "local": "Dinguiraye",
+      "en": "Dinguiraye",
+      "slug": "dinguiraye-gn003002"
+    },
+    "code": {
+      "id": "GN003002",
+      "iso": null
+    },
+    "parent": {
+      "id": "GN003",
+      "level": 1,
+      "name": {
+        "local": "Faranah",
+        "en": "Faranah",
+        "slug": "faranah-gn003"
+      }
+    },
+    "ancestors": [
+      {
+        "id": "GN003",
+        "level": 1,
+        "name": {
+          "local": "Faranah",
+          "en": "Faranah",
+          "slug": "faranah-gn003"
+        }
+      }
+    ],
+    "children_count": {
+      "sub_prefecture": 8
+    },
+    "zip_codes": [],
+    "geo": {
+      "lat": "11.568",
+      "lon": "-10.725"
+    },
+    "metadata": {},
+    "source": {}
+  },
+  {
+    "id": "GN005002",
+    "level": 2,
+    "level_name": {
+      "local": "Préfecture",
+      "en": "Prefecture"
+    },
+    "name": {
+      "local": "Dubreka",
+      "en": "Dubreka",
+      "slug": "dubreka-gn005002"
+    },
+    "code": {
+      "id": "GN005002",
+      "iso": null
+    },
+    "parent": {
+      "id": "GN005",
+      "level": 1,
+      "name": {
+        "local": "Kindia",
+        "en": "Kindia",
+        "slug": "kindia-gn005"
+      }
+    },
+    "ancestors": [
+      {
+        "id": "GN005",
+        "level": 1,
+        "name": {
+          "local": "Kindia",
+          "en": "Kindia",
+          "slug": "kindia-gn005"
+        }
+      }
+    ],
+    "children_count": {
+      "sub_prefecture": 7
+    },
+    "zip_codes": [],
+    "geo": {
+      "lat": "10.127",
+      "lon": "-13.539"
+    },
+    "metadata": {},
+    "source": {}
+  },
+  {
+    "id": "GN003003",
+    "level": 2,
+    "level_name": {
+      "local": "Préfecture",
+      "en": "Prefecture"
+    },
+    "name": {
+      "local": "Faranah",
+      "en": "Faranah",
+      "slug": "faranah-gn003003"
+    },
+    "code": {
+      "id": "GN003003",
+      "iso": null
+    },
+    "parent": {
+      "id": "GN003",
+      "level": 1,
+      "name": {
+        "local": "Faranah",
+        "en": "Faranah",
+        "slug": "faranah-gn003"
+      }
+    },
+    "ancestors": [
+      {
+        "id": "GN003",
+        "level": 1,
+        "name": {
+          "local": "Faranah",
+          "en": "Faranah",
+          "slug": "faranah-gn003"
+        }
+      }
+    ],
+    "children_count": {
+      "sub_prefecture": 11
+    },
+    "zip_codes": [],
+    "geo": {
+      "lat": "9.823",
+      "lon": "-10.719"
+    },
+    "metadata": {},
+    "source": {}
+  },
+  {
+    "id": "GN005003",
+    "level": 2,
+    "level_name": {
+      "local": "Préfecture",
+      "en": "Prefecture"
+    },
+    "name": {
+      "local": "Forecariah",
+      "en": "Forecariah",
+      "slug": "forecariah-gn005003"
+    },
+    "code": {
+      "id": "GN005003",
+      "iso": null
+    },
+    "parent": {
+      "id": "GN005",
+      "level": 1,
+      "name": {
+        "local": "Kindia",
+        "en": "Kindia",
+        "slug": "kindia-gn005"
+      }
+    },
+    "ancestors": [
+      {
+        "id": "GN005",
+        "level": 1,
+        "name": {
+          "local": "Kindia",
+          "en": "Kindia",
+          "slug": "kindia-gn005"
+        }
+      }
+    ],
+    "children_count": {
+      "sub_prefecture": 10
+    },
+    "zip_codes": [],
+    "geo": {
+      "lat": "9.383",
+      "lon": "-13.092"
+    },
+    "metadata": {},
+    "source": {}
+  },
+  {
+    "id": "GN001005",
+    "level": 2,
+    "level_name": {
+      "local": "Préfecture",
+      "en": "Prefecture"
+    },
+    "name": {
+      "local": "Fria",
+      "en": "Fria",
+      "slug": "fria-gn001005"
+    },
+    "code": {
+      "id": "GN001005",
+      "iso": null
+    },
+    "parent": {
+      "id": "GN001",
+      "level": 1,
+      "name": {
+        "local": "Boke",
+        "en": "Boke",
+        "slug": "boke-gn001"
+      }
+    },
+    "ancestors": [
+      {
+        "id": "GN001",
+        "level": 1,
+        "name": {
+          "local": "Boke",
+          "en": "Boke",
+          "slug": "boke-gn001"
+        }
+      }
+    ],
+    "children_count": {
+      "sub_prefecture": 4
+    },
+    "zip_codes": [],
+    "geo": {
+      "lat": "10.535",
+      "lon": "-13.538"
+    },
+    "metadata": {},
+    "source": {}
+  },
+  {
+    "id": "GN001003",
+    "level": 2,
+    "level_name": {
+      "local": "Préfecture",
+      "en": "Prefecture"
+    },
+    "name": {
+      "local": "Gaoual",
+      "en": "Gaoual",
+      "slug": "gaoual-gn001003"
+    },
+    "code": {
+      "id": "GN001003",
+      "iso": null
+    },
+    "parent": {
+      "id": "GN001",
+      "level": 1,
+      "name": {
+        "local": "Boke",
+        "en": "Boke",
+        "slug": "boke-gn001"
+      }
+    },
+    "ancestors": [
+      {
+        "id": "GN001",
+        "level": 1,
+        "name": {
+          "local": "Boke",
+          "en": "Boke",
+          "slug": "boke-gn001"
+        }
+      }
+    ],
+    "children_count": {
+      "sub_prefecture": 8
+    },
+    "zip_codes": [],
+    "geo": {
+      "lat": "11.692",
+      "lon": "-13.284"
+    },
+    "metadata": {},
+    "source": {}
+  },
+  {
+    "id": "GN008002",
+    "level": 2,
+    "level_name": {
+      "local": "Préfecture",
+      "en": "Prefecture"
+    },
+    "name": {
+      "local": "Gueckedou",
+      "en": "Gueckedou",
+      "slug": "gueckedou-gn008002"
+    },
+    "code": {
+      "id": "GN008002",
+      "iso": null
+    },
+    "parent": {
+      "id": "GN008",
+      "level": 1,
+      "name": {
+        "local": "Nzerekore",
+        "en": "Nzerekore",
+        "slug": "nzerekore-gn008"
+      }
+    },
+    "ancestors": [
+      {
+        "id": "GN008",
+        "level": 1,
+        "name": {
+          "local": "Nzerekore",
+          "en": "Nzerekore",
+          "slug": "nzerekore-gn008"
+        }
+      }
+    ],
+    "children_count": {
+      "sub_prefecture": 10
+    },
+    "zip_codes": [],
+    "geo": {
+      "lat": "8.696",
+      "lon": "-10.21"
+    },
+    "metadata": {},
+    "source": {}
+  },
+  {
+    "id": "GN004001",
+    "level": 2,
+    "level_name": {
+      "local": "Préfecture",
+      "en": "Prefecture"
+    },
+    "name": {
+      "local": "Kankan",
+      "en": "Kankan",
+      "slug": "kankan-gn004001"
+    },
+    "code": {
+      "id": "GN004001",
+      "iso": null
+    },
+    "parent": {
+      "id": "GN004",
+      "level": 1,
+      "name": {
+        "local": "Kankan",
+        "en": "Kankan",
+        "slug": "kankan-gn004"
+      }
+    },
+    "ancestors": [
+      {
+        "id": "GN004",
+        "level": 1,
+        "name": {
+          "local": "Kankan",
+          "en": "Kankan",
+          "slug": "kankan-gn004"
+        }
+      }
+    ],
+    "children_count": {
+      "sub_prefecture": 13
+    },
+    "zip_codes": [],
+    "geo": {
+      "lat": "10.225",
+      "lon": "-9.223"
+    },
+    "metadata": {},
+    "source": {}
+  },
+  {
+    "id": "GN004002",
+    "level": 2,
+    "level_name": {
+      "local": "Préfecture",
+      "en": "Prefecture"
+    },
+    "name": {
+      "local": "Kerouane",
+      "en": "Kerouane",
+      "slug": "kerouane-gn004002"
+    },
+    "code": {
+      "id": "GN004002",
+      "iso": null
+    },
+    "parent": {
+      "id": "GN004",
+      "level": 1,
+      "name": {
+        "local": "Kankan",
+        "en": "Kankan",
+        "slug": "kankan-gn004"
+      }
+    },
+    "ancestors": [
+      {
+        "id": "GN004",
+        "level": 1,
+        "name": {
+          "local": "Kankan",
+          "en": "Kankan",
+          "slug": "kankan-gn004"
+        }
+      }
+    ],
+    "children_count": {
+      "sub_prefecture": 8
+    },
+    "zip_codes": [],
+    "geo": {
+      "lat": "9.348",
+      "lon": "-9.111"
+    },
+    "metadata": {},
+    "source": {}
+  },
+  {
+    "id": "GN005004",
+    "level": 2,
+    "level_name": {
+      "local": "Préfecture",
+      "en": "Prefecture"
+    },
+    "name": {
+      "local": "Kindia",
+      "en": "Kindia",
+      "slug": "kindia-gn005004"
+    },
+    "code": {
+      "id": "GN005004",
+      "iso": null
+    },
+    "parent": {
+      "id": "GN005",
+      "level": 1,
+      "name": {
+        "local": "Kindia",
+        "en": "Kindia",
+        "slug": "kindia-gn005"
+      }
+    },
+    "ancestors": [
+      {
+        "id": "GN005",
+        "level": 1,
+        "name": {
+          "local": "Kindia",
+          "en": "Kindia",
+          "slug": "kindia-gn005"
+        }
+      }
+    ],
+    "children_count": {
+      "sub_prefecture": 10
+    },
+    "zip_codes": [],
+    "geo": {
+      "lat": "10.109",
+      "lon": "-12.669"
+    },
+    "metadata": {},
+    "source": {}
+  },
+  {
+    "id": "GN003004",
+    "level": 2,
+    "level_name": {
+      "local": "Préfecture",
+      "en": "Prefecture"
+    },
+    "name": {
+      "local": "Kissidougou",
+      "en": "Kissidougou",
+      "slug": "kissidougou-gn003004"
+    },
+    "code": {
+      "id": "GN003004",
+      "iso": null
+    },
+    "parent": {
+      "id": "GN003",
+      "level": 1,
+      "name": {
+        "local": "Faranah",
+        "en": "Faranah",
+        "slug": "faranah-gn003"
+      }
+    },
+    "ancestors": [
+      {
+        "id": "GN003",
+        "level": 1,
+        "name": {
+          "local": "Faranah",
+          "en": "Faranah",
+          "slug": "faranah-gn003"
+        }
+      }
+    ],
+    "children_count": {
+      "sub_prefecture": 13
+    },
+    "zip_codes": [],
+    "geo": {
+      "lat": "9.255",
+      "lon": "-10.036"
+    },
+    "metadata": {},
+    "source": {}
+  },
+  {
+    "id": "GN006001",
+    "level": 2,
+    "level_name": {
+      "local": "Préfecture",
+      "en": "Prefecture"
+    },
+    "name": {
+      "local": "Koubia",
+      "en": "Koubia",
+      "slug": "koubia-gn006001"
+    },
+    "code": {
+      "id": "GN006001",
+      "iso": null
+    },
+    "parent": {
+      "id": "GN006",
+      "level": 1,
+      "name": {
+        "local": "Labe",
+        "en": "Labe",
+        "slug": "labe-gn006"
+      }
+    },
+    "ancestors": [
+      {
+        "id": "GN006",
+        "level": 1,
+        "name": {
+          "local": "Labe",
+          "en": "Labe",
+          "slug": "labe-gn006"
+        }
+      }
+    ],
+    "children_count": {
+      "sub_prefecture": 6
+    },
+    "zip_codes": [],
+    "geo": {
+      "lat": "11.77",
+      "lon": "-11.844"
+    },
+    "metadata": {},
+    "source": {}
+  },
+  {
+    "id": "GN001004",
+    "level": 2,
+    "level_name": {
+      "local": "Préfecture",
+      "en": "Prefecture"
+    },
+    "name": {
+      "local": "Koundara",
+      "en": "Koundara",
+      "slug": "koundara-gn001004"
+    },
+    "code": {
+      "id": "GN001004",
+      "iso": null
+    },
+    "parent": {
+      "id": "GN001",
+      "level": 1,
+      "name": {
+        "local": "Boke",
+        "en": "Boke",
+        "slug": "boke-gn001"
+      }
+    },
+    "ancestors": [
+      {
+        "id": "GN001",
+        "level": 1,
+        "name": {
+          "local": "Boke",
+          "en": "Boke",
+          "slug": "boke-gn001"
+        }
+      }
+    ],
+    "children_count": {
+      "sub_prefecture": 7
+    },
+    "zip_codes": [],
+    "geo": {
+      "lat": "12.338",
+      "lon": "-13.136"
+    },
+    "metadata": {},
+    "source": {}
+  },
+  {
+    "id": "GN004003",
+    "level": 2,
+    "level_name": {
+      "local": "Préfecture",
+      "en": "Prefecture"
+    },
+    "name": {
+      "local": "Kouroussa",
+      "en": "Kouroussa",
+      "slug": "kouroussa-gn004003"
+    },
+    "code": {
+      "id": "GN004003",
+      "iso": null
+    },
+    "parent": {
+      "id": "GN004",
+      "level": 1,
+      "name": {
+        "local": "Kankan",
+        "en": "Kankan",
+        "slug": "kankan-gn004"
+      }
+    },
+    "ancestors": [
+      {
+        "id": "GN004",
+        "level": 1,
+        "name": {
+          "local": "Kankan",
+          "en": "Kankan",
+          "slug": "kankan-gn004"
+        }
+      }
+    ],
+    "children_count": {
+      "sub_prefecture": 12
+    },
+    "zip_codes": [],
+    "geo": {
+      "lat": "10.486",
+      "lon": "-9.891"
+    },
+    "metadata": {},
+    "source": {}
+  },
+  {
+    "id": "GN006002",
+    "level": 2,
+    "level_name": {
+      "local": "Préfecture",
+      "en": "Prefecture"
+    },
+    "name": {
+      "local": "Labe",
+      "en": "Labe",
+      "slug": "labe-gn006002"
+    },
+    "code": {
+      "id": "GN006002",
+      "iso": null
+    },
+    "parent": {
+      "id": "GN006",
+      "level": 1,
+      "name": {
+        "local": "Labe",
+        "en": "Labe",
+        "slug": "labe-gn006"
+      }
+    },
+    "ancestors": [
+      {
+        "id": "GN006",
+        "level": 1,
+        "name": {
+          "local": "Labe",
+          "en": "Labe",
+          "slug": "labe-gn006"
+        }
+      }
+    ],
+    "children_count": {
+      "sub_prefecture": 13
+    },
+    "zip_codes": [],
+    "geo": {
+      "lat": "11.407",
+      "lon": "-12.298"
+    },
+    "metadata": {},
+    "source": {}
+  },
+  {
+    "id": "GN006003",
+    "level": 2,
+    "level_name": {
+      "local": "Préfecture",
+      "en": "Prefecture"
+    },
+    "name": {
+      "local": "Lelouma",
+      "en": "Lelouma",
+      "slug": "lelouma-gn006003"
+    },
+    "code": {
+      "id": "GN006003",
+      "iso": null
+    },
+    "parent": {
+      "id": "GN006",
+      "level": 1,
+      "name": {
+        "local": "Labe",
+        "en": "Labe",
+        "slug": "labe-gn006"
+      }
+    },
+    "ancestors": [
+      {
+        "id": "GN006",
+        "level": 1,
+        "name": {
+          "local": "Labe",
+          "en": "Labe",
+          "slug": "labe-gn006"
+        }
+      }
+    ],
+    "children_count": {
+      "sub_prefecture": 11
+    },
+    "zip_codes": [],
+    "geo": {
+      "lat": "11.518",
+      "lon": "-12.611"
+    },
+    "metadata": {},
+    "source": {}
+  },
+  {
+    "id": "GN008003",
+    "level": 2,
+    "level_name": {
+      "local": "Préfecture",
+      "en": "Prefecture"
+    },
+    "name": {
+      "local": "Lola",
+      "en": "Lola",
+      "slug": "lola-gn008003"
+    },
+    "code": {
+      "id": "GN008003",
+      "iso": null
+    },
+    "parent": {
+      "id": "GN008",
+      "level": 1,
+      "name": {
+        "local": "Nzerekore",
+        "en": "Nzerekore",
+        "slug": "nzerekore-gn008"
+      }
+    },
+    "ancestors": [
+      {
+        "id": "GN008",
+        "level": 1,
+        "name": {
+          "local": "Nzerekore",
+          "en": "Nzerekore",
+          "slug": "nzerekore-gn008"
+        }
+      }
+    ],
+    "children_count": {
+      "sub_prefecture": 9
+    },
+    "zip_codes": [],
+    "geo": {
+      "lat": "8.015",
+      "lon": "-8.306"
+    },
+    "metadata": {},
+    "source": {}
+  },
+  {
+    "id": "GN008004",
+    "level": 2,
+    "level_name": {
+      "local": "Préfecture",
+      "en": "Prefecture"
+    },
+    "name": {
+      "local": "Macenta",
+      "en": "Macenta",
+      "slug": "macenta-gn008004"
+    },
+    "code": {
+      "id": "GN008004",
+      "iso": null
+    },
+    "parent": {
+      "id": "GN008",
+      "level": 1,
+      "name": {
+        "local": "Nzerekore",
+        "en": "Nzerekore",
+        "slug": "nzerekore-gn008"
+      }
+    },
+    "ancestors": [
+      {
+        "id": "GN008",
+        "level": 1,
+        "name": {
+          "local": "Nzerekore",
+          "en": "Nzerekore",
+          "slug": "nzerekore-gn008"
+        }
+      }
+    ],
+    "children_count": {
+      "sub_prefecture": 15
+    },
+    "zip_codes": [],
+    "geo": {
+      "lat": "8.319",
+      "lon": "-9.214"
+    },
+    "metadata": {},
+    "source": {}
+  },
+  {
+    "id": "GN006004",
+    "level": 2,
+    "level_name": {
+      "local": "Préfecture",
+      "en": "Prefecture"
+    },
+    "name": {
+      "local": "Mali",
+      "en": "Mali",
+      "slug": "mali-gn006004"
+    },
+    "code": {
+      "id": "GN006004",
+      "iso": null
+    },
+    "parent": {
+      "id": "GN006",
+      "level": 1,
+      "name": {
+        "local": "Labe",
+        "en": "Labe",
+        "slug": "labe-gn006"
+      }
+    },
+    "ancestors": [
+      {
+        "id": "GN006",
+        "level": 1,
+        "name": {
+          "local": "Labe",
+          "en": "Labe",
+          "slug": "labe-gn006"
+        }
+      }
+    ],
+    "children_count": {
+      "sub_prefecture": 13
+    },
+    "zip_codes": [],
+    "geo": {
+      "lat": "12.049",
+      "lon": "-12.257"
+    },
+    "metadata": {},
+    "source": {}
+  },
+  {
+    "id": "GN007002",
+    "level": 2,
+    "level_name": {
+      "local": "Préfecture",
+      "en": "Prefecture"
+    },
+    "name": {
+      "local": "Mamou",
+      "en": "Mamou",
+      "slug": "mamou-gn007002"
+    },
+    "code": {
+      "id": "GN007002",
+      "iso": null
+    },
+    "parent": {
+      "id": "GN007",
+      "level": 1,
+      "name": {
+        "local": "Mamou",
+        "en": "Mamou",
+        "slug": "mamou-gn007"
+      }
+    },
+    "ancestors": [
+      {
+        "id": "GN007",
+        "level": 1,
+        "name": {
+          "local": "Mamou",
+          "en": "Mamou",
+          "slug": "mamou-gn007"
+        }
+      }
+    ],
+    "children_count": {
+      "sub_prefecture": 14
+    },
+    "zip_codes": [],
+    "geo": {
+      "lat": "10.569",
+      "lon": "-11.904"
+    },
+    "metadata": {},
+    "source": {}
+  },
+  {
+    "id": "GN004004",
+    "level": 2,
+    "level_name": {
+      "local": "Préfecture",
+      "en": "Prefecture"
+    },
+    "name": {
+      "local": "Mandiana",
+      "en": "Mandiana",
+      "slug": "mandiana-gn004004"
+    },
+    "code": {
+      "id": "GN004004",
+      "iso": null
+    },
+    "parent": {
+      "id": "GN004",
+      "level": 1,
+      "name": {
+        "local": "Kankan",
+        "en": "Kankan",
+        "slug": "kankan-gn004"
+      }
+    },
+    "ancestors": [
+      {
+        "id": "GN004",
+        "level": 1,
+        "name": {
+          "local": "Kankan",
+          "en": "Kankan",
+          "slug": "kankan-gn004"
+        }
+      }
+    ],
+    "children_count": {
+      "sub_prefecture": 12
+    },
+    "zip_codes": [],
+    "geo": {
+      "lat": "10.815",
+      "lon": "-8.697"
+    },
+    "metadata": {},
+    "source": {}
+  },
+  {
+    "id": "GN008005",
+    "level": 2,
+    "level_name": {
+      "local": "Préfecture",
+      "en": "Prefecture"
+    },
+    "name": {
+      "local": "Nzerekore",
+      "en": "Nzerekore",
+      "slug": "nzerekore-gn008005"
+    },
+    "code": {
+      "id": "GN008005",
+      "iso": null
+    },
+    "parent": {
+      "id": "GN008",
+      "level": 1,
+      "name": {
+        "local": "Nzerekore",
+        "en": "Nzerekore",
+        "slug": "nzerekore-gn008"
+      }
+    },
+    "ancestors": [
+      {
+        "id": "GN008",
+        "level": 1,
+        "name": {
+          "local": "Nzerekore",
+          "en": "Nzerekore",
+          "slug": "nzerekore-gn008"
+        }
+      }
+    ],
+    "children_count": {
+      "sub_prefecture": 11
+    },
+    "zip_codes": [],
+    "geo": {
+      "lat": "7.891",
+      "lon": "-8.88"
+    },
+    "metadata": {},
+    "source": {}
+  },
+  {
+    "id": "GN007003",
+    "level": 2,
+    "level_name": {
+      "local": "Préfecture",
+      "en": "Prefecture"
+    },
+    "name": {
+      "local": "Pita",
+      "en": "Pita",
+      "slug": "pita-gn007003"
+    },
+    "code": {
+      "id": "GN007003",
+      "iso": null
+    },
+    "parent": {
+      "id": "GN007",
+      "level": 1,
+      "name": {
+        "local": "Mamou",
+        "en": "Mamou",
+        "slug": "mamou-gn007"
+      }
+    },
+    "ancestors": [
+      {
+        "id": "GN007",
+        "level": 1,
+        "name": {
+          "local": "Mamou",
+          "en": "Mamou",
+          "slug": "mamou-gn007"
+        }
+      }
+    ],
+    "children_count": {
+      "sub_prefecture": 12
+    },
+    "zip_codes": [],
+    "geo": {
+      "lat": "10.905",
+      "lon": "-12.662"
+    },
+    "metadata": {},
+    "source": {}
+  },
+  {
+    "id": "GN004005",
+    "level": 2,
+    "level_name": {
+      "local": "Préfecture",
+      "en": "Prefecture"
+    },
+    "name": {
+      "local": "Siguiri",
+      "en": "Siguiri",
+      "slug": "siguiri-gn004005"
+    },
+    "code": {
+      "id": "GN004005",
+      "iso": null
+    },
+    "parent": {
+      "id": "GN004",
+      "level": 1,
+      "name": {
+        "local": "Kankan",
+        "en": "Kankan",
+        "slug": "kankan-gn004"
+      }
+    },
+    "ancestors": [
+      {
+        "id": "GN004",
+        "level": 1,
+        "name": {
+          "local": "Kankan",
+          "en": "Kankan",
+          "slug": "kankan-gn004"
+        }
+      }
+    ],
+    "children_count": {
+      "sub_prefecture": 12
+    },
+    "zip_codes": [],
+    "geo": {
+      "lat": "11.677",
+      "lon": "-9.55"
+    },
+    "metadata": {},
+    "source": {}
+  },
+  {
+    "id": "GN005005",
+    "level": 2,
+    "level_name": {
+      "local": "Préfecture",
+      "en": "Prefecture"
+    },
+    "name": {
+      "local": "Telimele",
+      "en": "Telimele",
+      "slug": "telimele-gn005005"
+    },
+    "code": {
+      "id": "GN005005",
+      "iso": null
+    },
+    "parent": {
+      "id": "GN005",
+      "level": 1,
+      "name": {
+        "local": "Kindia",
+        "en": "Kindia",
+        "slug": "kindia-gn005"
+      }
+    },
+    "ancestors": [
+      {
+        "id": "GN005",
+        "level": 1,
+        "name": {
+          "local": "Kindia",
+          "en": "Kindia",
+          "slug": "kindia-gn005"
+        }
+      }
+    ],
+    "children_count": {
+      "sub_prefecture": 14
+    },
+    "zip_codes": [],
+    "geo": {
+      "lat": "10.888",
+      "lon": "-13.408"
+    },
+    "metadata": {},
+    "source": {}
+  },
+  {
+    "id": "GN006005",
+    "level": 2,
+    "level_name": {
+      "local": "Préfecture",
+      "en": "Prefecture"
+    },
+    "name": {
+      "local": "Tougue",
+      "en": "Tougue",
+      "slug": "tougue-gn006005"
+    },
+    "code": {
+      "id": "GN006005",
+      "iso": null
+    },
+    "parent": {
+      "id": "GN006",
+      "level": 1,
+      "name": {
+        "local": "Labe",
+        "en": "Labe",
+        "slug": "labe-gn006"
+      }
+    },
+    "ancestors": [
+      {
+        "id": "GN006",
+        "level": 1,
+        "name": {
+          "local": "Labe",
+          "en": "Labe",
+          "slug": "labe-gn006"
+        }
+      }
+    ],
+    "children_count": {
+      "sub_prefecture": 10
+    },
+    "zip_codes": [],
+    "geo": {
+      "lat": "11.512",
+      "lon": "-11.494"
+    },
+    "metadata": {},
+    "source": {}
+  },
+  {
+    "id": "GN008006",
+    "level": 2,
+    "level_name": {
+      "local": "Préfecture",
+      "en": "Prefecture"
+    },
+    "name": {
+      "local": "Yomou",
+      "en": "Yomou",
+      "slug": "yomou-gn008006"
+    },
+    "code": {
+      "id": "GN008006",
+      "iso": null
+    },
+    "parent": {
+      "id": "GN008",
+      "level": 1,
+      "name": {
+        "local": "Nzerekore",
+        "en": "Nzerekore",
+        "slug": "nzerekore-gn008"
+      }
+    },
+    "ancestors": [
+      {
+        "id": "GN008",
+        "level": 1,
+        "name": {
+          "local": "Nzerekore",
+          "en": "Nzerekore",
+          "slug": "nzerekore-gn008"
+        }
+      }
+    ],
+    "children_count": {
+      "sub_prefecture": 7
+    },
+    "zip_codes": [],
+    "geo": {
+      "lat": "7.537",
+      "lon": "-9.121"
+    },
+    "metadata": {},
+    "source": {}
+  }
+]

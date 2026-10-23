@@ -1,0 +1,159 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedIn() {
+      return request.auth != null;
+    }
+
+    function isOwner(uid) {
+      return signedIn() && request.auth.uid == uid;
+    }
+
+    function isAdmin() {
+      return signedIn() && request.auth.token.admin == true;
+    }
+
+    function validBusiness(data) {
+      return data.keys().hasAll([
+          'name', 'normalizedName', 'categoryId', 'categoryLabel', 'cityId', 'city',
+          'address', 'phone', 'latitude', 'longitude', 'rating', 'reviewCount',
+          'verified', 'services', 'imageUrl', 'description', 'status', 'createdAt',
+          'updatedAt'
+        ])
+        && data.name is string
+        && data.name.size() >= 2
+        && data.name.size() <= 160
+        && data.normalizedName is string
+        && data.categoryId is string
+        && data.cityId is string
+        && data.latitude is number
+        && data.latitude >= 7.0
+        && data.latitude <= 13.0
+        && data.longitude is number
+        && data.longitude >= -16.0
+        && data.longitude <= -7.0
+        && data.rating is number
+        && data.rating >= 0
+        && data.rating <= 5
+        && data.reviewCount is int
+        && data.reviewCount >= 0
+        && data.verified is bool
+        && data.services is list
+        && data.status in ['draft', 'pending', 'approved', 'rejected', 'closed', 'duplicate'];
+    }
+
+    match /businesses/{businessId} {
+      allow read: if resource.data.status == 'approved' || isAdmin();
+      allow create, update: if isAdmin() && validBusiness(request.resource.data);
+      allow delete: if isAdmin();
+
+      match /reviews/{reviewId} {
+        allow read: if resource.data.status == 'approved'
+          || isAdmin()
+          || (signedIn() && resource.data.userId == request.auth.uid);
+        allow create: if signedIn()
+          && request.resource.data.keys().hasOnly([
+            'businessId', 'userId', 'rating', 'text', 'status', 'createdAt', 'updatedAt'
+          ])
+          && request.resource.data.businessId == businessId
+          && request.resource.data.userId == request.auth.uid
+          && request.resource.data.rating is int
+          && request.resource.data.rating >= 1
+          && request.resource.data.rating <= 5
+          && request.resource.data.text is string
+          && request.resource.data.text.size() <= 2000
+          && request.resource.data.status == 'pending'
+          && request.resource.data.createdAt == request.time
+          && request.resource.data.updatedAt == request.time;
+        allow update, delete: if isAdmin();
+      }
+    }
+
+    match /categories/{categoryId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    match /locations/{locationId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    match /users/{uid} {
+      allow read: if isOwner(uid) || isAdmin();
+      allow create: if isOwner(uid)
+        && request.resource.data.keys().hasOnly([
+          'displayName', 'email', 'photoUrl', 'preferredCityId', 'createdAt', 'updatedAt'
+        ])
+        && request.resource.data.createdAt == request.time
+        && request.resource.data.updatedAt == request.time;
+      allow update: if isOwner(uid)
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly([
+          'displayName', 'photoUrl', 'preferredCityId', 'updatedAt'
+        ])
+        && request.resource.data.updatedAt == request.time;
+      allow delete: if false;
+
+      match /favorites/{businessId} {
+        allow read: if isOwner(uid);
+        allow create: if isOwner(uid)
+          && request.resource.data.keys().hasOnly(['businessId', 'createdAt'])
+          && request.resource.data.businessId == businessId
+          && request.resource.data.createdAt == request.time;
+        allow delete: if isOwner(uid);
+        allow update: if false;
+      }
+    }
+
+    match /submissions/{submissionId} {
+      allow create: if signedIn()
+        && request.resource.data.keys().hasAll([
+          'submitterId', 'name', 'categoryId', 'cityId', 'communeId', 'address',
+          'phone', 'email', 'website', 'whatsapp', 'latitude', 'longitude',
+          'status', 'createdAt', 'updatedAt'
+        ])
+        && request.resource.data.keys().hasOnly([
+          'submitterId', 'name', 'categoryId', 'cityId', 'communeId', 'address',
+          'phone', 'email', 'website', 'whatsapp', 'latitude', 'longitude',
+          'description', 'imagePaths', 'status', 'createdAt', 'updatedAt'
+        ])
+        && request.resource.data.submitterId == request.auth.uid
+        && request.resource.data.name is string
+        && request.resource.data.name.size() >= 2
+        && request.resource.data.name.size() <= 160
+        && request.resource.data.status == 'pending'
+        && request.resource.data.createdAt == request.time
+        && request.resource.data.updatedAt == request.time;
+      allow read: if isAdmin()
+        || (signedIn() && resource.data.submitterId == request.auth.uid);
+      allow update, delete: if isAdmin();
+    }
+
+    match /deletionRequests/{requestId} {
+      allow create: if signedIn()
+        && requestId == request.auth.uid
+        && request.resource.data.keys().hasOnly([
+          'userId', 'email', 'reason', 'status', 'createdAt', 'updatedAt'
+        ])
+        && request.resource.data.userId == request.auth.uid
+        && request.resource.data.email == request.auth.token.email
+        && request.resource.data.reason is string
+        && request.resource.data.reason.size() <= 500
+        && request.resource.data.status == 'pending'
+        && request.resource.data.createdAt == request.time
+        && request.resource.data.updatedAt == request.time;
+      allow read: if isAdmin() || (signedIn() && requestId == request.auth.uid);
+      allow update, delete: if isAdmin();
+    }
+
+    // Source provenance, duplicate signals, RCCM checks and reviewer notes stay private.
+    match /businessRecords/{recordId} {
+      allow read, write: if isAdmin();
+    }
+
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
