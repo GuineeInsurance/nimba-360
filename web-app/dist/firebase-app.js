@@ -53,7 +53,22 @@ try {
   const authForm = document.querySelector('[data-auth-form]');
   const authFeedback = document.querySelector('[data-auth-feedback]');
   const modeButton = document.querySelector('[data-auth-mode]');
+  const adminShell = document.querySelector('[data-admin-shell]');
+  const adminGateMessage = document.querySelector('[data-admin-gate-message]');
+  const adminSignOutButton = document.querySelector('[data-admin-signout]');
   let createMode = false;
+
+  const setAdminGate = (state, message = '') => {
+    if (!adminShell) return;
+    const allowed = state === 'allowed';
+    document.body.classList.toggle('admin-locked', !allowed);
+    adminShell.setAttribute('aria-hidden', String(!allowed));
+    if (adminGateMessage && message) adminGateMessage.textContent = message;
+    document.querySelectorAll('[data-admin-gate] [data-auth-open]').forEach((button) => {
+      button.hidden = state !== 'signed-out';
+    });
+    if (adminSignOutButton) adminSignOutButton.hidden = state !== 'denied';
+  };
 
   const openModal = () => {
     if (!modal) return;
@@ -67,6 +82,7 @@ try {
     document.body.style.overflow = '';
   };
   document.querySelectorAll('[data-auth-open]').forEach((button) => button.addEventListener('click', openModal));
+  adminSignOutButton?.addEventListener('click', () => signOut(auth));
   document.querySelector('[data-auth-close]')?.addEventListener('click', closeModal);
   modal?.addEventListener('click', (event) => event.target === modal && closeModal());
   modeButton?.addEventListener('click', () => {
@@ -473,14 +489,26 @@ try {
     activeUser = user;
     updateUserUi(user);
     if (!user) {
+      setAdminGate('signed-out', 'Connectez-vous avec un compte disposant du rôle administrateur.');
       setStatus('Firebase connecté — identification requise');
       return;
     }
-    setStatus('Connecté à Firebase', 'success');
     try {
+      if (adminShell) {
+        setAdminGate('checking', 'Vérification de vos autorisations…');
+        const token = await user.getIdTokenResult(true);
+        if (token.claims.admin !== true) {
+          setAdminGate('denied', 'Ce compte ne dispose pas du rôle administrateur.');
+          setStatus('Accès administrateur refusé', 'warning');
+          return;
+        }
+        setAdminGate('allowed');
+      }
+      setStatus('Connecté à Firebase', 'success');
       await loadAdminData(user);
     } catch (error) {
       console.error('Admin data load failed:', error);
+      setAdminGate('denied', 'Impossible de vérifier les autorisations de ce compte.');
       setStatus('Accès Firestore refusé ou indisponible', 'warning');
     }
   });
