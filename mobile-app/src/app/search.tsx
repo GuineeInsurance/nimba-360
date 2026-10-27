@@ -1,6 +1,14 @@
-import { useLocalSearchParams } from 'expo-router';
-import { useMemo, useState } from 'react';
-import { FlatList, Pressable, StyleSheet, Text, TextInput, View } from 'react-native';
+import { useFocusEffect, useLocalSearchParams } from 'expo-router';
+import { useCallback, useMemo, useRef, useState } from 'react';
+import {
+  FlatList,
+  Pressable,
+  StyleSheet,
+  Text,
+  TextInput,
+  type TextInputInstance,
+  View,
+} from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 import { AppIcon } from '@/components/app-icon';
@@ -13,9 +21,17 @@ const filters = ['Ouvert', 'Mieux notés', 'À proximité'];
 
 export default function SearchScreen() {
   const params = useLocalSearchParams<{ category?: string }>();
+  const searchInputRef = useRef<TextInputInstance>(null);
   const [queryText, setQueryText] = useState('');
   const [category, setCategory] = useState(params.category ?? 'Tout');
   const [activeFilter, setActiveFilter] = useState('À proximité');
+
+  useFocusEffect(
+    useCallback(() => {
+      const frame = requestAnimationFrame(() => searchInputRef.current?.focus());
+      return () => cancelAnimationFrame(frame);
+    }, []),
+  );
 
   const results = useMemo(() => {
     const query = queryText.trim().toLocaleLowerCase('fr');
@@ -56,6 +72,7 @@ export default function SearchScreen() {
                 onChangeText={setQueryText}
                 placeholder="Nom, service ou quartier"
                 placeholderTextColor="#7B858A"
+                ref={searchInputRef}
                 returnKeyType="search"
                 style={styles.input}
                 value={queryText}

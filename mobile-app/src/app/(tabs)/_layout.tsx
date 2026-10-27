@@ -1,5 +1,6 @@
 import { Tabs } from 'expo-router';
-import { ColorValue } from 'react-native';
+import { ColorValue, Pressable } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import { AppIcon, AppIconName } from '@/components/app-icon';
 import { Colors } from '@/constants/colors';
@@ -11,18 +12,29 @@ const icon = (name: AppIconName) =>
   };
 
 export default function TabLayout() {
+  const insets = useSafeAreaInsets();
+  const bottomInset = Math.max(insets.bottom, 9);
+
   return (
     <Tabs
       screenOptions={{
         headerShown: false,
+        tabBarHideOnKeyboard: true,
         tabBarActiveTintColor: Colors.red,
         tabBarInactiveTintColor: Colors.muted,
         tabBarLabelStyle: { fontSize: 11, fontWeight: '700' },
+        tabBarButton: ({ ref: _ref, ...props }) => (
+          <Pressable
+            {...props}
+            android_ripple={{ color: '#CE11261A', radius: 28 }}
+          />
+        ),
+        tabBarItemStyle: { borderRadius: 14, overflow: 'hidden' },
         tabBarStyle: {
           backgroundColor: Colors.white,
           borderTopColor: 'transparent',
-          height: 72,
-          paddingBottom: 9,
+          height: 63 + bottomInset,
+          paddingBottom: bottomInset,
           paddingTop: 8,
           shadowColor: Colors.navy,
           shadowOffset: { width: 0, height: -5 },
@@ -36,11 +48,7 @@ export default function TabLayout() {
       }}>
       <Tabs.Screen
         name="index"
-        options={{ title: 'Accueil', tabBarIcon: icon('home') }}
-      />
-      <Tabs.Screen
-        name="search"
-        options={{ title: 'Recherche', tabBarIcon: icon('search') }}
+        options={{ title: 'Explorer', tabBarIcon: icon('home') }}
       />
       <Tabs.Screen
         name="favorites"
