@@ -14,13 +14,17 @@ The product name, Expo slug, URL scheme, and store identifiers are configured fo
 - Local favorites
 - Firebase configuration layer with local-data fallback
 
-The businesses shown in the app are design/demo records. They are not the unverified OSM review dataset.
+With Firebase enabled, the app displays approved Firestore businesses. Demo records are only used when Firebase is disabled. Unverified review records remain private.
+
+## Authentication
+
+Google, Apple (iOS), and phone/SMS sign-in are implemented, with persistent sessions and per-account cloud favorites. See [Firebase authentication setup](docs/auth-setup.md) for the remaining device signing and SMS billing requirements. Use a development build, not Expo Go.
 
 ## Firebase setup
 
-1. Create a Firebase project and register a Web app.
+1. Use the existing Firebase project `guinee-directory-mvp`.
 2. Copy `.env.example` to `.env.local`.
-3. Fill in the six `EXPO_PUBLIC_FIREBASE_*` values from the Firebase configuration object.
+3. The example contains this project’s public client settings. Keep `EXPO_PUBLIC_FIREBASE_ENABLED=true` to use Firestore.
 4. Create a Firestore database and a `businesses` collection.
 5. Only documents with `status: "approved"` are loaded by the prepared service.
 
@@ -29,7 +33,7 @@ Firebase client configuration is public by design. Access control must be enforc
 ## Run
 
 ```bash
-npm start
+npx expo start --dev-client
 ```
 
 Then press `a` for an Android emulator, or scan the QR code with a physical device.

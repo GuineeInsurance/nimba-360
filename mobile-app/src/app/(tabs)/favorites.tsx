@@ -6,10 +6,12 @@ import { BusinessCard } from '@/components/business-card';
 import { EmptyState } from '@/components/empty-state';
 import { Colors } from '@/constants/colors';
 import { useFavorites } from '@/context/favorites-context';
-import { businesses } from '@/data/businesses';
+import { DataNotice } from '@/components/data-notice';
+import { useBusinesses } from '@/context/business-context';
 
 export default function FavoritesScreen() {
-  const { favorites } = useFavorites();
+  const { businesses } = useBusinesses();
+  const { favorites, loading: favoritesLoading, error: favoritesError } = useFavorites();
   const saved = businesses.filter((business) => favorites.includes(business.id));
 
   return (
@@ -19,10 +21,10 @@ export default function FavoritesScreen() {
         data={saved}
         keyExtractor={(item) => item.id}
         ListEmptyComponent={
-          <EmptyState
-            title="Aucun favori pour le moment"
-            description="Touchez le cœur d’une adresse pour la retrouver rapidement ici."
-          />
+          <DataNotice empty={<EmptyState
+            title={favoritesLoading ? "Chargement des favoris…" : favoritesError ? "Synchronisation indisponible" : "Aucun favori pour le moment"}
+            description={favoritesError ?? "Touchez le cœur d’une adresse pour la retrouver rapidement ici."}
+          />} />
         }
         ListHeaderComponent={
           <View style={styles.header}>

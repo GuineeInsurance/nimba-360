@@ -1,48 +1,32 @@
-import { Linking, Pressable, StyleSheet, Text, View } from 'react-native';
+import { ActivityIndicator, Alert, Linking, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 import { AppIcon } from '@/components/app-icon';
 import { BrandLockup } from '@/components/brand-lockup';
 import { Colors } from '@/constants/colors';
-import { isFirebaseConfigured } from '@/lib/firebase';
+import { useAuth } from '@/context/auth-context';
+import { LoginPanel } from '@/components/login-panel';
+import { logout } from '@/services/backend';
 
 export default function ProfileScreen() {
+  const { user, loading, profileError } = useAuth();
   return (
     <SafeAreaView edges={['top']} style={styles.safeArea}>
-      <View style={styles.content}>
+      <ScrollView contentContainerStyle={styles.content} keyboardShouldPersistTaps="handled">
         <BrandLockup />
         <View style={styles.header}>
           <View style={styles.avatar}>
             <AppIcon accent={Colors.yellow} color={Colors.white} name="profile" size={37} />
           </View>
-          <Text style={styles.heading}>Bienvenue</Text>
-          <Text style={styles.description}>
-            Connectez-vous bientôt pour publier des avis et synchroniser vos favoris.
-          </Text>
-          <Pressable style={styles.primaryButton}>
-            <Text style={styles.primaryButtonText}>Connexion bientôt disponible</Text>
-          </Pressable>
-        </View>
-
-        <View style={styles.card}>
-          <View style={styles.cardRow}>
-            <View style={styles.cardIcon}>
-              <AppIcon accent={Colors.green} color={Colors.navy} name="cloud" size={25} />
-            </View>
-            <View style={styles.cardText}>
-              <Text style={styles.cardTitle}>Backend Firebase</Text>
-              <Text style={styles.cardDescription}>
-                {isFirebaseConfigured
-                  ? 'Configuration détectée. L’application peut charger les données Firestore.'
-                  : 'Mode démonstration local. Ajoutez votre configuration Firebase pour connecter Firestore.'}
-              </Text>
-            </View>
-            <View style={[styles.status, isFirebaseConfigured && styles.statusConnected]}>
-              <Text style={[styles.statusText, isFirebaseConfigured && styles.statusTextConnected]}>
-                {isFirebaseConfigured ? 'Connecté' : 'Démo'}
-              </Text>
-            </View>
-          </View>
+          {loading ? <ActivityIndicator color={Colors.red} /> : user ? <>
+            <Text style={styles.heading}>{user.displayName || 'Bienvenue'}</Text>
+            <Text style={styles.description}>{user.email || user.phoneNumber}</Text>
+            <Text style={styles.description}>Vos favoris sont liés à votre compte.</Text>
+            {profileError && <Text accessibilityRole="alert" style={styles.description}>{profileError}</Text>}
+            <Pressable style={styles.primaryButton} onPress={() => void logout().catch(() => Alert.alert('Déconnexion', 'Impossible de vous déconnecter. Réessayez.'))}>
+              <Text style={styles.primaryButtonText}>Se déconnecter</Text>
+            </Pressable>
+          </> : <LoginPanel />}
         </View>
 
         <View style={styles.note}>
@@ -66,14 +50,14 @@ export default function ProfileScreen() {
             <Text style={[styles.legalLink, styles.deleteLink]}>Supprimer mon compte</Text>
           </Pressable>
         </View>
-      </View>
+      </ScrollView>
     </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   safeArea: { backgroundColor: Colors.cream, flex: 1 },
-  content: { flex: 1, padding: 20 },
+  content: { flexGrow: 1, padding: 20, paddingBottom: 40 },
   header: { alignItems: 'center', paddingBottom: 28, paddingTop: 42 },
   avatar: {
     alignItems: 'center',

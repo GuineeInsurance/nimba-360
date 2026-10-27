@@ -7,13 +7,16 @@ import { EmptyState } from '@/components/empty-state';
 import { Rating } from '@/components/rating';
 import { Colors } from '@/constants/colors';
 import { useFavorites } from '@/context/favorites-context';
-import { findBusiness } from '@/data/businesses';
+import { useBusinesses } from '@/context/business-context';
 
 export default function BusinessDetailsScreen() {
   const { id } = useLocalSearchParams<{ id: string }>();
-  const business = findBusiness(id);
+  const { businesses, loading, error } = useBusinesses();
+  const business = businesses.find(item => item.id === id);
   const { isFavorite, toggleFavorite } = useFavorites();
 
+  if (loading) return <EmptyState title="Chargement…" description="Nous recherchons cette adresse." />;
+  if (error) return <EmptyState title="Connexion indisponible" description={error} />;
   if (!business) {
     return <EmptyState title="Adresse introuvable" description="Cette fiche n’existe plus ou a été déplacée." />;
   }
@@ -51,7 +54,7 @@ export default function BusinessDetailsScreen() {
         </View>
         <Rating rating={business.rating} reviewCount={business.reviewCount} />
         <Text style={styles.meta}>
-          {business.category} · {business.neighborhood} · {business.distanceKm.toFixed(1)} km
+          {business.category} · {business.neighborhood}{Number.isFinite(business.distanceKm) ? ` · ${business.distanceKm.toFixed(1)} km` : ''}
         </Text>
         <Text style={styles.open}>{business.isOpen ? '● Ouvert maintenant' : '● Fermé'}</Text>
 

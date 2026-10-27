@@ -6,7 +6,9 @@ import { AppIcon, AppIconName } from '@/components/app-icon';
 import { BrandLockup } from '@/components/brand-lockup';
 import { BusinessCard } from '@/components/business-card';
 import { Colors } from '@/constants/colors';
-import { businesses, categoryOptions } from '@/data/businesses';
+import { categoryOptions } from '@/data/businesses';
+import { DataNotice } from '@/components/data-notice';
+import { useBusinesses } from '@/context/business-context';
 
 const categoryIcons: Record<string, AppIconName> = {
   Restaurants: 'restaurant',
@@ -25,12 +27,14 @@ const categoryColors: Record<string, string> = {
 };
 
 export default function HomeScreen() {
+  const { businesses } = useBusinesses();
   const router = useRouter();
 
   return (
     <SafeAreaView edges={['top']} style={styles.safeArea}>
       <ScrollView contentContainerStyle={styles.content} showsVerticalScrollIndicator={false}>
         <View style={styles.mobileCanvas}>
+        <DataNotice />
         <View style={styles.header}>
           <BrandLockup />
           <View style={styles.location}>

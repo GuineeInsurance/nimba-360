@@ -24,7 +24,7 @@ export function BusinessCard({ business, horizontal = false }: BusinessCardProps
         />
         <View style={styles.distanceBadge}>
           <AppIcon color={Colors.white} name="location" size={12} />
-          <Text style={styles.distanceText}>À {business.distanceKm.toFixed(1)} km</Text>
+          <Text style={styles.distanceText}>À {Number.isFinite(business.distanceKm) ? `${business.distanceKm.toFixed(1)} km` : business.city}</Text>
         </View>
         <Pressable
           accessibilityLabel={isFavorite(business.id) ? 'Retirer des favoris' : 'Ajouter aux favoris'}
@@ -60,7 +60,7 @@ export function BusinessCard({ business, horizontal = false }: BusinessCardProps
             </Text>
           )}
           <Text style={styles.meta}>
-            {business.category} · {business.neighborhood} · {business.distanceKm.toFixed(1)} km
+            {business.category} · {business.neighborhood}{Number.isFinite(business.distanceKm) ? ` · ${business.distanceKm.toFixed(1)} km` : ''}
           </Text>
           <Text style={[styles.open, !business.isOpen && styles.closed]}>
             {business.isOpen ? '● Ouvert maintenant' : '● Fermé'}

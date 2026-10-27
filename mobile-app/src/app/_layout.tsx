@@ -1,11 +1,14 @@
 import { Stack } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 
+import { AuthProvider } from '@/context/auth-context';
+import { BusinessProvider } from '@/context/business-context';
+
 import { FavoritesProvider } from '@/context/favorites-context';
 
 export default function RootLayout() {
   return (
-    <FavoritesProvider>
+    <AuthProvider><BusinessProvider><FavoritesProvider>
       <StatusBar style="dark" />
       <Stack screenOptions={{ headerShadowVisible: false }}>
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
@@ -19,6 +22,6 @@ export default function RootLayout() {
           }}
         />
       </Stack>
-    </FavoritesProvider>
+    </FavoritesProvider></BusinessProvider></AuthProvider>
   );
 }

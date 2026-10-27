@@ -15,11 +15,14 @@ import { AppIcon } from '@/components/app-icon';
 import { BusinessCard } from '@/components/business-card';
 import { EmptyState } from '@/components/empty-state';
 import { Colors } from '@/constants/colors';
-import { businesses, categoryOptions } from '@/data/businesses';
+import { categoryOptions } from '@/data/businesses';
+import { DataNotice } from '@/components/data-notice';
+import { useBusinesses } from '@/context/business-context';
 
 const filters = ['Ouvert', 'Mieux notés', 'À proximité'];
 
 export default function SearchScreen() {
+  const { businesses } = useBusinesses();
   const params = useLocalSearchParams<{ category?: string }>();
   const searchInputRef = useRef<TextInputInstance>(null);
   const [queryText, setQueryText] = useState('');
@@ -46,9 +49,9 @@ export default function SearchScreen() {
       .filter((business) => activeFilter !== 'Ouvert' || business.isOpen)
       .sort((a, b) => {
         if (activeFilter === 'Mieux notés') return b.rating - a.rating;
-        return a.distanceKm - b.distanceKm;
+        return (Number.isFinite(a.distanceKm) ? a.distanceKm : Infinity) - (Number.isFinite(b.distanceKm) ? b.distanceKm : Infinity);
       });
-  }, [activeFilter, category, queryText]);
+  }, [activeFilter, category, queryText, businesses]);
 
   return (
     <SafeAreaView edges={['top']} style={styles.safeArea}>
@@ -57,10 +60,10 @@ export default function SearchScreen() {
         data={results}
         keyExtractor={(item) => item.id}
         ListEmptyComponent={
-          <EmptyState
+          <DataNotice empty={<EmptyState
             title="Aucun résultat"
             description="Essayez une autre catégorie ou un terme plus général."
-          />
+          />} />
         }
         ListHeaderComponent={
           <View>
