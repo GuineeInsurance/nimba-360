@@ -1,3 +1,4 @@
+import { router } from 'expo-router';
 import { ActivityIndicator, Alert, Linking, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
@@ -28,6 +29,11 @@ export default function ProfileScreen() {
             </Pressable>
           </> : <LoginPanel />}
         </View>
+
+        <Pressable accessibilityRole="button" style={styles.card} onPress={() => router.push('/register-business')}>
+          <Text style={styles.cardTitle}>Inscrire mon entreprise</Text>
+          <Text style={styles.cardDescription}>Créez votre fiche et utilisez le GPS sur place pour localiser votre activité.</Text>
+        </Pressable>
 
         <View style={styles.note}>
           <Text style={styles.noteTitle}>NIMBA 360</Text>

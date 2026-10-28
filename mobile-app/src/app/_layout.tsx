@@ -13,6 +13,7 @@ export default function RootLayout() {
       <Stack screenOptions={{ headerShadowVisible: false }}>
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
         <Stack.Screen name="search" options={{ headerShown: false }} />
+        <Stack.Screen name="register-business" options={{ title: 'Inscrire mon entreprise', headerBackTitle: 'Retour', headerTintColor: '#10232D' }} />
         <Stack.Screen
           name="business/[id]"
           options={{

@@ -116,12 +116,24 @@ service cloud.firestore {
         && request.resource.data.keys().hasOnly([
           'submitterId', 'name', 'categoryId', 'cityId', 'communeId', 'address',
           'phone', 'email', 'website', 'whatsapp', 'latitude', 'longitude',
-          'description', 'imagePaths', 'status', 'createdAt', 'updatedAt'
+          'description', 'imagePaths', 'status', 'createdAt', 'updatedAt',
+          'category', 'subcategory', 'subcategoryId', 'city', 'district',
+          'quartier', 'postalCode', 'streetAddress', 'photo'
         ])
         && request.resource.data.submitterId == request.auth.uid
         && request.resource.data.name is string
         && request.resource.data.name.size() >= 2
         && request.resource.data.name.size() <= 160
+        && (!('category' in request.resource.data) || (request.resource.data.category is string && request.resource.data.category.size() <= 100))
+        && (!('subcategory' in request.resource.data) || (request.resource.data.subcategory is string && request.resource.data.subcategory.size() <= 100))
+        && (!('subcategoryId' in request.resource.data) || (request.resource.data.subcategoryId is string && request.resource.data.subcategoryId.size() <= 100))
+        && (!('city' in request.resource.data) || (request.resource.data.city is string && request.resource.data.city.size() <= 100))
+        && (!('district' in request.resource.data) || (request.resource.data.district is string && request.resource.data.district.size() <= 100))
+        && (!('quartier' in request.resource.data) || (request.resource.data.quartier is string && request.resource.data.quartier.size() <= 100))
+        && (!('postalCode' in request.resource.data) || (request.resource.data.postalCode is string && request.resource.data.postalCode.size() <= 20))
+        && (!('streetAddress' in request.resource.data) || (request.resource.data.streetAddress is string && request.resource.data.streetAddress.size() <= 180))
+        && (!('description' in request.resource.data) || (request.resource.data.description is string && request.resource.data.description.size() <= 800))
+        && (!('photo' in request.resource.data) || (request.resource.data.photo is string && request.resource.data.photo.size() <= 300000 && (request.resource.data.photo == '' || request.resource.data.photo.matches('^data:image/jpeg;base64,[A-Za-z0-9+/=]+$'))))
         && request.resource.data.status == 'pending'
         && request.resource.data.createdAt == request.time
         && request.resource.data.updatedAt == request.time;

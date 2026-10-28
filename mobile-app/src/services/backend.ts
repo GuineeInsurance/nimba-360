@@ -1,5 +1,6 @@
+import { normalizeRegistration, type RegistrationDraft } from './registration';
 import { getAuth, GoogleAuthProvider, OAuthProvider, onAuthStateChanged, RecaptchaVerifier, signInWithPhoneNumber, signInWithPopup, signOut } from 'firebase/auth';
-import { collection, deleteDoc, doc, getDoc, getDocs, onSnapshot, query, runTransaction, serverTimestamp, where } from 'firebase/firestore';
+import { setDoc, collection, deleteDoc, doc, getDoc, getDocs, onSnapshot, query, runTransaction, serverTimestamp, where } from 'firebase/firestore';
 
 import { app, db, isFirebaseConfigured } from '@/lib/firebase';
 import type { Account, CloudRecord, Failure, PhoneConfirmation } from './backend-types';
@@ -46,4 +47,20 @@ export async function saveFavorite(uid: string, id: string, saved: boolean) {
     if (!(await transaction.get(ref)).exists()) transaction.set(ref, { businessId: id, createdAt: serverTimestamp() });
   });
   else await deleteDoc(ref);
+}
+
+// A stable ID makes retrying after a lost response safe.
+export async function submitBusiness(uid: string, id: string, draft: RegistrationDraft, photo: string) {
+  if (!backendEnabled || auth().currentUser?.uid !== uid) throw new Error('Reconnectez-vous avant de soumettre votre fiche.');
+  const fields = normalizeRegistration(draft);
+  if (photo && (!/^data:image\/jpeg;base64,[A-Za-z0-9+/=]+$/.test(photo) || photo.length > 300000)) throw new Error('Cette photo est trop volumineuse.');
+  const ref = doc(database(), 'submissions', id);
+  // Owners can read existing submissions, but cannot read nonexistent records under the rules.
+  try {
+    await setDoc(ref, { ...fields, photo, imagePaths: [], submitterId: uid, status: 'pending', createdAt: serverTimestamp(), updatedAt: serverTimestamp() });
+  } catch (error) {
+    const existing = await getDoc(ref).catch(() => null);
+    if (!existing?.exists() || existing.data()?.submitterId !== uid) throw error;
+  }
+  return id;
 }

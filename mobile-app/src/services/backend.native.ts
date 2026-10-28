@@ -1,6 +1,7 @@
+import { normalizeRegistration, type RegistrationDraft } from './registration';
 import { getApp } from '@react-native-firebase/app';
 import { AppleAuthProvider, GoogleAuthProvider, getAuth, onAuthStateChanged, signInWithCredential, signInWithPhoneNumber, signOut, updateProfile } from '@react-native-firebase/auth';
-import { collection, deleteDoc, doc, getDoc, getDocs, getFirestore, onSnapshot, query, runTransaction, serverTimestamp, where } from '@react-native-firebase/firestore';
+import { setDoc, collection, deleteDoc, doc, getDoc, getDocs, getFirestore, onSnapshot, query, runTransaction, serverTimestamp, where } from '@react-native-firebase/firestore';
 import { GoogleSignin, isSuccessResponse } from '@react-native-google-signin/google-signin';
 import * as Apple from 'expo-apple-authentication';
 import * as Crypto from 'expo-crypto';
@@ -69,4 +70,20 @@ export async function saveFavorite(uid: string, id: string, saved: boolean) {
     if (!(await transaction.get(ref)).exists()) transaction.set(ref, { businessId: id, createdAt: serverTimestamp() });
   });
   else await deleteDoc(ref);
+}
+
+// A stable ID makes retrying after a lost response safe.
+export async function submitBusiness(uid: string, id: string, draft: RegistrationDraft, photo: string) {
+  if (!backendEnabled || auth().currentUser?.uid !== uid) throw new Error('Reconnectez-vous avant de soumettre votre fiche.');
+  const fields = normalizeRegistration(draft);
+  if (photo && (!/^data:image\/jpeg;base64,[A-Za-z0-9+/=]+$/.test(photo) || photo.length > 300000)) throw new Error('Cette photo est trop volumineuse.');
+  const ref = doc(db(), 'submissions', id);
+  // Owners can read existing submissions, but cannot read nonexistent records under the rules.
+  try {
+    await setDoc(ref, { ...fields, photo, imagePaths: [], submitterId: uid, status: 'pending', createdAt: serverTimestamp(), updatedAt: serverTimestamp() });
+  } catch (error) {
+    const existing = await getDoc(ref).catch(() => null);
+    if (!existing?.exists() || existing.data()?.submitterId !== uid) throw error;
+  }
+  return id;
 }
