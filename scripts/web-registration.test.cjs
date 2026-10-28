@@ -27,4 +27,7 @@ test('photo validation accepts supported formats and rejects oversized or non-im
  assert.throws(()=>registration.validatePhoto({type:'image/jpeg',size:5*1024*1024+1}));
  assert.throws(()=>registration.validatePhoto({type:'image/svg+xml',size:1024}));
 });
-test('website uses the exact reference logo',()=>{assert.equal(fs.readFileSync('web-app/dist/logo.svg','utf8'),fs.readFileSync('logo.svg','utf8'));});
+test('website uses the exact reference logo',()=>{
+ const readLogo = file => fs.readFileSync(file, 'utf8').replace(/\r\n/g, '\n');
+ assert.equal(readLogo('web-app/dist/logo.svg'), readLogo('logo.svg'));
+});
