@@ -3,14 +3,14 @@
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#071f2c">
   <title>Espace entreprise — NIMBA 360</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="styles.css?v=20261028-portal">
 <link rel="icon" type="image/svg+xml" sizes="any" href="/favicon.svg">
 </head>
 <body class="portal-body">
   <header class="site-header portal-header"><a class="brand" href="index.html"><img class="brand-logo" src="logo.svg" alt="NIMBA 360" width="720" height="170"><span class="brand-tagline">Découvrez. Connectez. Avancez.</span></a><div class="portal-actions"><a href="index.html">← Retour au site</a><button class="nav-cta auth-trigger" type="button" data-auth-open>Se connecter</button><button class="user-chip" type="button" data-user-chip hidden></button></div></header>
   <main class="portal-shell">
-    <div class="portal-intro"><div><p class="eyebrow"><span></span> Espace entreprise</p><h1>Présentez votre activité.</h1><p>Créez une fiche complète et envoyez-la à notre équipe de vérification.</p></div></div>
-    <div class="workspace">
+    <div class="portal-intro"><div><p class="eyebrow"><span></span> Espace entreprise</p><h1>Votre espace entreprise.</h1><p>Inscrivez votre activité, suivez sa vérification et mettez à jour ses informations.</p></div></div>
+    <section id="business-dashboard" aria-live="polite"><p>Chargement de votre espace…</p></section><button type="button" id="back-to-businesses" class="button button-secondary" hidden>← Mes entreprises</button><div class="workspace" hidden>
       <aside class="workspace-side"><h2>Votre inscription</h2><ol class="step-list"><li class="active" data-step-label="1"><i>1</i>Identité</li><li data-step-label="2"><i>2</i>Coordonnées</li><li data-step-label="3"><i>3</i>Présentation</li><li data-step-label="4"><i>4</i>Vérification</li></ol><div class="side-help"><strong>Besoin d’aide ?</strong>Votre progression est enregistrée sur cet appareil. Une équipe pourra bientôt vous accompagner.</div></aside>
       <form class="workspace-main" id="business-form" novalidate>
         <section class="form-step active" data-step="1"><h2>Parlez-nous de votre entreprise</h2><p>Ces informations permettront de créer la base de votre fiche publique.</p><div class="form-grid">
@@ -40,7 +40,7 @@
       </form>
     </div>
   </main>
-  <div class="modal-backdrop" data-auth-modal hidden><section class="auth-modal" role="dialog" aria-modal="true" aria-labelledby="auth-title"><button class="drawer-close" type="button" data-auth-close aria-label="Fermer">×</button><p class="eyebrow"><span></span> Compte entreprise</p><h2 id="auth-title">Connectez-vous</h2><p class="auth-intro">Utilisez votre e-mail professionnel pour gérer vos soumissions.</p><form data-auth-form><div class="field"><label for="auth-name">Votre nom</label><input id="auth-name" name="displayName" autocomplete="name" placeholder="Nom du responsable"></div><div class="field"><label for="auth-email">Adresse e-mail</label><input id="auth-email" name="email" type="email" autocomplete="email" required></div><div class="field"><label for="auth-password">Mot de passe</label><input id="auth-password" name="password" type="password" autocomplete="current-password" minlength="8" required></div><button class="button button-primary auth-submit" type="submit">Se connecter</button></form><button class="auth-mode" type="button" data-auth-mode>Pas encore de compte ? Créer un compte</button><p class="form-feedback" data-auth-feedback aria-live="polite"></p><p class="auth-legal">En continuant, vous acceptez nos <a href="terms.html">conditions</a> et notre <a href="privacy.html">politique de confidentialité</a>.</p></section></div>
-  <script src="registration-data.js"></script><script src="registration.js"></script><script src="app.js"></script><script type="module" src="firebase-app.js"></script>
+  <div class="modal-backdrop" data-auth-modal hidden></div>
+  <script src="registration-data.js"></script><script src="registration.js"></script><script src="app.js?v=20261028-portal"></script><script type="module" src="firebase-app.js?v=20261028-portal"></script>
 </body>
 </html>

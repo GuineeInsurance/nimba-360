@@ -1,16 +1,13 @@
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/13.1.0/firebase-app.js';
-import {
-  createUserWithEmailAndPassword,
-  getAuth,
-  onAuthStateChanged,
-  signInWithEmailAndPassword,
-  signOut,
-  updateProfile,
-} from 'https://www.gstatic.com/firebasejs/13.1.0/firebase-auth.js';
+import { getAuth, onAuthStateChanged, signOut } from 'https://www.gstatic.com/firebasejs/13.1.0/firebase-auth.js';
+import { setupAuth } from './auth-ui.js';
+import { setupBusinessPortal } from './business-portal.js';
 import {
   addDoc,
   collection,
   doc,
+  getDoc,
+  runTransaction,
   getDocs,
   getFirestore,
   limit,
@@ -38,25 +35,10 @@ try {
 
   const slugify = (value = '') => value.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
   const cleanCity = (value = '') => value.replace(/\s*\(à vérifier\)\s*/i, '').trim();
-  const authMessage = (error) => {
-    const messages = {
-      'auth/email-already-in-use': 'Un compte utilise déjà cette adresse e-mail.',
-      'auth/invalid-credential': 'Adresse e-mail ou mot de passe incorrect.',
-      'auth/invalid-email': 'Saisissez une adresse e-mail valide.',
-      'auth/weak-password': 'Choisissez un mot de passe d’au moins 8 caractères.',
-      'auth/too-many-requests': 'Trop de tentatives. Réessayez un peu plus tard.',
-    };
-    return messages[error.code] || 'La connexion a échoué. Réessayez.';
-  };
-
-  const modal = document.querySelector('[data-auth-modal]');
-  const authForm = document.querySelector('[data-auth-form]');
-  const authFeedback = document.querySelector('[data-auth-feedback]');
-  const modeButton = document.querySelector('[data-auth-mode]');
   const adminShell = document.querySelector('[data-admin-shell]');
   const adminGateMessage = document.querySelector('[data-admin-gate-message]');
   const adminSignOutButton = document.querySelector('[data-admin-signout]');
-  let createMode = false;
+
 
   const setAdminGate = (state, message = '') => {
     if (!adminShell) return;
@@ -70,58 +52,8 @@ try {
     if (adminSignOutButton) adminSignOutButton.hidden = state !== 'denied';
   };
 
-  const openModal = () => {
-    if (!modal) return;
-    modal.hidden = false;
-    document.body.style.overflow = 'hidden';
-    setTimeout(() => authForm?.elements.email?.focus(), 20);
-  };
-  const closeModal = () => {
-    if (!modal) return;
-    modal.hidden = true;
-    document.body.style.overflow = '';
-  };
-  document.querySelectorAll('[data-auth-open]').forEach((button) => button.addEventListener('click', openModal));
+  setupAuth(auth);
   adminSignOutButton?.addEventListener('click', () => signOut(auth));
-  document.querySelector('[data-auth-close]')?.addEventListener('click', closeModal);
-  modal?.addEventListener('click', (event) => event.target === modal && closeModal());
-  modeButton?.addEventListener('click', () => {
-    createMode = !createMode;
-    const nameField = authForm?.elements.displayName?.closest('.field');
-    if (nameField) nameField.hidden = !createMode;
-    modal.querySelector('h2').textContent = createMode ? 'Créez votre compte' : 'Connectez-vous';
-    modal.querySelector('.auth-submit').textContent = createMode ? 'Créer mon compte' : 'Se connecter';
-    modeButton.textContent = createMode ? 'J’ai déjà un compte — me connecter' : 'Pas encore de compte ? Créer un compte';
-  });
-
-  authForm?.addEventListener('submit', async (event) => {
-    event.preventDefault();
-    authFeedback.textContent = '';
-    const values = Object.fromEntries(new FormData(authForm));
-    const forceSignIn = values.mode === 'signin';
-    try {
-      if (createMode && !forceSignIn) {
-        const credential = await createUserWithEmailAndPassword(auth, values.email.trim(), values.password);
-        const displayName = values.displayName?.trim() || '';
-        if (displayName) await updateProfile(credential.user, { displayName });
-        await setDoc(doc(db, 'users', credential.user.uid), {
-          displayName,
-          email: credential.user.email || '',
-          photoUrl: '',
-          preferredCityId: '',
-          createdAt: serverTimestamp(),
-          updatedAt: serverTimestamp(),
-        });
-      } else {
-        await signInWithEmailAndPassword(auth, values.email.trim(), values.password);
-      }
-      authForm.reset();
-      closeModal();
-    } catch (error) {
-      authFeedback.textContent = authMessage(error);
-      authFeedback.style.color = '#b90e24';
-    }
-  });
 
   async function preparePhoto(file) {
     window.g360Registration.validatePhoto(file);
@@ -146,9 +78,24 @@ try {
     if (!activeUser) throw new Error('Connectez-vous avant d’envoyer votre fiche.');
     const userId = activeUser.uid;
     const fields = window.g360Registration.normalize(values);
-    const photo = await preparePhoto(values.businessPhoto);
+    const portal = window.g360BusinessPortal;
+    const editing = portal?.editRecord;
+    const photo = values.businessPhoto?.size ? await preparePhoto(values.businessPhoto) : (values.retainedPhoto || '');
     if (activeUser?.uid !== userId) throw new Error('Votre session a changé. Reconnectez-vous avant de réessayer.');
-    const reference = await addDoc(collection(db, 'submissions'), {
+    if (editing) {
+      fields.latitude = editing.latitude ?? null; fields.longitude = editing.longitude ?? null;
+      const ref = doc(db, 'submissions', editing.id);
+      await runTransaction(db, async transaction => {
+        const snapshot = await transaction.get(ref); const record = snapshot.data();
+        if (!record || record.submitterId !== userId) throw new Error('Cette fiche ne vous appartient pas.');
+        if (record.editRequestId === portal.requestId) return;
+        if (!['approved', 'correction_required', 'rejected'].includes(record.status)) throw new Error('Cette fiche est déjà en cours de vérification.');
+        transaction.update(ref, { ...fields, photo, status: 'pending', editRequestId: portal.requestId, verificationChecks: { identity: false, contact: false, location: false, duplicate: false }, updatedAt: serverTimestamp() });
+      });
+      return editing.id;
+    }
+    const reference = doc(db, 'submissions', portal?.requestId || crypto.randomUUID());
+    try { await setDoc(reference, {
       ...fields,
       submitterId: userId,
       photo,
@@ -156,7 +103,10 @@ try {
       status: 'pending',
       createdAt: serverTimestamp(),
       updatedAt: serverTimestamp(),
-    });
+    }); } catch (error) {
+      const existing = await getDoc(reference).catch(() => null);
+      if (!existing?.exists() || existing.data().submitterId !== userId) throw error;
+    }
     return reference.id;
   }
 
@@ -395,6 +345,7 @@ try {
 
       if (action === 'approved') {
         const businessId = activeRecord.businessId || activeRecord.id;
+        const publishedSnapshot = await getDoc(doc(db, 'businesses', businessId));
         batch.set(doc(db, 'businesses', businessId), {
           name: values.name,
           normalizedName: slugify(values.name),
@@ -416,14 +367,11 @@ try {
           phone: values.phone,
           latitude: values.latitude,
           longitude: values.longitude,
-          rating: 0,
-          reviewCount: 0,
+          ...(!publishedSnapshot.exists() ? { rating: 0, reviewCount: 0, services: [], createdAt: activeRecord.publishedAt || serverTimestamp() } : {}),
           verified: true,
-          services: [],
-          imageUrl: activeRecord.photo || activeRecord.imageUrl || '',
+          imageUrl: typeof activeRecord.photo === 'string' ? activeRecord.photo : (activeRecord.imageUrl || ''),
           description: values.description,
           status: 'approved',
-          createdAt: activeRecord.publishedAt || serverTimestamp(),
           updatedAt: serverTimestamp(),
         }, { merge: true });
         recordUpdate.businessId = businessId;
@@ -490,7 +438,7 @@ try {
     document.querySelectorAll('[data-auth-open]').forEach((button) => { button.hidden = Boolean(user); });
     document.querySelectorAll('[data-user-chip]').forEach((chip) => {
       chip.hidden = !user;
-      chip.textContent = user ? `${user.displayName || user.email} · Déconnexion` : '';
+      chip.textContent = user ? `${user.displayName || user.email || user.phoneNumber || 'Mon compte'} · Déconnexion` : '';
       chip.onclick = user ? () => signOut(auth) : null;
     });
     const deletionForm = document.querySelector('[data-deletion-form]');
@@ -516,6 +464,7 @@ try {
 
   setupAdminControls();
   window.g360Firebase = { currentUser: () => activeUser, submitBusiness, reviewRecord, requestDeletion };
+  setupBusinessPortal(auth, db);
   onAuthStateChanged(auth, async (user) => {
     activeUser = user;
     updateUserUi(user);
@@ -545,6 +494,8 @@ try {
   });
 } catch (error) {
   statusElements.forEach((element) => { element.textContent = 'Configuration Firebase indisponible'; });
+  const dashboard = document.querySelector('#business-dashboard');
+  if (dashboard) dashboard.textContent = 'Impossible de charger votre espace. Vérifiez votre connexion et rechargez cette page.';
   console.error('Firebase initialization failed:', error);
 }
 

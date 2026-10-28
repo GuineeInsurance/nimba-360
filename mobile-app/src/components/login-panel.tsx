@@ -7,6 +7,8 @@ import { authError } from '@/services/auth-errors';
 import type { PhoneConfirmation } from '@/services/backend-types';
 
 export function LoginPanel() {
+  const [mode, setMode] = useState<'new' | 'returning' | null>(null);
+  const [usePhone, setUsePhone] = useState(false);
   const [phone, setPhone] = useState('+224');
   const [code, setCode] = useState('');
   const [confirmation, setConfirmation] = useState<PhoneConfirmation | null>(null);
@@ -36,13 +38,26 @@ export function LoginPanel() {
   }
   const disabled = busy || !backendEnabled;
   const remaining = Math.max(0, Math.ceil((retryAt - now) / 1000));
+  if (!mode) return <View style={styles.panel}>
+    <Text style={styles.title}>Bienvenue sur NIMBA 360</Text>
+    <Text style={styles.description}>Est-ce votre première visite ?</Text>
+    <Pressable accessibilityRole="button" style={styles.primary} onPress={() => setMode('new')}><Text style={styles.primaryText}>Je suis nouveau · Créer mon compte</Text></Pressable>
+    <Pressable accessibilityRole="button" style={styles.social} onPress={() => setMode('returning')}><Text style={styles.socialText}>J’ai déjà un compte · Me connecter</Text></Pressable>
+  </View>;
   return <View style={styles.panel}>
-    <Text style={styles.title}>Votre compte NIMBA 360</Text>
-    <Text style={styles.description}>Retrouvez vos favoris sur tous vos appareils.</Text>
+    <Pressable disabled={busy} onPress={() => { setMode(null); setUsePhone(false); setConfirmation(null); setCode(''); setError(null); }}><Text style={styles.socialText}>← Retour</Text></Pressable>
+    <Text style={styles.title}>{mode === 'new' ? 'Créer mon compte' : 'Me connecter'}</Text>
+    <Text style={styles.description}>{mode === 'new' ? 'Choisissez une méthode. Votre compte sera créé après vérification, sans mot de passe.' : 'Utilisez le même compte Google ou le même numéro que lors de votre première visite.'}</Text>
+    <Text style={styles.description}>Si un compte existe déjà avec cette méthode, vous le retrouverez automatiquement.</Text>
     {!backendEnabled && <Text style={styles.description}>La connexion sera bientôt disponible.</Text>}
+    {!usePhone && <>
     <Pressable accessibilityRole="button" disabled={disabled} onPress={() => void perform(loginGoogle)} style={[styles.social, disabled && styles.disabled]}><Text style={styles.socialText}>Continuer avec Google</Text></Pressable>
     {appleAvailable && <View pointerEvents={disabled ? 'none' : 'auto'} style={disabled && styles.disabled}><Apple.AppleAuthenticationButton buttonType={Apple.AppleAuthenticationButtonType.CONTINUE} buttonStyle={Apple.AppleAuthenticationButtonStyle.BLACK} cornerRadius={12} style={styles.apple} onPress={() => void perform(loginApple)} /></View>}
-    <Text style={styles.divider}>ou avec votre numéro de téléphone</Text>
+    <Pressable accessibilityRole="button" disabled={disabled} style={styles.primary} onPress={() => setUsePhone(true)}><Text style={styles.primaryText}>Utiliser mon numéro de téléphone</Text></Pressable>
+    </>}
+    {usePhone && <>
+    <Pressable disabled={busy} onPress={() => { setUsePhone(false); setConfirmation(null); }}><Text style={styles.socialText}>Choisir une autre méthode</Text></Pressable>
+    <Text style={styles.description}>Recevez un code par SMS, puis recopiez ses 6 chiffres pour continuer.</Text>
     <Text style={styles.label}>Numéro de téléphone</Text>
     <TextInput accessibilityLabel="Numéro de téléphone avec indicatif" autoComplete="tel" keyboardType="phone-pad" value={phone} onChangeText={value => { setPhone(value); setConfirmation(null); setCode(''); }} editable={!disabled} style={styles.input} />
     {confirmation && <>
@@ -52,6 +67,7 @@ export function LoginPanel() {
     </>}
     <Pressable disabled={disabled || remaining > 0} onPress={() => void send()} style={[styles.social, (disabled || remaining > 0) && styles.disabled]}><Text style={styles.socialText}>{remaining ? `Renvoyer dans ${remaining} s` : confirmation ? 'Renvoyer le code' : 'Recevoir un code par SMS'}</Text></Pressable>
     <Text style={styles.consent}>En demandant un code, vous acceptez de recevoir un SMS de vérification. Google traite votre numéro pour prévenir les abus. Des frais opérateur peuvent s’appliquer.</Text>
+    </>}
     {busy && <ActivityIndicator accessibilityLabel="Connexion en cours" color={Colors.red} />}
     {error && <Text accessibilityRole="alert" style={styles.error}>{error}</Text>}
   </View>;

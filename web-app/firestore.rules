@@ -106,6 +106,22 @@ service cloud.firestore {
       }
     }
 
+    function validSubmissionFields(data) {
+      return data.name is string
+        && data.name.size() >= 2
+        && data.name.size() <= 160
+        && (!('category' in data) || (data.category is string && data.category.size() <= 100))
+        && (!('subcategory' in data) || (data.subcategory is string && data.subcategory.size() <= 100))
+        && (!('subcategoryId' in data) || (data.subcategoryId is string && data.subcategoryId.size() <= 100))
+        && (!('city' in data) || (data.city is string && data.city.size() <= 100))
+        && (!('district' in data) || (data.district is string && data.district.size() <= 100))
+        && (!('quartier' in data) || (data.quartier is string && data.quartier.size() <= 100))
+        && (!('postalCode' in data) || (data.postalCode is string && data.postalCode.size() <= 20))
+        && (!('streetAddress' in data) || (data.streetAddress is string && data.streetAddress.size() <= 180))
+        && (!('description' in data) || (data.description is string && data.description.size() <= 800))
+        && (!('photo' in data) || (data.photo is string && data.photo.size() <= 300000 && (data.photo == '' || data.photo.matches('^data:image/jpeg;base64,[A-Za-z0-9+/=]+$'))));
+    }
+
     match /submissions/{submissionId} {
       allow create: if signedIn()
         && request.resource.data.keys().hasAll([
@@ -121,25 +137,35 @@ service cloud.firestore {
           'quartier', 'postalCode', 'streetAddress', 'photo'
         ])
         && request.resource.data.submitterId == request.auth.uid
-        && request.resource.data.name is string
-        && request.resource.data.name.size() >= 2
-        && request.resource.data.name.size() <= 160
-        && (!('category' in request.resource.data) || (request.resource.data.category is string && request.resource.data.category.size() <= 100))
-        && (!('subcategory' in request.resource.data) || (request.resource.data.subcategory is string && request.resource.data.subcategory.size() <= 100))
-        && (!('subcategoryId' in request.resource.data) || (request.resource.data.subcategoryId is string && request.resource.data.subcategoryId.size() <= 100))
-        && (!('city' in request.resource.data) || (request.resource.data.city is string && request.resource.data.city.size() <= 100))
-        && (!('district' in request.resource.data) || (request.resource.data.district is string && request.resource.data.district.size() <= 100))
-        && (!('quartier' in request.resource.data) || (request.resource.data.quartier is string && request.resource.data.quartier.size() <= 100))
-        && (!('postalCode' in request.resource.data) || (request.resource.data.postalCode is string && request.resource.data.postalCode.size() <= 20))
-        && (!('streetAddress' in request.resource.data) || (request.resource.data.streetAddress is string && request.resource.data.streetAddress.size() <= 180))
-        && (!('description' in request.resource.data) || (request.resource.data.description is string && request.resource.data.description.size() <= 800))
-        && (!('photo' in request.resource.data) || (request.resource.data.photo is string && request.resource.data.photo.size() <= 300000 && (request.resource.data.photo == '' || request.resource.data.photo.matches('^data:image/jpeg;base64,[A-Za-z0-9+/=]+$'))))
+        && validSubmissionFields(request.resource.data)
         && request.resource.data.status == 'pending'
         && request.resource.data.createdAt == request.time
         && request.resource.data.updatedAt == request.time;
       allow read: if isAdmin()
         || (signedIn() && resource.data.submitterId == request.auth.uid);
-      allow update, delete: if isAdmin();
+      allow delete: if isAdmin();
+      allow update: if isAdmin() || (
+        signedIn() && resource.data.submitterId == request.auth.uid
+        && resource.data.status in ['approved', 'correction_required', 'rejected']
+        && request.resource.data.status == 'pending'
+        && request.resource.data.updatedAt == request.time
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly([
+          'name', 'category', 'subcategory', 'categoryId', 'subcategoryId', 'city', 'cityId',
+          'district', 'communeId', 'quartier', 'postalCode', 'streetAddress', 'address',
+          'phone', 'email', 'website', 'whatsapp', 'description', 'latitude', 'longitude',
+          'photo', 'status', 'updatedAt', 'editRequestId', 'verificationChecks'
+        ])
+        && request.resource.data.editRequestId is string && request.resource.data.editRequestId.size() == 36
+        && request.resource.data.verificationChecks == {'identity': false, 'contact': false, 'location': false, 'duplicate': false}
+        && validSubmissionFields(request.resource.data)
+        && request.resource.data.phone is string && request.resource.data.phone.size() <= 30
+        && request.resource.data.email is string && request.resource.data.email.size() <= 150
+        && request.resource.data.website is string && request.resource.data.website.size() <= 2000
+        && request.resource.data.whatsapp is string && request.resource.data.whatsapp.size() <= 30
+        && ((request.resource.data.latitude == null && request.resource.data.longitude == null)
+          || (request.resource.data.latitude is number && request.resource.data.latitude >= 7 && request.resource.data.latitude <= 13
+            && request.resource.data.longitude is number && request.resource.data.longitude >= -16 && request.resource.data.longitude <= -7))
+      );
     }
 
     match /deletionRequests/{requestId} {
@@ -149,7 +175,7 @@ service cloud.firestore {
           'userId', 'email', 'reason', 'status', 'createdAt', 'updatedAt'
         ])
         && request.resource.data.userId == request.auth.uid
-        && request.resource.data.email == request.auth.token.email
+        && request.resource.data.email == request.auth.token.get('email', '')
         && request.resource.data.reason is string
         && request.resource.data.reason.size() <= 500
         && request.resource.data.status == 'pending'

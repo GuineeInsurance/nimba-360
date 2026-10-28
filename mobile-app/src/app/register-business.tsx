@@ -1,3 +1,5 @@
+import { BusinessDashboard } from '@/components/business-dashboard';
+import type { CloudRecord } from '@/services/backend-types';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import * as Crypto from 'expo-crypto';
 import { ImageManipulator, SaveFormat } from 'expo-image-manipulator';
@@ -9,7 +11,7 @@ import { ActivityIndicator, Image, KeyboardAvoidingView, Linking, Modal, Platfor
 import { LoginPanel } from '@/components/login-panel';
 import { Colors } from '@/constants/colors';
 import { useAuth } from '@/context/auth-context';
-import { submitBusiness } from '@/services/backend';
+import { editBusinessSubmission, submitBusiness } from '@/services/backend';
 import { cities, emptyDraft, fieldLabels, limits, required, stepFields, taxonomy, validateStep, type Field, type RegistrationDraft } from '@/services/registration';
 
 const titles = ['Identité', 'Coordonnées', 'Présentation', 'Vérification'];
@@ -19,14 +21,14 @@ export default function RegisterBusinessScreen() {
   const { user, loading } = useAuth();
   if (loading) return <ActivityIndicator style={{ margin: 40 }} color={Colors.red} />;
   if (!user) return <ScrollView contentContainerStyle={styles.content} keyboardShouldPersistTaps="handled"><Text style={styles.title}>Inscrire mon entreprise</Text><Text style={styles.help}>Connectez-vous pour enregistrer votre fiche et l’envoyer à notre équipe de vérification.</Text><LoginPanel /></ScrollView>;
-  return <RegistrationForm key={user.uid} uid={user.uid} />;
+  return <BusinessDashboard key={user.uid} uid={user.uid} renderForm={(record, close) => <RegistrationForm key={record?.id || "new"} uid={user.uid} record={record} close={close} />} />;
 }
 
-function RegistrationForm({ uid }: { uid: string }) {
+function RegistrationForm({ uid, record, close }: { uid: string; record?: CloudRecord; close: () => void }) {
   const [draft, setDraft] = useState<RegistrationDraft>({ ...emptyDraft });
   const [ready, setReady] = useState(false);
   const [step, setStep] = useState(0);
-  const [photo, setPhoto] = useState('');
+  const [photo, setPhoto] = useState(typeof record?.data.photo === 'string' ? record.data.photo : '');
   const [consent, setConsent] = useState(false);
   const [busy, setBusy] = useState(false);
   const [locating, setLocating] = useState(false);
@@ -41,9 +43,10 @@ function RegistrationForm({ uid }: { uid: string }) {
   const mounted = useRef(true);
   const submitting = useRef(false);
   const writes = useRef(Promise.resolve());
-  const storageKey = `g360_registration_v1_${uid}`;
+  const storageKey = `g360_registration_v1_${uid}${record ? `_${record.id}` : ''}`;
   useEffect(() => {
     mounted.current = true;
+    if (record) setDraft(Object.fromEntries(Object.keys(emptyDraft).map(key => [key, record.data[key] == null ? '' : String(record.data[key])])) as RegistrationDraft);
     void AsyncStorage.getItem(storageKey).then(raw => {
       if (!mounted.current) return;
       if (raw) {
@@ -54,7 +57,7 @@ function RegistrationForm({ uid }: { uid: string }) {
       }
     }).catch(() => { if (mounted.current) setMessage('Le brouillon précédent n’a pas pu être chargé.'); }).finally(() => { if (mounted.current) setReady(true); });
     return () => { mounted.current = false; };
-  }, [storageKey]);
+  }, [storageKey, record]);
   useEffect(() => {
     if (!ready || done) return;
     const value = JSON.stringify({ fields: draft, id: id.current });
@@ -124,10 +127,12 @@ function RegistrationForm({ uid }: { uid: string }) {
     if (!consent) { setMessage('Confirmez votre autorisation et acceptez les conditions avant l’envoi.'); return; }
     submitting.current = true; setBusy(true); setMessage('');
     try {
-      await submitBusiness(uid, id.current, draft, photo);
+      if (record) await editBusinessSubmission(uid, record.id, id.current, draft, photo);
+      else await submitBusiness(uid, id.current, draft, photo);
       if (mounted.current) setDone(true);
       writes.current = writes.current.then(() => AsyncStorage.removeItem(storageKey)).catch(() => {});
       await writes.current;
+      if (mounted.current) close();
     } catch { if (mounted.current) setMessage('Envoi non confirmé. Vérifiez votre connexion et réessayez. Votre brouillon est conservé.'); }
     finally { submitting.current = false; if (mounted.current) setBusy(false); }
   }
@@ -139,7 +144,9 @@ function RegistrationForm({ uid }: { uid: string }) {
   return <KeyboardAvoidingView style={styles.safe} behavior={Platform.OS === 'ios' ? 'padding' : undefined}>
     <ScrollView ref={scroll} contentContainerStyle={styles.content} keyboardShouldPersistTaps="handled">
       <Text style={styles.kicker}>Étape {step + 1} sur 4 · {titles[step]}</Text>
-      <Text style={styles.title}>Inscrire mon entreprise</Text>
+      <Pressable disabled={disabled} onPress={close}><Text style={styles.link}>← Mes entreprises</Text></Pressable>
+      <Text style={styles.title}>{record ? 'Modifier mon entreprise' : 'Inscrire mon entreprise'}</Text>
+      {record && <Text style={styles.help}>Vos modifications seront vérifiées avant publication. Votre fiche publique reste visible pendant ce temps.</Text>}
       <Text style={styles.help}>Votre brouillon est enregistré sur cet appareil. Les champs * sont obligatoires.</Text>
       {step < 3 && stepFields[step].filter(field => !['latitude', 'longitude'].includes(field)).map(field => <View key={field} style={styles.field}>
         <Text style={styles.label}>{fieldLabels[field]}{required.includes(field) ? ' *' : ' (facultatif)'}</Text>
@@ -162,7 +169,7 @@ function RegistrationForm({ uid }: { uid: string }) {
         <Pressable onPress={() => link('terms')}><Text style={styles.link}>Conditions d’utilisation</Text></Pressable><Pressable onPress={() => link('privacy')}><Text style={styles.link}>Politique de confidentialité</Text></Pressable>
       </>}
       {!!message && <Text accessibilityRole="alert" style={styles.error}>{message}</Text>}
-      <View style={styles.navigation}>{step > 0 && <Pressable disabled={disabled} style={styles.secondary} onPress={() => go(step - 1)}><Text style={styles.value}>Précédent</Text></Pressable>}<Pressable accessibilityRole="button" disabled={disabled} style={[styles.button, disabled && { opacity: 0.5 }]} onPress={() => void next()}><Text style={styles.buttonText}>{busy ? 'Envoi…' : step === 3 ? 'Envoyer la fiche' : 'Continuer →'}</Text></Pressable></View>
+      <View style={styles.navigation}>{step > 0 && <Pressable disabled={disabled} style={styles.secondary} onPress={() => go(step - 1)}><Text style={styles.value}>Précédent</Text></Pressable>}<Pressable accessibilityRole="button" disabled={disabled} style={[styles.button, disabled && { opacity: 0.5 }]} onPress={() => void next()}><Text style={styles.buttonText}>{busy ? 'Envoi…' : step === 3 ? (record ? 'Envoyer les modifications' : 'Envoyer la fiche') : 'Continuer →'}</Text></Pressable></View>
     </ScrollView>
     <Modal visible={selection !== null} animationType="slide" onRequestClose={() => setSelection(null)}><View style={styles.modal}><Pressable onPress={() => setSelection(null)}><Text style={styles.link}>Fermer</Text></Pressable><Text style={styles.title}>{selection ? fieldLabels[selection] : ''}</Text><TextInput accessibilityLabel="Rechercher une option" placeholder="Rechercher…" style={styles.input} value={search} onChangeText={setSearch} /><ScrollView keyboardShouldPersistTaps="handled">{options.filter(option => option.toLocaleLowerCase('fr').includes(search.toLocaleLowerCase('fr'))).map(option => <Pressable accessibilityRole="button" key={option} style={styles.option} onPress={() => { if (selection) change(selection, option); setSelection(null); }}><Text style={styles.value}>{option}</Text></Pressable>)}</ScrollView></View></Modal>
   </KeyboardAvoidingView>;

@@ -31,8 +31,8 @@ export default function ProfileScreen() {
         </View>
 
         <Pressable accessibilityRole="button" style={styles.card} onPress={() => router.push('/register-business')}>
-          <Text style={styles.cardTitle}>Inscrire mon entreprise</Text>
-          <Text style={styles.cardDescription}>Créez votre fiche et utilisez le GPS sur place pour localiser votre activité.</Text>
+          <Text style={styles.cardTitle}>Mes entreprises</Text>
+          <Text style={styles.cardDescription}>Suivez la vérification de votre fiche et mettez à jour vos informations.</Text>
         </Pressable>
 
         <View style={styles.note}>

@@ -64,3 +64,23 @@ export async function submitBusiness(uid: string, id: string, draft: Registratio
   }
   return id;
 }
+
+export function watchSubmissions(uid: string, next: (records: CloudRecord[]) => void, fail: Failure) {
+  if (!backendEnabled) { fail(new Error('Connexion indisponible.')); return () => {}; }
+  return onSnapshot(query(collection(database(), 'submissions'), where('submitterId', '==', uid)), snapshot => next(snapshot.docs.map(item => ({ id: item.id, data: item.data() }))), fail);
+}
+
+export async function editBusinessSubmission(uid: string, id: string, requestId: string, draft: RegistrationDraft, photo: string) {
+  if (!backendEnabled || auth().currentUser?.uid !== uid) throw new Error('Reconnectez-vous avant de continuer.');
+  const fields = normalizeRegistration(draft);
+  if (photo && (!/^data:image\/jpeg;base64,[A-Za-z0-9+/=]+$/.test(photo) || photo.length > 300000)) throw new Error('Photo invalide.');
+  const ref = doc(database(), 'submissions', id);
+  await runTransaction(database(), async transaction => {
+    const snapshot = await transaction.get(ref);
+    const record = snapshot.data();
+    if (!record || record.submitterId !== uid) throw new Error('Fiche inaccessible.');
+    if (record.editRequestId === requestId) return;
+    if (!['approved', 'correction_required', 'rejected'].includes(record.status)) throw new Error('Cette fiche est déjà en cours de vérification.');
+    transaction.update(ref, { ...fields, photo, status: 'pending', editRequestId: requestId, verificationChecks: { identity: false, contact: false, location: false, duplicate: false }, updatedAt: serverTimestamp() });
+  });
+}

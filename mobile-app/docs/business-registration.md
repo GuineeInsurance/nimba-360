@@ -1,6 +1,6 @@
 # Business registration
 
-Open **Profil → Inscrire mon entreprise**. Authentication uses the existing Google, Apple (iOS), or phone login panel. The four steps match the website: identity, location/contact, presentation, and review/consent.
+Open **Profil → Mes entreprises**. Existing submissions appear with their review status; use **Inscrire mon entreprise** only when adding a new business. Authentication uses the existing Google, Apple (iOS), or phone login panel. The four steps match the website: identity, location/contact, presentation, and review/consent.
 
 The 19 categories, their subcategories, and 35 city choices in `src/data/registration.json` are copied from `web-app/dist/registration-data.js`. Update both files together when changing the reference taxonomy. Commune, neighborhood, postal code, address, contacts, description, and the optional photo use the website submission schema.
 
@@ -17,6 +17,14 @@ No mobile tests, lint/typecheck commands, builds, emulators, or app launches wer
 3. On device, check each registration step, dependent subcategories, draft restore, GPS allow/deny/disabled/timeout, manual negative longitude, optional photo, login, and final consent/submission.
 4. Confirm a submitted record appears in the website admin queue with all fields, coordinates, and photo before approving it. Test duplicate taps and retrying an interrupted submission.
 
-The deployed website Firestore rules already accept this schema. The mobile rules' submission block has been brought into sync; no production Firebase changes are needed for this feature. Website and mobile rule files still have other differences, so deploy production rules from `web-app` as usual.
+Owner edits now use a restricted update of the existing submission: only approved, rejected, or correction-required records can return to pending. Ownership, publication links, and admin metadata stay unchanged; verification checkboxes reset. The website Firestore rules must be deployed for editing to work. Website and mobile rule files still have other differences, so deploy production rules from `web-app` as usual.
 
 Expo SDK 58 references: https://docs.expo.dev/versions/v58.0.0/sdk/location/ , https://docs.expo.dev/versions/v58.0.0/sdk/imagepicker/ , https://docs.expo.dev/versions/v58.0.0/sdk/imagemanipulator/ .
+
+## Review status and edits
+
+Both the website and mobile app subscribe to the signed-in user’s submissions. Reopening the business area shows saved status and information instead of restarting registration. Accepted records offer an edit button; edits are prefilled, submitted under the same record ID, and reviewed again. The existing public business stays visible while edits are pending. Admin reapproval updates the same public record and preserves existing ratings, review counts, services, and creation time.
+
+Both account interfaces distinguish first-time and returning visitors, then offer provider-based authentication. The website uses Google or SMS only; the mobile app also retains its existing Apple option on iOS. Firebase providers automatically create a new account on first successful authentication or sign in to an existing matching account. The UI explains this and asks returning users to use their original provider/number.
+
+At home, verify status persistence after relaunch, owner-only edits, pending edit locking, correction/resubmission, and reapproval without duplicate businesses or lost ratings. Mobile runtime testing remains deferred.

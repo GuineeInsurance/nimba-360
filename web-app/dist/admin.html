@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20261026-4">
+  <link rel="stylesheet" href="styles.css?v=20261028-portal">
 <link rel="icon" type="image/svg+xml" sizes="any" href="/favicon.svg">
 </head>
 <body class="portal-body admin-body admin-locked">
@@ -148,23 +148,9 @@
     </form>
   </aside>
 
-  <div class="modal-backdrop" data-auth-modal hidden>
-    <section class="auth-modal" role="dialog" aria-modal="true" aria-labelledby="auth-title">
-      <button class="drawer-close" type="button" data-auth-close aria-label="Fermer">×</button>
-      <p class="eyebrow"><span></span> Accès protégé</p>
-      <h2 id="auth-title">Connexion administrateur</h2>
-      <p class="auth-intro">Connectez-vous avec le compte administrateur autorisé.</p>
-      <form data-auth-form>
-        <input type="hidden" name="mode" value="signin">
-        <div class="field"><label for="auth-email">Adresse e-mail</label><input id="auth-email" name="email" type="email" autocomplete="email" value="info@guineeinsurance.com" required></div>
-        <div class="field"><label for="auth-password">Mot de passe</label><input id="auth-password" name="password" type="password" autocomplete="current-password" required></div>
-        <button class="button button-primary auth-submit" type="submit">Se connecter</button>
-      </form>
-      <p class="form-feedback" data-auth-feedback aria-live="polite"></p>
-    </section>
-  </div>
+  <div class="modal-backdrop" data-auth-modal hidden></div>
 
-  <script src="app.js?v=20261026-3"></script>
-  <script type="module" src="firebase-app.js?v=20261026-3"></script>
+  <script src="app.js?v=20261028-portal"></script>
+  <script type="module" src="firebase-app.js?v=20261028-portal"></script>
 </body>
 </html>

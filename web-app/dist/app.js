@@ -28,18 +28,22 @@
     const next = document.querySelector('#next-step');
     const feedback = document.querySelector('#business-feedback');
     let current = 0;
+    let retainedPhoto = '';
+    const draftKey = () => 'g360_business_draft_' + (window.g360Firebase?.currentUser()?.uid || 'guest') + '_' + (window.g360BusinessPortal?.editRecord?.id || 'new');
 
     const saveDraft = () => {
       const values = {};
       new FormData(businessForm).forEach((value, key) => {
         if (typeof value === 'string') values[key] = value;
       });
-      try { localStorage.setItem('g360_business_draft', JSON.stringify(values)); } catch (_) { feedback.textContent = 'Votre navigateur ne peut pas enregistrer le brouillon. Vous pouvez continuer sans fermer cette page.'; }
+      try { localStorage.setItem(draftKey(), JSON.stringify(values)); } catch (_) { feedback.textContent = 'Votre navigateur ne peut pas enregistrer le brouillon. Vous pouvez continuer sans fermer cette page.'; }
     };
 
     const restoreDraft = () => {
       try {
-        const values = JSON.parse(localStorage.getItem('g360_business_draft') || '{}');
+        const saved = localStorage.getItem(draftKey());
+        if (!saved) return;
+        const values = JSON.parse(saved);
         // Migrate older website drafts without confusing commune and neighborhood.
         if (values.commune) { values.quartier = values.quartier || values.district || ''; values.district = values.commune; }
         values.streetAddress = values.streetAddress || values.address || '';
@@ -66,7 +70,7 @@
         block('Localisation et contact', 1, [['Ville / Préfecture', 'city'], ['Commune', 'district'], ['Quartier', 'quartier'], ['Code postal', 'postalCode'], ['Adresse / repère', 'streetAddress'], ['Téléphone', 'phone'], ['E-mail', 'email'], ['Site web', 'website'], ['WhatsApp', 'whatsapp']]),
         block('Présentation', 2, [['Description des services', 'description']])
       ].join('');
-      if (photoUrl) { const photo = document.createElement('img'); photo.src = photoUrl; photo.alt = 'Photo de l’entreprise'; photo.className = 'summary-photo'; document.querySelector('#form-summary').append(photo); }
+      if (photoUrl || retainedPhoto) { const photo = document.createElement('img'); photo.src = photoUrl || retainedPhoto; photo.alt = 'Photo de l’entreprise'; photo.className = 'summary-photo'; document.querySelector('#form-summary').append(photo); }
       document.querySelectorAll('[data-edit-step]').forEach((button) => button.addEventListener('click', () => showStep(Number(button.dataset.editStep))));
     };
 
@@ -111,8 +115,23 @@
       catch (error) { photoField.value = ''; photoFeedback.textContent = error.message; }
     });
     preview.addEventListener('error', () => { clearPhoto(); photoFeedback.textContent = 'Cette image ne peut pas être lue. Choisissez une autre photo.'; });
-    removePhoto.addEventListener('click', () => { clearPhoto(); photoFeedback.textContent = ''; });
-    restoreDraft();
+    removePhoto.addEventListener('click', () => { retainedPhoto = ''; clearPhoto(); photoFeedback.textContent = ''; });
+    function resetForm(record) {
+      businessForm.reset(); clearPhoto(); retainedPhoto = record?.photo || '';
+      businessForm.querySelectorAll('input, select, textarea, button').forEach(field => { field.disabled = false; });
+      businessForm.elements.category.value = record?.category || '';
+      window.g360Registration.fillSubcategories(record?.subcategory);
+      if (record) Object.entries(record).forEach(([key, value]) => { const field = businessForm.elements.namedItem(key); if (field && field.type !== 'file' && typeof value === 'string') field.value = value; });
+      restoreDraft();
+      if (retainedPhoto.startsWith('data:image/jpeg;base64,')) { preview.src = retainedPhoto; preview.hidden = false; removePhoto.hidden = false; }
+      businessForm.querySelector('#consent').checked = false;
+      feedback.textContent = '';
+      document.querySelector('[data-submit-notice]').textContent = record ? 'Vos modifications seront vérifiées avant publication. La fiche publique reste visible pendant ce temps.' : 'Votre fiche sera examinée avant publication.';
+      showStep(0);
+    }
+    document.addEventListener('g360:edit-business', event => resetForm(event.detail));
+    document.addEventListener('g360:clear-business', () => { businessForm.reset(); clearPhoto(); retainedPhoto = ''; });
+
     businessForm.addEventListener('input', saveDraft);
     businessForm.addEventListener('change', saveDraft);
     businessForm.addEventListener('submit', event => { event.preventDefault(); next.click(); });
@@ -135,14 +154,16 @@
         next.textContent = 'Envoi en cours…';
         try {
           const values = Object.fromEntries(new FormData(businessForm));
+          values.retainedPhoto = retainedPhoto;
           const submissionId = await window.g360Firebase.submitBusiness(values);
-          try { localStorage.removeItem('g360_business_draft'); } catch (_) {}
+          try { localStorage.removeItem(draftKey()); } catch (_) {}
           previous.disabled = true;
           businessForm.querySelectorAll('input, select, textarea, [data-edit-step]').forEach(field => { field.disabled = true; });
           feedback.textContent = `Fiche envoyée avec succès. Référence : ${submissionId}`;
           feedback.style.color = '#07865e';
           document.querySelector('[data-submit-notice]').textContent = 'Votre fiche est maintenant en attente de vérification. Vous pourrez suivre son statut depuis votre espace entreprise.';
           next.textContent = 'Fiche envoyée ✓';
+          document.dispatchEvent(new CustomEvent('g360:business-sent', { detail: submissionId }));
         } catch (error) {
           feedback.textContent = error.message || 'Impossible d’envoyer la fiche pour le moment.';
           feedback.style.color = '#b90e24';
