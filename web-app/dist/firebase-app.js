@@ -123,22 +123,35 @@ try {
     }
   });
 
+  async function preparePhoto(file) {
+    window.g360Registration.validatePhoto(file);
+    if (!file?.size) return '';
+    const url = URL.createObjectURL(file);
+    try {
+      const image = new Image();
+      await new Promise((resolve, reject) => { image.onload = resolve; image.onerror = () => reject(new Error('Impossible de lire cette photo.')); image.src = url; });
+      const ratio = Math.min(1, 900 / Math.max(image.width, image.height));
+      const canvas = document.createElement('canvas');
+      canvas.width = Math.max(1, Math.round(image.width * ratio)); canvas.height = Math.max(1, Math.round(image.height * ratio));
+      canvas.getContext('2d').drawImage(image, 0, 0, canvas.width, canvas.height);
+      for (const quality of [0.72, 0.55, 0.4, 0.25]) {
+        const photo = canvas.toDataURL('image/jpeg', quality);
+        if (photo.length <= 300000) return photo;
+      }
+      throw new Error('Choisissez une photo moins détaillée ou plus petite.');
+    } finally { URL.revokeObjectURL(url); }
+  }
+
   async function submitBusiness(values) {
     if (!activeUser) throw new Error('Connectez-vous avant d’envoyer votre fiche.');
+    const userId = activeUser.uid;
+    const fields = window.g360Registration.normalize(values);
+    const photo = await preparePhoto(values.businessPhoto);
+    if (activeUser?.uid !== userId) throw new Error('Votre session a changé. Reconnectez-vous avant de réessayer.');
     const reference = await addDoc(collection(db, 'submissions'), {
-      submitterId: activeUser.uid,
-      name: values.name.trim(),
-      categoryId: slugify(values.category),
-      cityId: slugify(values.city),
-      communeId: slugify(values.commune),
-      address: values.address.trim(),
-      phone: values.phone.trim(),
-      email: values.email?.trim() || activeUser.email || '',
-      website: values.website?.trim() || '',
-      whatsapp: values.whatsapp?.trim() || '',
-      latitude: Number(values.latitude),
-      longitude: Number(values.longitude),
-      description: values.description?.trim() || '',
+      ...fields,
+      submitterId: userId,
+      photo,
       imagePaths: [],
       status: 'pending',
       createdAt: serverTimestamp(),
@@ -250,16 +263,19 @@ try {
     return {
       name: record.name || '',
       category: record.category || record.categoryLabel || record.categoryId || '',
-      subcategory: record.subcategory || '',
+      subcategory: record.subcategory || record.subcategoryId || '',
       city: record.city || record.cityId || '',
       district: record.district || record.communeId || '',
+      quartier: record.quartier || record.neighborhood || '',
+      postalCode: record.postalCode || '',
+      description: record.description || '',
       streetAddress: record.streetAddress || record.address || '',
       phone: record.phone || '',
       whatsapp: record.whatsapp || '',
       email: record.email || '',
       website: record.website || '',
-      latitude: Number(record.latitude),
-      longitude: Number(record.longitude),
+      latitude: record.latitude == null ? NaN : Number(record.latitude),
+      longitude: record.longitude == null ? NaN : Number(record.longitude),
       apipVerification: record.apipVerification || 'not_checked',
       rccm: record.rccm || '',
       verificationSource: record.verificationSource || '',
@@ -276,6 +292,9 @@ try {
       const field = form.elements.namedItem(name);
       if (field) field.value = Number.isNaN(value) ? '' : value;
     });
+    const photo = document.querySelector('#review-photo');
+    photo.hidden = !record.photo;
+    if (record.photo?.startsWith('data:image/jpeg;base64,')) photo.src = record.photo; else { photo.removeAttribute('src'); photo.hidden = true; }
     const checks = record.verificationChecks || {};
     form.elements.checkIdentity.checked = Boolean(checks.identity);
     form.elements.checkContact.checked = Boolean(checks.contact);
@@ -319,13 +338,16 @@ try {
       subcategory: values.subcategory.trim(),
       city: values.city.trim(),
       district: values.district.trim(),
+      quartier: values.quartier.trim(),
+      postalCode: values.postalCode.trim(),
+      description: values.description.trim(),
       streetAddress: values.streetAddress.trim(),
       phone: values.phone.trim(),
       whatsapp: values.whatsapp.trim(),
       email: values.email.trim(),
       website: values.website.trim(),
-      latitude: Number(values.latitude),
-      longitude: Number(values.longitude),
+      latitude: values.latitude.trim() ? Number(values.latitude) : null,
+      longitude: values.longitude.trim() ? Number(values.longitude) : null,
       apipVerification: values.apipVerification,
       rccm: values.rccm.trim(),
       verificationSource: values.verificationSource.trim(),
@@ -347,9 +369,8 @@ try {
     const buttons = [...document.querySelectorAll('[data-review-action]')];
     try {
       const values = reviewValues();
-      if (!values.name || !values.category || !values.city || !Number.isFinite(values.latitude) || !Number.isFinite(values.longitude)) {
-        throw new Error('Le nom, la catégorie, la ville et les coordonnées sont obligatoires.');
-      }
+      if (!values.name || !values.category || !values.city) throw new Error('Le nom, la catégorie et la ville sont obligatoires.');
+      if (action === 'approved' && (!Number.isFinite(values.latitude) || !Number.isFinite(values.longitude) || values.latitude < 7 || values.latitude > 13 || values.longitude < -16 || values.longitude > -7)) throw new Error('Vérifiez les coordonnées en Guinée avant publication.');
       if (action === 'approved' && (!values.verificationChecks.identity || !values.verificationChecks.location)) {
         throw new Error('Confirmez au minimum l’identité et la localisation avant publication.');
       }
@@ -379,9 +400,19 @@ try {
           normalizedName: slugify(values.name),
           categoryId: slugify(values.category),
           categoryLabel: values.category,
+          subcategoryId: slugify(values.subcategory),
+          subcategory: values.subcategory,
+          communeId: slugify(values.district),
+          commune: values.district,
+          neighborhood: values.quartier,
+          postalCode: values.postalCode,
+          streetAddress: values.streetAddress,
+          email: values.email,
+          website: values.website,
+          whatsapp: values.whatsapp,
           cityId: slugify(cleanCity(values.city)),
           city: cleanCity(values.city),
-          address: [values.streetAddress, values.district].filter(Boolean).join(', '),
+          address: [values.streetAddress, values.quartier, values.district].filter(Boolean).join(', '),
           phone: values.phone,
           latitude: values.latitude,
           longitude: values.longitude,
@@ -389,8 +420,8 @@ try {
           reviewCount: 0,
           verified: true,
           services: [],
-          imageUrl: '',
-          description: activeRecord.description || '',
+          imageUrl: activeRecord.photo || activeRecord.imageUrl || '',
+          description: values.description,
           status: 'approved',
           createdAt: activeRecord.publishedAt || serverTimestamp(),
           updatedAt: serverTimestamp(),

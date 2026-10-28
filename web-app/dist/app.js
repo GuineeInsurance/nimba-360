@@ -34,12 +34,19 @@
       new FormData(businessForm).forEach((value, key) => {
         if (typeof value === 'string') values[key] = value;
       });
-      localStorage.setItem('g360_business_draft', JSON.stringify(values));
+      try { localStorage.setItem('g360_business_draft', JSON.stringify(values)); } catch (_) { feedback.textContent = 'Votre navigateur ne peut pas enregistrer le brouillon. Vous pouvez continuer sans fermer cette page.'; }
     };
 
     const restoreDraft = () => {
       try {
         const values = JSON.parse(localStorage.getItem('g360_business_draft') || '{}');
+        // Migrate older website drafts without confusing commune and neighborhood.
+        if (values.commune) { values.quartier = values.quartier || values.district || ''; values.district = values.commune; }
+        values.streetAddress = values.streetAddress || values.address || '';
+        const aliases = { Restaurant: 'Restaurants', 'Hôtel et hébergement': 'Hôtels', Commerce: 'Commerces', 'Tourisme et loisirs': 'Tourisme', Autre: 'Autres' };
+        values.category = aliases[values.category] || values.category;
+        businessForm.elements.category.value = values.category || '';
+        window.g360Registration.fillSubcategories(values.subcategory);
         Object.entries(values).forEach(([name, value]) => {
           const field = businessForm.elements.namedItem(name);
           if (field && field.type !== 'file') field.value = value;
@@ -53,15 +60,18 @@
     };
 
     const buildSummary = () => {
-      document.querySelector('#form-summary').innerHTML = `
-        <article class="summary-block"><header><strong>Identité</strong><button type="button" data-edit-step="0">Modifier</button></header><dl><div><dt>Entreprise</dt><dd>${escapeHtml(fieldValue('name'))}</dd></div><div><dt>Catégorie</dt><dd>${escapeHtml(fieldValue('category'))}</dd></div><div><dt>RCCM</dt><dd>${escapeHtml(fieldValue('rccm'))}</dd></div><div><dt>Raison sociale</dt><dd>${escapeHtml(fieldValue('legalName'))}</dd></div></dl></article>
-        <article class="summary-block"><header><strong>Localisation et contact</strong><button type="button" data-edit-step="1">Modifier</button></header><dl><div><dt>Localisation</dt><dd>${escapeHtml(fieldValue('commune'))}, ${escapeHtml(fieldValue('city'))}</dd></div><div><dt>Adresse</dt><dd>${escapeHtml(fieldValue('address'))}</dd></div><div><dt>Téléphone</dt><dd>${escapeHtml(fieldValue('phone'))}</dd></div><div><dt>E-mail</dt><dd>${escapeHtml(fieldValue('email'))}</dd></div></dl></article>
-        <article class="summary-block"><header><strong>Présentation</strong><button type="button" data-edit-step="2">Modifier</button></header><dl><div><dt>Description</dt><dd>${escapeHtml(fieldValue('description'))}</dd></div><div><dt>Services</dt><dd>${escapeHtml(fieldValue('services'))}</dd></div></dl></article>`;
+      const block = (title, step, fields) => '<article class="summary-block"><header><strong>' + title + '</strong><button type="button" data-edit-step="' + step + '">Modifier</button></header><dl>' + fields.map(([label, name]) => '<div><dt>' + label + '</dt><dd>' + escapeHtml(fieldValue(name)) + '</dd></div>').join('') + '</dl></article>';
+      document.querySelector('#form-summary').innerHTML = [
+        block('Identité', 0, [['Entreprise', 'name'], ['Catégorie', 'category'], ['Sous-catégorie', 'subcategory']]),
+        block('Localisation et contact', 1, [['Ville / Préfecture', 'city'], ['Commune', 'district'], ['Quartier', 'quartier'], ['Code postal', 'postalCode'], ['Adresse / repère', 'streetAddress'], ['Téléphone', 'phone'], ['E-mail', 'email'], ['Site web', 'website'], ['WhatsApp', 'whatsapp']]),
+        block('Présentation', 2, [['Description des services', 'description']])
+      ].join('');
+      if (photoUrl) { const photo = document.createElement('img'); photo.src = photoUrl; photo.alt = 'Photo de l’entreprise'; photo.className = 'summary-photo'; document.querySelector('#form-summary').append(photo); }
       document.querySelectorAll('[data-edit-step]').forEach((button) => button.addEventListener('click', () => showStep(Number(button.dataset.editStep))));
     };
 
     const validateStep = () => {
-      const required = [...steps[current].querySelectorAll('[required]')];
+      const required = [...steps[current].querySelectorAll('input, select, textarea')];
       const invalid = required.find((field) => !field.checkValidity());
       if (invalid) {
         invalid.reportValidity();
@@ -84,8 +94,28 @@
       window.scrollTo({ top: 0, behavior: 'smooth' });
     };
 
+    let photoUrl = '';
+    const photoField = businessForm.elements.businessPhoto;
+    const preview = document.querySelector('#photo-preview');
+    const removePhoto = document.querySelector('#remove-photo');
+    const photoFeedback = document.querySelector('#photo-feedback');
+    function clearPhoto() {
+      if (photoUrl) URL.revokeObjectURL(photoUrl);
+      photoUrl = ''; photoField.value = ''; photoField.setCustomValidity(''); preview.removeAttribute('src'); preview.hidden = true; removePhoto.hidden = true;
+    }
+    photoField.addEventListener('change', () => {
+      if (photoUrl) URL.revokeObjectURL(photoUrl);
+      photoUrl = ''; preview.hidden = true; removePhoto.hidden = true; photoFeedback.textContent = ''; photoField.setCustomValidity('');
+      const file = photoField.files[0]; if (!file) return;
+      try { window.g360Registration.validatePhoto(file); photoUrl = URL.createObjectURL(file); preview.src = photoUrl; preview.hidden = false; removePhoto.hidden = false; photoFeedback.textContent = file.name + ' — resélectionnez la photo si vous rechargez cette page.'; }
+      catch (error) { photoField.value = ''; photoFeedback.textContent = error.message; }
+    });
+    preview.addEventListener('error', () => { clearPhoto(); photoFeedback.textContent = 'Cette image ne peut pas être lue. Choisissez une autre photo.'; });
+    removePhoto.addEventListener('click', () => { clearPhoto(); photoFeedback.textContent = ''; });
     restoreDraft();
     businessForm.addEventListener('input', saveDraft);
+    businessForm.addEventListener('change', saveDraft);
+    businessForm.addEventListener('submit', event => { event.preventDefault(); next.click(); });
     previous.addEventListener('click', () => showStep(current - 1));
     next.addEventListener('click', async () => {
       feedback.textContent = '';
@@ -93,6 +123,8 @@
       saveDraft();
       if (current < steps.length - 1) showStep(current + 1);
       else {
+        const invalidStep = steps.findIndex(step => [...step.querySelectorAll('input, select, textarea')].some(field => !field.checkValidity()));
+        if (invalidStep >= 0) { showStep(invalidStep); validateStep(); return; }
         if (!window.g360Firebase?.currentUser()) {
           feedback.textContent = 'Connectez-vous pour envoyer cette fiche à la vérification.';
           feedback.style.color = '#b90e24';
@@ -104,7 +136,9 @@
         try {
           const values = Object.fromEntries(new FormData(businessForm));
           const submissionId = await window.g360Firebase.submitBusiness(values);
-          localStorage.removeItem('g360_business_draft');
+          try { localStorage.removeItem('g360_business_draft'); } catch (_) {}
+          previous.disabled = true;
+          businessForm.querySelectorAll('input, select, textarea, [data-edit-step]').forEach(field => { field.disabled = true; });
           feedback.textContent = `Fiche envoyée avec succès. Référence : ${submissionId}`;
           feedback.style.color = '#07865e';
           document.querySelector('[data-submit-notice]').textContent = 'Votre fiche est maintenant en attente de vérification. Vous pourrez suivre son statut depuis votre espace entreprise.';

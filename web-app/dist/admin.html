@@ -12,7 +12,7 @@
 </head>
 <body class="portal-body admin-body admin-locked">
   <header class="site-header portal-header">
-    <a class="brand" href="index.html"><span class="brand-name">NIMBA</span><span class="brand-360"><i>3</i><i>6</i><i>0</i></span></a>
+    <a class="brand" href="index.html"><img class="brand-logo" src="logo.svg" alt="NIMBA 360" width="720" height="170"></a>
     <div class="portal-actions">
       <a href="index.html">Voir le site</a>
       <button class="nav-cta auth-trigger" type="button" data-auth-open>Connexion admin</button>
@@ -91,6 +91,7 @@
     <h2 id="drawer-name">Entreprise</h2>
     <div class="drawer-status-line"><span class="status pending" id="drawer-status">À vérifier</span><a id="drawer-source-link" href="#" target="_blank" rel="noopener">Voir la source ↗</a></div>
 
+    <img id="review-photo" class="submission-photo" hidden alt="Photo de l’entreprise soumise">
     <form id="review-form">
       <section class="drawer-section">
         <h3>Identité</h3>
@@ -104,14 +105,15 @@
         <h3>Localisation</h3>
         <div class="drawer-grid">
           <label class="field"><span>Ville</span><input name="city" required></label>
-          <label class="field"><span>Quartier / commune</span><input name="district"></label>
+          <label class="field"><span>Commune</span><input name="district"></label>
+          <label class="field"><span>Quartier</span><input name="quartier" maxlength="100"></label><label class="field"><span>Code postal</span><input name="postalCode" maxlength="20"></label>
           <label class="field full"><span>Adresse</span><input name="streetAddress"></label>
           <label class="field"><span>Latitude</span><input name="latitude" type="number" step="any" required></label>
           <label class="field"><span>Longitude</span><input name="longitude" type="number" step="any" required></label>
         </div>
       </section>
       <section class="drawer-section">
-        <h3>Contacts</h3>
+        <h3>Présentation et contacts</h3><label class="field"><span>Description des services</span><textarea name="description" maxlength="800"></textarea></label>
         <div class="drawer-grid">
           <label class="field"><span>Téléphone</span><input name="phone"></label>
           <label class="field"><span>WhatsApp</span><input name="whatsapp"></label>
