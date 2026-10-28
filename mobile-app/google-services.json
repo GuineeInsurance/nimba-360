@@ -14,6 +14,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "114891564661-r52qsqm8mptm0thqjdsr9gschgn8ea99.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.nimba360.app",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
           "client_id": "114891564661-aedc9ta3807patknqr0rras66248nvoo.apps.googleusercontent.com",
           "client_type": 3
         }

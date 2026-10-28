@@ -163,7 +163,7 @@ try {
   const statusLabel = (status) => ({
     review_required: 'À vérifier',
     pending: 'À vérifier',
-    in_review: 'En cours',
+    in_progress: 'En cours',
     duplicate: 'Doublon',
     rejected: 'Refusée',
     correction_required: 'Correction requise',
@@ -173,7 +173,7 @@ try {
 
   function updateMetrics() {
     const sourceRecords = adminRecords.filter((record) => record.recordType === 'source');
-    const pending = adminRecords.filter((record) => ['review_required', 'pending', 'in_review', 'correction_required'].includes(recordStatus(record))).length;
+    const pending = adminRecords.filter((record) => ['review_required', 'pending', 'in_progress', 'correction_required'].includes(recordStatus(record))).length;
     document.querySelector('#metric-total').textContent = sourceRecords.length.toLocaleString('fr-FR');
     document.querySelector('#metric-duplicates').textContent = sourceRecords.filter((record) => record.duplicateAlert && recordStatus(record) !== 'approved').length.toLocaleString('fr-FR');
     document.querySelector('#metric-pending').textContent = pending.toLocaleString('fr-FR');
@@ -359,7 +359,7 @@ try {
 
       buttons.forEach((button) => { button.disabled = true; });
       notice.textContent = 'Enregistrement en cours…';
-      const nextStatus = action === 'save' ? (recordStatus(activeRecord) === 'approved' ? 'approved' : 'in_review') : action;
+      const nextStatus = action === 'save' ? (recordStatus(activeRecord) === 'approved' ? 'approved' : 'in_progress') : action;
       const batch = writeBatch(db);
       const recordRef = doc(db, activeRecord.collectionName, activeRecord.id);
       const recordUpdate = {

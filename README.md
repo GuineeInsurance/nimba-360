@@ -2,6 +2,8 @@
 
 NIMBA 360 est une plateforme de découverte et de vérification d'entreprises en Guinée. Le projet comprend une application mobile multiplateforme, un site public et un portail web destiné aux entreprises et aux administrateurs.
 
+La vision produit, les exigences fonctionnelles, les critères de lancement et la feuille de route sont définis dans [PRODUCT_SPEC.md](PRODUCT_SPEC.md). Ce document doit être mis à jour avant toute modification importante du périmètre.
+
 ## Composants
 
 - `mobile-app/` — application Expo / React Native pour Android, iOS et le web.

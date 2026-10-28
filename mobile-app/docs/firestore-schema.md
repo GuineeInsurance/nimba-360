@@ -78,4 +78,4 @@ Run `npm run data:import:dry-run` to validate the current source file and inspec
 
 The rules in `firestore.rules` deny access by default. Public users can read approved directory content. Signed-in users control only their own profile, favorites, reviews, and submissions. Administrative writes require the `admin: true` custom claim.
 
-The Firestore database has not been created yet because its geographic location is permanent. Choose the production location before deployment; for Guinea, compare a nearby European regional location with the European multi-region option based on latency, durability, and cost.
+The project's default Firestore database is provisioned in `europe-west1` with deletion protection enabled. The database location is permanent, so any additional environment must choose its location before provisioning.
