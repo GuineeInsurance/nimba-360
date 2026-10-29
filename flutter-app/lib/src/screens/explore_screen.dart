@@ -43,12 +43,11 @@ class ExploreScreen extends StatelessWidget {
   Widget build(BuildContext context) => AnimatedBuilder(
     animation: controller,
     builder: (_, _) => SafeArea(
-      child: RefreshIndicator(
-        onRefresh: controller.refresh,
-        child: ListView(
-          padding: const EdgeInsets.fromLTRB(18, 14, 18, 28),
-          children: [
-            Row(
+      child: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.fromLTRB(18, 14, 18, 12),
+            child: Row(
               children: [
                 Expanded(
                   child: Column(
@@ -75,149 +74,159 @@ class ExploreScreen extends StatelessWidget {
                 ),
               ],
             ),
-            const SizedBox(height: 28),
-            const Text(
-              'Qu’est-ce qu’on cherche aujourd’hui ?',
-              style: TextStyle(
-                color: NimbaColors.navy,
-                fontSize: 29,
-                height: 1.08,
-                fontWeight: FontWeight.w900,
-              ),
-            ),
-            const SizedBox(height: 7),
-            const Text(
-              'Trouvez les meilleures adresses en Guinée',
-              style: TextStyle(color: NimbaColors.muted),
-            ),
-            const SizedBox(height: 18),
-            InkWell(
-              onTap: () => context.push('/search'),
-              borderRadius: BorderRadius.circular(15),
-              child: Container(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 16,
-                  vertical: 17,
-                ),
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  border: Border.all(color: NimbaColors.border),
-                  borderRadius: BorderRadius.circular(15),
-                ),
-                child: const Row(
-                  children: [
-                    Icon(Icons.search),
-                    SizedBox(width: 10),
-                    Expanded(
-                      child: Text(
-                        'Restaurant, garage, hôtel…',
-                        style: TextStyle(color: NimbaColors.muted),
+          ),
+          Expanded(
+            child: RefreshIndicator(
+              onRefresh: controller.refresh,
+              child: ListView(
+                padding: const EdgeInsets.fromLTRB(18, 18, 18, 28),
+                children: [
+                  const Text(
+                    'Qu’est-ce qu’on cherche aujourd’hui ?',
+                    style: TextStyle(
+                      color: NimbaColors.navy,
+                      fontSize: 29,
+                      height: 1.08,
+                      fontWeight: FontWeight.w900,
+                    ),
+                  ),
+                  const SizedBox(height: 7),
+                  const Text(
+                    'Trouvez les meilleures adresses en Guinée',
+                    style: TextStyle(color: NimbaColors.muted),
+                  ),
+                  const SizedBox(height: 18),
+                  InkWell(
+                    onTap: () => context.push('/search'),
+                    borderRadius: BorderRadius.circular(15),
+                    child: Container(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 16,
+                        vertical: 17,
+                      ),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        border: Border.all(color: NimbaColors.border),
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                      child: const Row(
+                        children: [
+                          Icon(Icons.search),
+                          SizedBox(width: 10),
+                          Expanded(
+                            child: Text(
+                              'Restaurant, garage, hôtel…',
+                              style: TextStyle(color: NimbaColors.muted),
+                            ),
+                          ),
+                          Icon(Icons.tune, color: NimbaColors.red),
+                        ],
                       ),
                     ),
-                    Icon(Icons.tune, color: NimbaColors.red),
-                  ],
-                ),
-              ),
-            ),
-            const SizedBox(height: 18),
-            SizedBox(
-              height: 100,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: List.generate(
-                  categories.length,
-                  (index) => _CategoryShortcut(
-                    label: categoryLabels[index],
-                    icon: icons[index],
-                    color: categoryColors[index],
-                    darkIcon: index == 3,
-                    onTap: () => context.push(
-                      '/search?category=${Uri.encodeComponent(categories[index])}',
-                    ),
                   ),
-                ),
-              ),
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                const Text(
-                  'Adresses vérifiées',
-                  style: TextStyle(
-                    color: NimbaColors.navy,
-                    fontSize: 22,
-                    fontWeight: FontWeight.w900,
-                  ),
-                ),
-                TextButton(
-                  onPressed: () => context.push('/search'),
-                  child: const Text('Voir tout'),
-                ),
-              ],
-            ),
-            if (controller.loading)
-              const Padding(
-                padding: EdgeInsets.all(40),
-                child: Center(child: CircularProgressIndicator()),
-              )
-            else if (controller.error != null)
-              EmptyState(
-                icon: Icons.cloud_off,
-                title: 'Connexion impossible',
-                message: controller.error!,
-                action: FilledButton(
-                  onPressed: controller.refresh,
-                  child: const Text('Réessayer'),
-                ),
-              )
-            else if (controller.businesses.isEmpty)
-              const EmptyState(
-                icon: Icons.storefront,
-                title: 'Le catalogue se prépare',
-                message: 'Les entreprises apparaîtront ici après vérification.',
-              )
-            else
-              ...controller.businesses
-                  .take(5)
-                  .map(
-                    (business) => BusinessCard(
-                      business: business,
-                      controller: controller,
-                    ),
-                  ),
-            const SizedBox(height: 10),
-            const Card(
-              color: NimbaColors.softGreen,
-              child: Padding(
-                padding: EdgeInsets.all(18),
-                child: Row(
-                  children: [
-                    Icon(
-                      Icons.verified_user,
-                      color: NimbaColors.green,
-                      size: 34,
-                    ),
-                    SizedBox(width: 14),
-                    Expanded(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'Choisissez en confiance',
-                            style: TextStyle(fontWeight: FontWeight.w900),
+                  const SizedBox(height: 18),
+                  SizedBox(
+                    height: 100,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: List.generate(
+                        categories.length,
+                        (index) => _CategoryShortcut(
+                          label: categoryLabels[index],
+                          icon: icons[index],
+                          color: categoryColors[index],
+                          darkIcon: index == 3,
+                          onTap: () => context.push(
+                            '/search?category=${Uri.encodeComponent(categories[index])}',
                           ),
-                          Text(
-                            'Les fiches vérifiées confirment les coordonnées essentielles.',
+                        ),
+                      ),
+                    ),
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      const Text(
+                        'Adresses vérifiées',
+                        style: TextStyle(
+                          color: NimbaColors.navy,
+                          fontSize: 22,
+                          fontWeight: FontWeight.w900,
+                        ),
+                      ),
+                      TextButton(
+                        onPressed: () => context.push('/search'),
+                        child: const Text('Voir tout'),
+                      ),
+                    ],
+                  ),
+                  if (controller.loading)
+                    const Padding(
+                      padding: EdgeInsets.all(40),
+                      child: Center(child: CircularProgressIndicator()),
+                    )
+                  else if (controller.error != null)
+                    EmptyState(
+                      icon: Icons.cloud_off,
+                      title: 'Connexion impossible',
+                      message: controller.error!,
+                      action: FilledButton(
+                        onPressed: controller.refresh,
+                        child: const Text('Réessayer'),
+                      ),
+                    )
+                  else if (controller.businesses.isEmpty)
+                    const EmptyState(
+                      icon: Icons.storefront,
+                      title: 'Le catalogue se prépare',
+                      message:
+                          'Les entreprises apparaîtront ici après vérification.',
+                    )
+                  else
+                    ...controller.businesses
+                        .take(5)
+                        .map(
+                          (business) => BusinessCard(
+                            business: business,
+                            controller: controller,
+                          ),
+                        ),
+                  const SizedBox(height: 10),
+                  const Card(
+                    color: NimbaColors.softGreen,
+                    child: Padding(
+                      padding: EdgeInsets.all(18),
+                      child: Row(
+                        children: [
+                          Icon(
+                            Icons.verified_user,
+                            color: NimbaColors.green,
+                            size: 34,
+                          ),
+                          SizedBox(width: 14),
+                          Expanded(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  'Choisissez en confiance',
+                                  style: TextStyle(fontWeight: FontWeight.w900),
+                                ),
+                                Text(
+                                  'Les fiches vérifiées confirment les coordonnées essentielles.',
+                                ),
+                              ],
+                            ),
                           ),
                         ],
                       ),
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     ),
   );
