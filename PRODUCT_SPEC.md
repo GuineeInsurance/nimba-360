@@ -3,13 +3,13 @@
 | Document | Value |
 |---|---|
 | Status | Draft for product approval |
-| Version | 0.1 |
-| Last updated | 27 October 2026 |
+| Version | 0.2 |
+| Last updated | 28 October 2026 |
 | Product | NIMBA 360 |
 | Initial market | Guinea, beginning with Conakry |
 | Primary language | French |
 | Platforms | Android first; responsive web; iOS later |
-| Technical foundation | Expo / React Native, Firebase Authentication, Firestore, Firebase Hosting |
+| Technical foundation | Flutter, Firebase Authentication, Firestore, Firebase Hosting |
 
 This document is the product and delivery source of truth for NIMBA 360. Feature work should not begin until the relevant requirement, priority, acceptance criteria, and dependencies are represented here. Changes to scope should update this document before implementation.
 
@@ -26,7 +26,7 @@ The recommended delivery order is:
 1. Approve this specification and resolve the blocking product decisions.
 2. Establish secure server-side operations and production observability.
 3. Verify and publish a small, high-quality Conakry launch catalog.
-4. complete the Android consumer discovery experience.
+4. Complete the Android consumer discovery experience.
 5. Add business submissions, corrections, ownership, and review workflows.
 6. Harden, measure, and release before expanding nationally.
 
@@ -156,14 +156,15 @@ Core jobs:
 
 ### 6.2 Implemented consumer capabilities
 
-- Android development build and responsive React Native interface.
+- Android Flutter application validated on a physical Android 12 device.
 - Home, Explore/Search, Favorites, Profile, and Business Detail screens.
-- Google sign-in on Android; Apple and phone flows implemented in code.
+- Google sign-in verified on Android; phone/SMS flow implemented for device acceptance.
 - Firestore user profile creation.
 - Per-account cloud favorite synchronization.
 - Approved-business reads from Firestore.
 - Phone, WhatsApp, and Google Maps actions.
-- Client-side filtering by category, open state, rating, and distance fields.
+- Client-side search and category filtering without invented open, rating, or distance values.
+- Mobile business submission, status dashboard, correction, and approved-record resubmission flows.
 
 ### 6.3 Implemented business and admin capabilities
 
@@ -176,12 +177,11 @@ Core jobs:
 ### 6.4 Known incomplete or misleading areas
 
 - No public `businesses` records exist, so the live consumer catalog is empty.
-- The business detail screen shows a hardcoded example review.
 - Share action has no implementation.
 - “Open now” and proximity depend on fields that are not yet supported by reliable location/hour logic.
 - Rating aggregates are described as server-managed, but no server process manages them.
 - Deletion requests are stored but not executed.
-- Mobile has no submission, correction, review, or reporting workflow.
+- Mobile review and consumer-reporting workflows are not implemented.
 - Category and location references are planned but not populated or consumed.
 - Business photo selection exists in the web interface, but upload/storage is not complete.
 - There is no analytics, crash reporting, operational alerting, or moderation SLA reporting.

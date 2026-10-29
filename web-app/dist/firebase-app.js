@@ -242,9 +242,13 @@ try {
       const field = form.elements.namedItem(name);
       if (field) field.value = Number.isNaN(value) ? '' : value;
     });
-    const photo = document.querySelector('#review-photo');
-    photo.hidden = !record.photo;
-    if (record.photo?.startsWith('data:image/jpeg;base64,')) photo.src = record.photo; else { photo.removeAttribute('src'); photo.hidden = true; }
+    const photoGallery = document.querySelector('#review-photos');
+    const submittedPhotos = [record.photo, ...(Array.isArray(record.imagePaths) ? record.imagePaths : [])]
+      .filter(value => typeof value === 'string' && value.startsWith('data:image/')).slice(0, 5);
+    photoGallery.replaceChildren(...submittedPhotos.map((source, index) => {
+      const image = document.createElement('img'); image.src = source; image.alt = `Photo ${index + 1} de l’entreprise`; image.className = 'submission-photo'; return image;
+    }));
+    photoGallery.hidden = !submittedPhotos.length;
     const checks = record.verificationChecks || {};
     form.elements.checkIdentity.checked = Boolean(checks.identity);
     form.elements.checkContact.checked = Boolean(checks.contact);
@@ -346,6 +350,8 @@ try {
       if (action === 'approved') {
         const businessId = activeRecord.businessId || activeRecord.id;
         const publishedSnapshot = await getDoc(doc(db, 'businesses', businessId));
+        const submittedPhotos = [activeRecord.photo, ...(Array.isArray(activeRecord.imagePaths) ? activeRecord.imagePaths : [])]
+          .filter(value => typeof value === 'string' && value.startsWith('data:image/')).slice(0, 5);
         batch.set(doc(db, 'businesses', businessId), {
           name: values.name,
           normalizedName: slugify(values.name),
@@ -369,7 +375,8 @@ try {
           longitude: values.longitude,
           ...(!publishedSnapshot.exists() ? { rating: 0, reviewCount: 0, services: [], createdAt: activeRecord.publishedAt || serverTimestamp() } : {}),
           verified: true,
-          imageUrl: typeof activeRecord.photo === 'string' ? activeRecord.photo : (activeRecord.imageUrl || ''),
+          imageUrl: submittedPhotos[0] || activeRecord.imageUrl || '',
+          imageUrls: submittedPhotos.length ? submittedPhotos : (activeRecord.imageUrls || []),
           description: values.description,
           status: 'approved',
           updatedAt: serverTimestamp(),

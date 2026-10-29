@@ -6,7 +6,7 @@ La vision produit, les exigences fonctionnelles, les critères de lancement et l
 
 ## Composants
 
-- `mobile-app/` — application Expo / React Native pour Android, iOS et le web.
+- `flutter-app/` — application mobile Flutter pour Android, avec iOS prévu après validation Android.
 - `web-app/dist/` — site marketing, inscription d'entreprises, pages légales et administration.
 - `web-app/firestore.rules` — règles d'accès Firebase fondées sur les rôles.
 - `data/` — données sources et fichiers de revue avant publication.
@@ -29,23 +29,23 @@ Les fiches importées ne sont jamais publiées automatiquement. Chaque fiche doi
 
 ## Développement mobile
 
-Prérequis : Node.js et npm.
+Prérequis : Flutter 3.32.8, Dart 3.8.1 et l'outillage Android.
 
-```bash
-cd mobile-app
-npm install
-npm start
+```powershell
+cd flutter-app
+flutter pub get
+flutter analyze
+flutter test
+flutter run -d <device-id>
 ```
 
-Commandes utiles :
+Générer un APK Android ARM64 optimisé :
 
-```bash
-npm run android
-npm run ios
-npm run web
-npm run lint
-npm run data:import:dry-run
+```powershell
+flutter build apk --release --target-platform android-arm64 --split-per-abi
 ```
+
+L'application utilise l'identifiant Android `com.nimba360.app` et le projet Firebase `guinee-directory-mvp`. La signature de production doit être configurée avant publication sur le Play Store.
 
 ## Développement web
 

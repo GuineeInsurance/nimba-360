@@ -1,16 +1,15 @@
 # NIMBA 360 — Flutter migration plan
 
-Status: proposed implementation sequence. No Flutter implementation started.
+Status: source migration completed 28 October 2026. Flutter is the sole mobile codebase; final release acceptance remains in progress.
 Requested scope: rebuild the mobile app screen by screen; keep the website and Firebase backend working.
 
 ## Approach
 
-- Build a new `flutter-app/` beside `mobile-app/`. Keep the existing Expo app available as a reference and fallback until replacement acceptance.
+- The Flutter application now lives in `flutter-app/`. The accepted Expo/React Native source was removed after migration.
 - Android first, French first. Carry over the NIMBA logo, tagline, colors, taxonomy, and business workflow. iOS follows Android acceptance.
 - Continue using Firebase project `guinee-directory-mvp`: existing accounts, approved businesses, favorites, submissions, and web moderation queue.
 - Preserve `com.nimba360.app` for the eventual replacement. Inspect existing app registrations and signing configuration before running FlutterFire configuration; do not create duplicate registrations blindly.
-- Flutter removes the Expo/EAS development workflow from the replacement app, but does not remove Firebase configuration, signing certificates, Android tooling, SMS verification, or Apple release requirements.
-- Do not promise that local Expo drafts or guest favorites migrate automatically. They use a different storage stack. Cloud data remains available to the same Firebase UID; users may need to sign in again.
+- Flutter removes the Expo/EAS development workflow, but does not remove Firebase configuration, signing certificates, Android tooling, SMS verification, or Apple release requirements.
 - Do not copy runtime assumptions or bugs merely for parity. Unknown distances and opening hours must remain unknown rather than displaying invented values.
 
 ## Keep the code understandable
@@ -72,13 +71,23 @@ Stages 8–11 should be implemented one step at a time but remain a single conne
 2. At the office: write/review source and document status. Do not launch mobile apps, emulators, builds, or mobile tests unless the user changes the existing instruction.
 3. At home: install one agreed Flutter SDK version and Android tooling, pull changes, run dependency setup and static checks, then verify the current screen on the configured device.
 4. Record issues and approval for each screen. Code-complete and device-verified are separate statuses; do not label an untested screen device-ready.
-5. Do not switch the shipping app or delete Expo until end-to-end Android acceptance is complete. Retain a Git reference to the old app for rollback.
+5. Use the Git commit before the Flutter replacement as the rollback reference for the removed Expo implementation.
 
 The final Android build must use the intended signing identity. An update over an installed app requires compatible package identity and signing; a differently signed development build may require a separate installation strategy. iOS builds/signing require the appropriate Apple toolchain or a suitable macOS build service and account configuration.
 
 ## Immediate next deliverable
 
-Stage 0 followed by Stage 1: scaffold Flutter, establish the NIMBA design components and navigation, then implement the Explorer screen. Do not rewrite every screen in one pass. Update `PRODUCT_SPEC.md` to reflect the selected Flutter architecture before implementation begins; retain its product priorities and distinguish migration parity from future roadmap features.
+Complete the remaining device acceptance on Android: SMS authentication, Firebase reads with controlled records, guest-to-account favorite merge, GPS permission, photo selection, new submission, approved-submission resubmission, and production release signing.
+
+## Implementation status — 28 October 2026
+
+- Stages 0–12 are represented in `flutter-app/`: app shell, discovery, search, details/actions, Google and SMS authentication, guest/cloud favorites, profile, submission dashboard, registration with recoverable drafts/GPS/compressed JPEG, and owner resubmission.
+- Firebase Android identity remains `com.nimba360.app` and uses the existing `guinee-directory-mvp` registration.
+- `flutter analyze` passes and automated Dart tests pass.
+- ARM64 debug and release-mode test APKs build successfully. The application renders correctly on a Redmi Note 9S / Android 12.
+- Google authentication is verified on the physical device after registering the Flutter signing fingerprints in Firebase.
+- The Expo/React Native application and its duplicated Firebase configuration were removed after explicit replacement acceptance.
+- Final production signing and the remaining workflow checks are not complete.
 
 ## References
 

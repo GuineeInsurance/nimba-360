@@ -119,7 +119,29 @@ service cloud.firestore {
         && (!('postalCode' in data) || (data.postalCode is string && data.postalCode.size() <= 20))
         && (!('streetAddress' in data) || (data.streetAddress is string && data.streetAddress.size() <= 180))
         && (!('description' in data) || (data.description is string && data.description.size() <= 800))
-        && (!('photo' in data) || (data.photo is string && data.photo.size() <= 300000 && (data.photo == '' || data.photo.matches('^data:image/jpeg;base64,[A-Za-z0-9+/=]+$'))));
+        && (!('photo' in data) || validSubmissionPhoto(data.photo))
+        && (!('imagePaths' in data) || validSubmissionGallery(data.imagePaths));
+    }
+
+    function validSubmissionPhoto(value) {
+      return value is string
+        && value.size() <= 300000
+        && (value == '' || value.matches('^data:image/jpeg;base64,[A-Za-z0-9+/=]+$'));
+    }
+
+    function validGalleryPhoto(value) {
+      return value is string
+        && value.size() <= 140000
+        && value.matches('^data:image/jpeg;base64,[A-Za-z0-9+/=]+$');
+    }
+
+    function validSubmissionGallery(values) {
+      return values is list
+        && values.size() <= 4
+        && (values.size() < 1 || validGalleryPhoto(values[0]))
+        && (values.size() < 2 || validGalleryPhoto(values[1]))
+        && (values.size() < 3 || validGalleryPhoto(values[2]))
+        && (values.size() < 4 || validGalleryPhoto(values[3]));
     }
 
     match /submissions/{submissionId} {
@@ -153,7 +175,7 @@ service cloud.firestore {
           'name', 'category', 'subcategory', 'categoryId', 'subcategoryId', 'city', 'cityId',
           'district', 'communeId', 'quartier', 'postalCode', 'streetAddress', 'address',
           'phone', 'email', 'website', 'whatsapp', 'description', 'latitude', 'longitude',
-          'photo', 'status', 'updatedAt', 'editRequestId', 'verificationChecks'
+          'photo', 'imagePaths', 'status', 'updatedAt', 'editRequestId', 'verificationChecks'
         ])
         && request.resource.data.editRequestId is string && request.resource.data.editRequestId.size() == 36
         && request.resource.data.verificationChecks == {'identity': false, 'contact': false, 'location': false, 'duplicate': false}

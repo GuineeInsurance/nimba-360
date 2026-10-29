@@ -49,7 +49,8 @@ export function setupBusinessPortal(auth, db) {
       const list = element('dl', '', 'business-details');
       for (const [key, label] of Object.entries(labels)) { const row = element('div'); row.append(element('dt', label), element('dd', record[key] == null || record[key] === '' ? 'Non renseigné' : String(record[key]))); list.append(row); }
       details.append(list);
-      if (typeof record.photo === 'string' && record.photo.startsWith('data:image/jpeg;base64,')) { const photo = element('img', '', 'summary-photo'); photo.src = record.photo; photo.alt = 'Photo de l’entreprise'; details.append(photo); }
+      const photos = [record.photo, ...(Array.isArray(record.imagePaths) ? record.imagePaths : [])].filter(value => typeof value === 'string' && value.startsWith('data:image/')).slice(0, 5);
+      for (const [index, source] of photos.entries()) { const photo = element('img', '', 'summary-photo'); photo.src = source; photo.alt = `Photo ${index + 1} de l’entreprise`; details.append(photo); }
       card.append(details);
       if (['approved', 'correction_required', 'rejected'].includes(record.status)) card.append(button(record.status === 'approved' ? 'Modifier les informations' : 'Corriger et renvoyer', () => start(record)));
       dashboard.append(card);
